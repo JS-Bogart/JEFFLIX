@@ -119,3 +119,322 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 4558ms (Views: 4547.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-02-09 13:48:31 -0800
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 4410ms (Views: 4394.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]" for ::1 at 2021-02-09 13:53:30 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 10ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]" for ::1 at 2021-02-09 14:03:55 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (9.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 105ms (ActiveRecord: 42.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:19:in `user_params'
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]" for ::1 at 2021-02-09 14:08:37 -0800
+  [1m[35m (9.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 44ms (ActiveRecord: 7.9ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:19:in `user_params'
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-09 14:08:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 4570ms (Views: 4560.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]&" for ::1 at 2021-02-09 14:12:22 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 73ms (ActiveRecord: 23.5ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:23:in `user_params'
+  app/controllers/api/users_controller.rb:11:in `create'
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]&user=@user" for ::1 at 2021-02-09 14:13:11 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "user"=>"@user"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `permit' for "@user":String:
+  app/controllers/api/users_controller.rb:23:in `user_params'
+  app/controllers/api/users_controller.rb:11:in `create'
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]&user=%23{@user}" for ::1 at 2021-02-09 14:13:35 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "user"=>"\#{@user}"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+
+
+
+NoMethodError - undefined method `permit' for "\#{@user}":String:
+  app/controllers/api/users_controller.rb:23:in `user_params'
+  app/controllers/api/users_controller.rb:11:in `create'
+
+Started POST "/api/user?email=abc@gmail.com&password=[FILTERED]" for ::1 at 2021-02-09 14:13:54 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 400 Bad Request in 20ms (ActiveRecord: 5.3ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/api/users_controller.rb:23:in `user_params'
+  app/controllers/api/users_controller.rb:11:in `create'
+
+Started POST "/api/user" for ::1 at 2021-02-09 14:26:01 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jvZ92BF5narHfLCACRxyAw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8
+Completed 422 Unprocessable Entity in 553ms (Views: 1.6ms | ActiveRecord: 53.8ms)
+
+
+Started POST "/api/user?user[email]=abc@gmail.com&user[password]=[FILTERED]" for ::1 at 2021-02-09 14:38:42 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eBJ03mTveROJAUssVkRNlA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (3.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8
+Completed 422 Unprocessable Entity in 1627ms (Views: 8.8ms | ActiveRecord: 21.4ms)
+
+
+Started POST "/api/user?user[email]=abc@gmail.com&user[password]=[FILTERED]&user[username]=abc" for ::1 at 2021-02-09 14:39:09 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "username"=>"abc"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Unpermitted parameter: :username
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "u1kSCtbFRdoti78jWeLWlA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8
+Completed 422 Unprocessable Entity in 1535ms (Views: 46.5ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/user?user[email]=%27abc@gmail.com%27&user[password]=[FILTERED]&user[username]=%27abc%27" for ::1 at 2021-02-09 14:39:37 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"'abc@gmail.com'", "password"=>"[FILTERED]", "username"=>"'abc'"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Unpermitted parameter: :username
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "'abc@gmail.com'"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-AdJRxvlrkkf_EJJ5J3pHw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8
+Completed 422 Unprocessable Entity in 1003ms (Views: 5.4ms | ActiveRecord: 5.5ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2813240567747369445)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveUsername (20210209224356)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (57.7ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "username"[0m
+  ↳ db/migrate/20210209224356_remove_username.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (16.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210209224356"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2813240567747369445)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/api/user?user[email]=%27abc@gmail.com%27&user[password]=[FILTERED]" for ::1 at 2021-02-09 14:45:53 -0800
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"'abc@gmail.com'", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8
+Completed 500 Internal Server Error in 653ms (ActiveRecord: 20.9ms)
+
+
+
+NoMethodError - undefined method `username' for #<User:0x00007fce58c91430>:
+  app/controllers/api/users_controller.rb:8:in `create'
+
+Started POST "/api/user?user[email]=%27abc@gmail.com%27&user[password]=[FILTERED]" for ::1 at 2021-02-09 14:47:20 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"'abc@gmail.com'", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "'abc@gmail.com'"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (8.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BZf2weyqbISfxLRiQTEgWA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Create (15.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "'abc@gmail.com'"], ["password_digest", "$2a$12$Yl16MgLsRRgxvIY/vhiJ9.eyld6D2HIoHX9/6g/QhyQYfwwbEAyQO"], ["session_token", "BZf2weyqbISfxLRiQTEgWA"], ["created_at", "2021-02-09 22:47:23.571925"], ["updated_at", "2021-02-09 22:47:23.571925"]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 500 Internal Server Error in 2308ms (ActiveRecord: 103.8ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for nil:NilClass:
+  app/controllers/application_controller.rb:16:in `login'
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started POST "/api/user?user[email]=%27abc@gmail.com%27&user[password]=[FILTERED]" for ::1 at 2021-02-09 14:49:43 -0800
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"'abc@gmail.com'", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "'abc@gmail.com'"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "wcLy8oJSnLodwnWnIjZqBA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:8
+Completed 422 Unprocessable Entity in 661ms (Views: 2.9ms | ActiveRecord: 27.6ms)
+
+
+Started POST "/api/user?user[email]=%27abcd@gmail.com%27&user[password]=[FILTERED]" for ::1 at 2021-02-09 14:49:56 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"'abcd@gmail.com'", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "'abcd@gmail.com'"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PVtFiPBkqWRHhj8tId4qKg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "'abcd@gmail.com'"], ["password_digest", "$2a$12$5yP.YUxFoQKF6YhC3mj1lOMISp8WOitMNsDisj0GJ605dFudwsW2y"], ["session_token", "PVtFiPBkqWRHhj8tId4qKg"], ["created_at", "2021-02-09 22:49:57.163862"], ["updated_at", "2021-02-09 22:49:57.163862"]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 500 Internal Server Error in 713ms (ActiveRecord: 10.4ms)
+
+
+
+NoMethodError - undefined method `reset_session_token!' for nil:NilClass:
+  app/controllers/application_controller.rb:16:in `login'
+  app/controllers/api/users_controller.rb:9:in `create'
+
+Started POST "/api/user?user[email]=%27abcde@gmail.com%27&user[password]=[FILTERED]" for ::1 at 2021-02-09 14:51:44 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"'abcde@gmail.com'", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (9.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "'abcde@gmail.com'"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OQd8ZScrJ7sCpTBM8SIGAA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "'abcde@gmail.com'"], ["password_digest", "$2a$12$MBcmL5NqSGwkSpYdYHHO6OImMct9knpv4uNdi5s4nT1zg8g6nIZyS"], ["session_token", "OQd8ZScrJ7sCpTBM8SIGAA"], ["created_at", "2021-02-09 22:51:46.439898"], ["updated_at", "2021-02-09 22:51:46.439898"]]
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (3.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "'abcde@gmail.com'"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ej5fhlPga5SYxIGPKLTNtw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (9.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ej5fhlPga5SYxIGPKLTNtw"], ["updated_at", "2021-02-09 22:51:46.476529"], ["id", 3]]
+  ↳ app/models/user.rb:28
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (37.9ms)
+  Rendered api/users/show.json.jbuilder (87.6ms)
+Completed 200 OK in 1819ms (Views: 233.6ms | ActiveRecord: 54.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-09 14:52:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 9923ms (Views: 9912.6ms | ActiveRecord: 0.0ms)
+
+
