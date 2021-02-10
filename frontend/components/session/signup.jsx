@@ -8,11 +8,12 @@ class Signup extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(field) {
     return (e) => {
-      this.setState({ [field]: e.target.value })
+      this.setState({ [field]: e.currentTarget.value })
     }
   }
 

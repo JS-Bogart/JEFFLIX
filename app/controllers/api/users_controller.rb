@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  before_action :redirect_if_logged_in
+  # before_action :redirect_if_logged_in
   skip_before_action :verify_authenticity_token
 
   def create
