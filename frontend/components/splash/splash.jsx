@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 class Splash extends React.Component {
   constructor(props){
@@ -40,9 +41,10 @@ class Splash extends React.Component {
               value={this.state.splashEmail}
               onChange={this.handleInput('splashEmail')}
             />
-            <Link to="/signup" onClick={this.handleSubmit} className="signup-link">
+            <Link to="/signup" onClick={() => {this.handleSubmit}} className="signup-link">
               Get Started
             </Link>
+
           </form>
         </div>
       </div>
