@@ -708,3 +708,45 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1227ms (Views: 1213.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-02-09 23:44:53 -0800
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 5068ms (Views: 5053.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-09 23:46:13 -0800
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/scottbogart/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5374ms (Views: 5365.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-09 23:48:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 1746ms (Views: 1730.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-09 23:48:34 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QLmjpC4gcAV-yEGSxclyiQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Redirected to http://localhost:3000/
+Filter chain halted as :redirect_if_logged_in rendered or redirected
+Completed 302 Found in 122ms (ActiveRecord: 62.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-09 23:48:34 -0800
+Processing by StaticPagesController#root as */*
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 351ms (Views: 223.1ms | ActiveRecord: 0.0ms)
+
+
