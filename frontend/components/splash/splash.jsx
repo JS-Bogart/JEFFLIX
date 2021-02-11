@@ -38,7 +38,13 @@ class Splash extends React.Component {
       <div className="splash">
         <header>
           <h1 className="app-logo">JEFFLIX</h1>
-          <Link to="/login" className="login-link">Sign In</Link>
+          <Button
+            component={Link}
+            to="/login"
+            className="login-link"
+          >
+            Sign In
+          </Button>
         </header>
         <div>
           <h1>Unlimited movies.</h1>
@@ -52,9 +58,6 @@ class Splash extends React.Component {
               onChange={this.handleInput}
             />
           </form>
-            {/* <Link to="/signup" className="signup-link">
-              Get Started
-            </Link> */}
           <Button
             component={Link} 
             to="/signup" 
@@ -62,7 +65,6 @@ class Splash extends React.Component {
             >
               Get Started
           </Button>
-
         </div>
       </div>
     );

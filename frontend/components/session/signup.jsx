@@ -46,7 +46,9 @@ class Signup extends React.Component {
           <p>{this.props.navLink}</p>
         </header>
         <div>
-          <h2>Sign Up</h2>
+          <h2>Create a password to start your membership.</h2>
+          <p>Just a few more steps and you're done!</p>
+          <p>We hate paperwork, too.</p>
           <form>
             <label>Email</label>
             <input 
