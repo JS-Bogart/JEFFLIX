@@ -1,5 +1,4 @@
 import React from 'react';
-import { logout } from '../../actions/session_actions';
 
 class Browse extends React.Component {
 
@@ -8,7 +7,7 @@ class Browse extends React.Component {
       <div>
         <header>
           <h1>JEFFLIX</h1>
-          <button onClick={logout}>Sign out of Jefflix</button>
+          <button onClick={this.props.logout}>Sign out of Jefflix</button>
         </header>
       </div>
     );
