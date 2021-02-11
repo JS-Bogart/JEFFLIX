@@ -39,6 +39,16 @@ class Signup extends React.Component {
     this.props.signup(this.state);
   }
 
+  renderErrors() {
+    if (this.props.errors.length > 0) {
+      return(
+        <div>
+          {this.props.errors[0]}
+        </div>
+      )
+    }
+  }
+
   render() {
     return(
       <div className="signup">
@@ -51,6 +61,7 @@ class Signup extends React.Component {
           </Link>
           <p>{this.props.navLink}</p>
         </header>
+        {this.renderErrors()}
         <div>
           <h2>Create a password to start your membership.</h2>
           <p>Just a few more steps and you're done!</p>

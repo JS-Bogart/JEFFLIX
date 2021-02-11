@@ -10,11 +10,8 @@ class Api::SessionsController < ApplicationController
     if @user
       login(@user)
       render "api/users/show"
-    elsif !User.find_by(email: email)
-      render json: ["Sorry, we can't find an account with this email address. 
-                    Please try again or create a new account"], status: 401
     else
-      render json: ["Incorrect password. Please try again"], status: 401
+      render json: ["Invalid credentials"], status: 401
     end
   end
 

@@ -23,6 +23,16 @@ class Login extends React.Component {
     this.props.login(this.state);
   }
 
+  renderErrors() {
+    if (this.props.errors.length > 0) {
+      return (
+        <div>
+          {this.props.errors[0]}
+        </div>
+      )
+    }
+  }
+
   render() {
     return(
       <div className="signin">
@@ -34,6 +44,7 @@ class Login extends React.Component {
             JEFFLIX
           </Link>
         </header>
+        {this.renderErrors()}
         <div>
           <h2>Sign In</h2>
           <form>
@@ -51,6 +62,7 @@ class Login extends React.Component {
             />
             <button onClick={this.handleSubmit}>Sign In</button>
           </form>
+          <p>New to Jefflix?</p>
           <p>{this.props.navLink}</p>
         </div>
       </div>
