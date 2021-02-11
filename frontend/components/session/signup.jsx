@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -42,7 +43,12 @@ class Signup extends React.Component {
     return(
       <div className="signup">
         <header>
-          <h1 className="app-logo">JEFFLIX</h1>
+          <Link
+            to="/"
+            className="logo-splash-link"
+          >
+            JEFFLIX
+          </Link>
           <p>{this.props.navLink}</p>
         </header>
         <div>
