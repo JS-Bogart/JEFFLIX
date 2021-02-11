@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 import { signup } from '../../actions/session_actions';
 import Signup from './signup';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = state => {
   return {
-    // errors: errors.session,
+    splashEmail: state.splashEmail,
     navLink: <Link to="/login">Sign In</Link>
   };
 };

@@ -9,18 +9,29 @@ class Splash extends React.Component {
       splashEmail: ''
     };
     this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInput(field) {
-    return (e) => {
-      this.setState({ [field]: e.currentTarget.value })
+  handleInput(e) {
+    this.setState({ splashEmail: e.currentTarget.value })
+  }
+
+  componentDidMount() {
+    this.splashData = JSON.parse(localStorage.getItem('splashEmail'));
+
+    if (localStorage.getItem('splashEmail')) {
+      this.setState({
+        splashEmail: this.splashData.splashEmail
+      })
+    } else {
+      this.setState({
+        splashEmail: ''
+      })
     }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    // this.props.signup(this.state);
+  componentDidUpdate() {
+    localStorage.setItem('splashEmail', JSON.stringify(this.state));
   }
 
   render() {
@@ -39,13 +50,20 @@ class Splash extends React.Component {
             <input
               type="text"
               value={this.state.splashEmail}
-              onChange={this.handleInput('splashEmail')}
+              onChange={this.handleInput}
             />
-            <Link to="/signup" onClick={() => {this.handleSubmit}} className="signup-link">
-              Get Started
-            </Link>
-
           </form>
+            {/* <Link to="/signup" onClick={() => {this.handleSubmit}} className="signup-link">
+              Get Started
+            </Link> */}
+          <Button
+            component={Link} 
+            to="/signup" 
+            className="signup-link"
+            >
+              Get Started
+          </Button>
+
         </div>
       </div>
     );
