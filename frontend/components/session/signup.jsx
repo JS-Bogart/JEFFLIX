@@ -11,6 +11,22 @@ class Signup extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentDidMount() {
+    this.splashData = JSON.parse(localStorage.getItem('splashEmail'));
+
+    if (localStorage.getItem('splashEmail')) {
+      this.setState({
+        email: this.splashData.splashEmail,
+        password: ''
+      })
+    } else {
+      this.setState({
+        email: '',
+        password: ''
+      })
+    }
+  }
+
   handleInput(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })

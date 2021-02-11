@@ -9,7 +9,6 @@ class Splash extends React.Component {
       splashEmail: ''
     };
     this.handleInput = this.handleInput.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(e) {
@@ -53,7 +52,7 @@ class Splash extends React.Component {
               onChange={this.handleInput}
             />
           </form>
-            {/* <Link to="/signup" onClick={() => {this.handleSubmit}} className="signup-link">
+            {/* <Link to="/signup" className="signup-link">
               Get Started
             </Link> */}
           <Button
