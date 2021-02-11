@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Browse extends React.Component {
 
@@ -6,13 +7,19 @@ class Browse extends React.Component {
     return (
       <div>
         <header>
-          <h1>JEFFLIX</h1>
-          {/* <button onClick={this.props.logout}>Sign out of Jefflix</button> */}
-          <input 
-            type="text" 
-            onClick={this.props.logout} 
-            value="Sign out of Jefflix"
-          />
+          <Link
+            to="/browse"
+            className="logo-browse-link"
+          >
+            JEFFLIX
+          </Link>
+          <Link
+            onClick={this.props.logout}
+            to="/login"
+            className="logout-link"
+          >
+            Sign out of Jefflix
+          </Link>
         </header>
       </div>
     );
