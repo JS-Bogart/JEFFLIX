@@ -3054,3 +3054,32 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 405ms (Views: 38.4ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/" for ::1 at 2021-02-11 13:34:52 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (23.1ms)
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CU_kzfiDqamW5ME_qidyIA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 905ms (Views: 832.5ms | ActiveRecord: 21.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-02-11 13:34:59 -0800
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "CU_kzfiDqamW5ME_qidyIA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "test1@test.com"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "CwZsmbz5EixMsTMYfbzDtA"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (25.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "CwZsmbz5EixMsTMYfbzDtA"], ["updated_at", "2021-02-11 21:34:59.586540"], ["id", 7]]
+  ↳ app/models/user.rb:28
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (8.5ms)
+  Rendered api/users/show.json.jbuilder (15.6ms)
+Completed 200 OK in 157ms (Views: 60.6ms | ActiveRecord: 40.2ms)
+
+
