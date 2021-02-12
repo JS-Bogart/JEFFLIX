@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
 
 class Splash extends React.Component {
   constructor(props){
@@ -50,8 +48,8 @@ class Splash extends React.Component {
           <h1>Unlimited movies, TV shows, and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
           <h3>Ready to watch? Enter your email to create your membership.</h3>
+          <label>Email address</label>
           <form>
-            <label>Email address</label>
             <input
               type="text"
               value={this.state.splashEmail}

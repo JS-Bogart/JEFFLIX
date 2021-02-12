@@ -48,11 +48,12 @@ body{
   margin: 30px;
 }
 
-.splash-body > form > label {
+.splash-body > label {
   z-index: 1;
-  position: absolute;
-  top: 32.3rem;
-  left: 35.5rem;
+  position: relative;
+  top: 1.5rem;
+  left: 0.8rem;
+  width: 100px;
 }
 
 .splash-input {
