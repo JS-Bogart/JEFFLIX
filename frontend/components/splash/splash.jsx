@@ -1,4 +1,5 @@
 import React from 'react';
+import splashLogo from '../../../app/assets/images/logo/splashlogo.png';
 
 class Splash extends React.Component {
   constructor(props){
@@ -35,8 +36,7 @@ class Splash extends React.Component {
     return(
       <div className="splash">
         <header className="splash-header">
-          {/* <h1 className="app-logo">JEFFLIX</h1> */}
-          <img src="https://fontmeme.com/permalink/210212/c9b8984d98cb53bbf076c280c50eea7b.png"/>
+          <img src={window.splashLogo} alt="splashLogo"/>
           <a
             href="/#/login"
             className="login-link"
