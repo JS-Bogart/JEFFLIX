@@ -12,6 +12,10 @@ class Login extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentDidMount() {
+    this.props.removeErrors();
+  }
+
   handleInput(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })

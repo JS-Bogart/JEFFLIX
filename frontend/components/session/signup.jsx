@@ -11,8 +11,9 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
-
+  
   componentDidMount() {
+    this.props.removeErrors();
     this.splashData = JSON.parse(localStorage.getItem('splashEmail'));
 
     if (localStorage.getItem('splashEmail')) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/session_actions';
+import { login, removeErrors } from '../../actions/session_actions';
 import Login from './login';
 
 const mapStateToProps = ({ errors }) => {
@@ -13,7 +13,8 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    login: user => dispatch(login(user))
+    login: user => dispatch(login(user)),
+    removeErrors: () => dispatch(removeErrors())
   };
 };
 
