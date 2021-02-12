@@ -36,18 +36,18 @@ class Splash extends React.Component {
   render() {
     return(
       <div className="splash">
-        <header>
-          <h1 className="app-logo">JEFFLIX</h1>
-          <Button
-            component={Link}
-            to="/login"
+        <header className="splash-header">
+          {/* <h1 className="app-logo">JEFFLIX</h1> */}
+          <img src="https://fontmeme.com/permalink/210212/c9b8984d98cb53bbf076c280c50eea7b.png"/>
+          <a
+            href="/#/login"
             className="login-link"
           >
             Sign In
-          </Button>
+          </a>
         </header>
-        <div>
-          <h1>Unlimited movies.</h1>
+        <div className="splash-body">
+          <h1>Unlimited movies, TV shows, and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
           <h3>Ready to watch? Enter your email to create your membership.</h3>
           <form>
@@ -58,13 +58,12 @@ class Splash extends React.Component {
               onChange={this.handleInput}
             />
           </form>
-          <Button
-            component={Link} 
-            to="/signup" 
+          <a
+            href="/#/signup" 
             className="signup-link"
             >
               Get Started
-          </Button>
+          </a>
         </div>
       </div>
     );

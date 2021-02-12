@@ -5,7 +5,7 @@ class Browse extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="browse">
         <header>
           <Link
             to="/browse"
