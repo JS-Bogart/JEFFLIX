@@ -11,6 +11,10 @@
   background-color: #e50914;
 }
 
+.splash-top {
+  background-color: rgba(0,0,0,0.6);
+}
+
 .splash-body {
   color: white;
 }
@@ -22,4 +26,8 @@
 .signup-link {
   background-color: #DB202C;
   color: white;
+}
+
+.signup-link:hover {
+  background-color: #e50914;
 }

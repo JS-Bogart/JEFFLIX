@@ -1,5 +1,4 @@
 import React from 'react';
-import splashLogo from '../../../app/assets/images/logo/splashlogo.png';
 
 class Splash extends React.Component {
   constructor(props){
@@ -35,34 +34,37 @@ class Splash extends React.Component {
   render() {
     return(
       <div className="splash">
-        <header className="splash-header">
-          <img src={window.splashLogo} alt="splashLogo"/>
-          <a
-            href="/#/login"
-            className="login-link"
-          >
-            Sign In
-          </a>
-        </header>
-        <div className="splash-body">
-          <h1>Unlimited movies, TV shows, and more.</h1>
-          <h2>Watch anywhere. Cancel anytime.</h2>
-          <h3>Ready to watch? Enter your email to create your membership.</h3>
-          <label>Email address</label>
-          <form>
-            <input
-              type="text"
-              value={this.state.splashEmail}
-              onChange={this.handleInput}
-              className="splash-input"
-            />
+        <img src={window.splashbg} alt="splashLogo" className="splashbg"/>
+        <div className="splash-top">
+          <header className="splash-header">
+            <img src={window.splashLogo} alt="splashLogo"/>
             <a
-              href="/#/signup" 
-              className="signup-link"
-              >
-              Get Started  {">"}
+              href="/#/login"
+              className="login-link"
+            >
+              Sign In
             </a>
-          </form>
+          </header>
+          <div className="splash-body">
+            <h1>Unlimited movies, TV shows, and more.</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <h3>Ready to watch? Enter your email to create your membership.</h3>
+            <label>Email address</label>
+            <form>
+              <input
+                type="text"
+                value={this.state.splashEmail}
+                onChange={this.handleInput}
+                className="splash-input"
+              />
+              <a
+                href="/#/signup" 
+                className="signup-link"
+                >
+                Get Started  {">"}
+              </a>
+            </form>
+          </div>
         </div>
       </div>
     );

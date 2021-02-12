@@ -19,6 +19,18 @@ body{
   height: 100%;
 }
 
+.splashbg {
+  position: absolute;
+  // z-index: -1;
+  z-index: 1;
+}
+
+.splash-top {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
 .splash-header {
   width: 95%;
   margin: 20px;

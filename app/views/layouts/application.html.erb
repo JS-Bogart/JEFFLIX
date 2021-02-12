@@ -9,7 +9,9 @@
     <%= javascript_include_tag 'application' %>
     <script type='text/javascript'>
       window.splashLogo = "<%= image_url('splashlogo.png')%>"
+      window.splashbg = "<%= image_url('splashbg.jpg')%>"
     </script>
+    
     <% if current_user %>
       <script>
         window.currentUser = {
