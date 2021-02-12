@@ -2,12 +2,15 @@ div {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .app-logo {
   font-size: 30px;
 }
 
 .login-link {
-  text-decoration: none;
   text-align: center;
   line-height: 2.3;
 }
@@ -39,7 +42,6 @@ div {
 }
 
 .signup-link {
-  text-decoration: none;
   text-align: center;
   font-size: 30px;
   line-height: 2.3;

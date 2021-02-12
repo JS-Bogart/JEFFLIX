@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -54,12 +53,12 @@ class Signup extends React.Component {
     return(
       <div className="signup">
         <header>
-          <Link
-            to="/"
+          <a
+            href="/#/"
             className="logo-splash-link"
           >
-            JEFFLIX
-          </Link>
+            <img src={window.splashLogo} alt="splashLogo"/>
+          </a>
           <p>{this.props.navLink}</p>
         </header>
         {this.renderErrors()}
