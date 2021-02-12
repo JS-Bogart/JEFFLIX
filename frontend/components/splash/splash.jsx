@@ -56,14 +56,15 @@ class Splash extends React.Component {
               type="text"
               value={this.state.splashEmail}
               onChange={this.handleInput}
+              className="splash-input"
             />
+            <a
+              href="/#/signup" 
+              className="signup-link"
+              >
+              Get Started  {">"}
+            </a>
           </form>
-          <a
-            href="/#/signup" 
-            className="signup-link"
-            >
-              Get Started
-          </a>
         </div>
       </div>
     );

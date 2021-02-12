@@ -19,6 +19,48 @@ body{
   height: 100%;
 }
 
+.splash-header {
+  width: 95%;
+  margin: 20px;
+}
+
+.login-link {
+  border-radius: 3px;
+  margin: 0.5rem;
+  height: 34px;
+  width: 84px;
+}
+
 .splash-body {
-  max-width: 740px;
+  margin: 100px;
+  max-width: 800px;
+}
+
+.splash-body > h1 {
+  margin: 10px;
+}
+
+.splash-body > h2 {
+  margin: 25px;
+}
+
+.splash-body > h3 {
+  margin: 30px;
+}
+
+.splash-body > form > label {
+  z-index: 1;
+  position: absolute;
+  top: 32.3rem;
+  left: 35.5rem;
+}
+
+.splash-input {
+  width: 550px;
+}
+
+.signup-link {
+  border-radius: 1px;
+  height: 75px;
+  width: 250px;
 }
