@@ -59,7 +59,12 @@ class Signup extends React.Component {
           >
             <img src={window.splashLogo} alt="splashLogo"/>
           </a>
-          <p>{this.props.navLink}</p>
+          <a
+            href="/#/login"
+            className="login-link"
+          >
+            Sign In
+          </a>
         </header>
         {this.renderErrors()}
         <div>

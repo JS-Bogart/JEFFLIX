@@ -40,7 +40,7 @@ class Splash extends React.Component {
             <img src={window.splashLogo} alt="splashLogo"/>
             <a
               href="/#/login"
-              className="login-link"
+              className="login-link-btn"
             >
               Sign In
             </a>
