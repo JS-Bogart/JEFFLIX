@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -40,34 +39,42 @@ class Login extends React.Component {
   render() {
     return(
       <div className="signin">
-        <header>
-          <Link
-            to="/"
-            className="logo-splash-link"
-          >
-            JEFFLIX
-          </Link>
-        </header>
-        {this.renderErrors()}
         <div>
-          <h2>Sign In</h2>
-          <form>
-            <label>Email</label>
-            <input 
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
-            />
-            <label>Password</label>
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-            />
-            <button onClick={this.handleSubmit}>Sign In</button>
-          </form>
-          <p>New to Jefflix?</p>
-          <p>{this.props.navLink}</p>
+          <header>
+            <a
+              href="/#/"
+              className="logo-signup-link"
+            >
+              <img src={window.splashLogo} alt="splashLogo" />
+            </a>
+          </header>
+          {this.renderErrors()}
+          <div>
+            <h2>Sign In</h2>
+            <form>
+              <label>Email</label>
+              <input 
+                type="text"
+                value={this.state.email}
+                onChange={this.handleInput('email')}
+              />
+              <label>Password</label>
+              <input 
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+              />
+              {/* <button onClick={this.handleSubmit}>Sign In</button> */}
+              <div
+                onClick={this.handleSubmit}
+                className="signin-btn"
+              >
+                Sign In
+              </div>
+            </form>
+            <p>New to Jefflix?</p>
+            <p>{this.props.navLink}</p>
+          </div>
         </div>
       </div>
     )
