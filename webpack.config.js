@@ -18,28 +18,7 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         },
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: 'images/[name].[ext]',
-              publicPath: 'assets',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
+      }
     ]
   },
   devtool: 'source-map',
