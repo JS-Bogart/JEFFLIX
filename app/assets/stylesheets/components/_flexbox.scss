@@ -10,3 +10,20 @@
 .splash-body > form {
   justify-content: center;
 }
+
+.signup {
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup > header {
+  justify-content: space-between;
+}
+
+.signup-body {
+  justify-content: flex-start;
+}
+
+.signup-form {
+  flex-direction: column;
+}

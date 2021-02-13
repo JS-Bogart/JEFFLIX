@@ -15,6 +15,7 @@ a {
   line-height: 2.3;
 }
 
+// Splash page
 .splash-body > h1 {
   font-size: 4rem;
   font-weight: bold;
@@ -41,8 +42,43 @@ a {
   font-size: 20px;
 }
 
-.signup-link {
+.splash * .signup-link {
   text-align: center;
   font-size: 30px;
   line-height: 2.3;
+}
+
+// Signup page
+.login-link {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+.signup-body > h2 {
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.5;
+} 
+
+.signup-body > p {
+  font-size: 20px;
+}
+
+.signup * .signup-link {
+  font-size: 18px;
+  text-align: center;
+  line-height: 3;
+  font-weight: 100;
+}
+
+.signup-form > label {
+  font-size: 14px;
+}
+
+.signup-form > input {
+  font-size: 20px;
 }

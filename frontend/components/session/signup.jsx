@@ -55,7 +55,7 @@ class Signup extends React.Component {
         <header>
           <a
             href="/#/"
-            className="logo-splash-link"
+            className="logo-signup-link"
           >
             <img src={window.splashLogo} alt="splashLogo"/>
           </a>
@@ -67,24 +67,29 @@ class Signup extends React.Component {
           </a>
         </header>
         {this.renderErrors()}
-        <div>
+        <div className="signup-body">
           <h2>Create a password to start your membership.</h2>
           <p>Just a few more steps and you're done!</p>
           <p>We hate paperwork, too.</p>
-          <form>
-            <label>Email</label>
+          <form className="signup-form">
+            <label className="email-label">Email</label>
             <input 
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
             />
-            <label>Add a password</label>
+            <label className="password-label">Add a password</label>
             <input 
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
             />
-            <button onClick={this.handleSubmit}>Continue</button>
+            <div 
+              onClick={this.handleSubmit}
+              className="signup-link"
+            >
+              Continue
+            </div>
           </form>
         </div>
       </div>

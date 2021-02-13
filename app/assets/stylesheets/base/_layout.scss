@@ -15,6 +15,7 @@ body{
     height: 100%;
 }
 
+// Splash page
 .splash {
   height: 100%;
 }
@@ -72,8 +73,66 @@ body{
   width: 550px;
 }
 
-.signup-link {
+.splash * .signup-link {
   border-radius: 1px;
   height: 75px;
   width: 250px;
+}
+
+// Signup page
+
+.signup {
+  height: 100%;
+}
+
+.signup > header {
+  width: 100%;
+  padding: 15px;
+}
+
+.logo-signup-link {
+  position: relative;
+  top: 0rem;
+  left: 3.5rem;
+}
+
+.login-link {
+  position: relative;
+  top: 2rem;
+  right: 4rem;
+} 
+
+.signup-body {
+  margin: 70px;
+  width: 500px;
+}
+
+.signup-body > h2 {
+  margin-bottom: 10px;
+}
+
+.signup-body > p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.signup-form > input {
+  height: 55px;
+}
+
+.signup * .signup-link {
+  height: 55px;
+  margin-top: 25px;
+}
+
+.email-label {
+  position: relative;
+  top: 1.2rem;
+  left: 0.5rem;
+}
+
+.password-label {
+  position: relative;
+  top: 1.2rem;
+  left: 0.5rem;
 }
