@@ -39,19 +39,18 @@ class Login extends React.Component {
   render() {
     return(
       <div className="signin">
-        <div>
-          <header>
-            <a
-              href="/#/"
-              className="logo-signup-link"
-            >
-              <img src={window.splashLogo} alt="splashLogo" />
-            </a>
-          </header>
+        <img src={window.splashbg} alt="splashLogo" className="splashbg" />
+        <div className="signin-wrapper">
+          <a
+            href="/#/"
+            className="logo-signup-link"
+          >
+            <img src={window.splashLogo} alt="splashLogo" />
+          </a>
           {this.renderErrors()}
-          <div>
+          <div className="signin-body">
             <h2>Sign In</h2>
-            <form>
+            <form className="signin-form">
               <label>Email</label>
               <input 
                 type="text"
@@ -64,7 +63,6 @@ class Login extends React.Component {
                 value={this.state.password}
                 onChange={this.handleInput('password')}
               />
-              {/* <button onClick={this.handleSubmit}>Sign In</button> */}
               <div
                 onClick={this.handleSubmit}
                 className="signin-btn"
@@ -72,8 +70,15 @@ class Login extends React.Component {
                 Sign In
               </div>
             </form>
-            <p>New to Jefflix?</p>
-            <p>{this.props.navLink}</p>
+            <div className="signup-now">
+              <p>New to Jefflix?</p>
+              <a
+                href="/#/signup"
+                className="signup-now-link"
+              >
+                Sign up now.
+              </a>
+            </div>
           </div>
         </div>
       </div>

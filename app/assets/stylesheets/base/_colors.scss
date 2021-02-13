@@ -1,3 +1,7 @@
+input:focus{
+    outline: none;
+}
+
 .splash {
   background-color: black;
 }
@@ -43,5 +47,39 @@
 }
 
 .signup-form > label {
+  color: grey;
+}
+
+.signin-wrapper {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.signin-body {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.signin-body > h2 {
+  color: white;
+}
+
+.signin-btn {
+  background-color: #DB202C;
+  color: white;
+}
+
+.signup-now-link {
+  color: white;
+}
+
+.signin-form > label {
+  color: grey;
+}
+
+.signin-form > input {
+  background-color: rgb(56, 56, 56);
+  color: white;
+}
+
+.signup-now > p {
   color: grey;
 }

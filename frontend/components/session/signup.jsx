@@ -66,8 +66,8 @@ class Signup extends React.Component {
             Sign In
           </a>
         </header>
-        {this.renderErrors()}
         <div className="signup-body">
+          {this.renderErrors()}
           <h2>Create a password to start your membership.</h2>
           <p>Just a few more steps and you're done!</p>
           <p>We hate paperwork, too.</p>
