@@ -13,8 +13,11 @@
 }
 
 .signup-email-error {
+  align-items: center;
+}
+
+.signup-email-error > div {
   flex-wrap: wrap;
-  justify-content: center;
   align-content: center;
 }
 

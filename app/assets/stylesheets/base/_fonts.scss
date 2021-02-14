@@ -83,8 +83,12 @@ a {
   font-size: 20px;
 }
 
-.signup-email-error > a {
+.signup-email-error * a {
   text-decoration: underline;
+}
+
+.signup-email-error > span {
+  font-size: 40px;
 }
 
 // Signin Page

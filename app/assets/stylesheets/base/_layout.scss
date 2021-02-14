@@ -102,11 +102,12 @@ body{
 } 
 
 .signup-body {
-  margin: 70px;
-  width: 500px;
+  margin: 45px;
+  width: 470px;
 }
 
 .signup-body > h2 {
+  margin-top: 45px;
   margin-bottom: 10px;
 }
 
@@ -140,6 +141,19 @@ body{
 .signup-email-error {
   height: 80px;
   border-radius: 2px;
+}
+
+.signup-email-error > span {
+  margin: 18px;
+}
+
+// .signup-email-error > div {
+//   margin-right: 25px;
+//   border: 2px solid black;
+// }
+
+.signup-email-error * p, .signup-email-error * a {
+  margin: 3px;
 }
 
 // Signin page
