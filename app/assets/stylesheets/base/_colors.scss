@@ -50,6 +50,16 @@ input:focus{
   color: grey;
 }
 
+.signup-email-error {
+  background-color: orange;
+  color: white;
+}
+
+.signup-email-error > a {
+  color: white;
+}
+
+// Signin Page
 .signin-wrapper {
   background-color: rgba(0,0,0,0.6);
 }

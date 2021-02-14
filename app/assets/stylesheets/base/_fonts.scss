@@ -83,6 +83,11 @@ a {
   font-size: 20px;
 }
 
+.signup-email-error > a {
+  text-decoration: underline;
+}
+
+// Signin Page
 .signin-body > h2 {
   font-size: 35px;
 }

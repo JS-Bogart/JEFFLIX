@@ -40,10 +40,12 @@ class Signup extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors.length > 0) {
+    if (this.props.errors[0] === "Email has already been taken") {
       return(
-        <div>
-          {this.props.errors[0]}
+        <div className="signup-email-error">
+          <p>Looks like that account already exists.</p>
+          <a href="/#/login">Sign into that account</a>
+          <p>or try using a different email.</p>
         </div>
       )
     }
