@@ -95,6 +95,10 @@ a {
   font-size: 13px;
 }
 
+.signup-link{
+  cursor: pointer;
+}
+
 // Signin Page
 .signin-body > h2 {
   font-size: 35px;
@@ -127,4 +131,8 @@ a {
 
 .signin-error > a {
   text-decoration: underline;
+}
+
+.signin-btn:hover {
+  cursor: pointer;
 }
