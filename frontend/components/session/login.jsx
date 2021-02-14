@@ -29,8 +29,10 @@ class Login extends React.Component {
   renderErrors() {
     if (this.props.errors.length > 0) {
       return (
-        <div>
-          {this.props.errors[0]}
+        <div className="signin-error">
+          <p>Sorry, we can't find an account with this</p>
+          <p>email or password. Please try again or</p>
+          <a href="/#/signup">create a new account.</a>
         </div>
       )
     }
@@ -47,9 +49,9 @@ class Login extends React.Component {
           >
             <img src={window.splashLogo} alt="splashLogo" />
           </a>
-          {this.renderErrors()}
           <div className="signin-body">
             <h2>Sign In</h2>
+            {this.renderErrors()}
             <form className="signin-form">
               <label>Email</label>
               <input 

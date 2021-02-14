@@ -118,6 +118,7 @@ body{
 
 .signup-form > input {
   height: 55px;
+  border-radius: 2px;
 }
 
 .signup * .signup-link {
@@ -147,10 +148,9 @@ body{
   margin: 18px;
 }
 
-// .signup-email-error > div {
-//   margin-right: 25px;
-//   border: 2px solid black;
-// }
+.signup-password-error {
+  margin-top: 3px;
+}
 
 .signup-email-error * p, .signup-email-error * a {
   margin: 3px;
@@ -170,7 +170,7 @@ body{
 .signin-body {
   position: relative;
   top: 8rem;
-  width: 17%;
+  width: 330px;
   padding: 60px;
   border-radius: 4px;
 }
@@ -208,4 +208,18 @@ body{
 .signup-now-link {
   margin-left: 6px;
   margin-bottom: 70px;
+}
+
+.signin-error {
+  height: 70px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 25px;
+}
+
+.signin-error > p, .signin-error > a {
+  margin-right: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }

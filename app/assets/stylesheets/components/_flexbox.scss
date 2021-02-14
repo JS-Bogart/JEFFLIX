@@ -52,3 +52,9 @@
 .signin-form {
   flex-direction: column;
 }
+
+.signin-error {
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+}

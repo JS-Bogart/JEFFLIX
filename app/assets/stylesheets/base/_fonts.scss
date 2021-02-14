@@ -91,6 +91,10 @@ a {
   font-size: 40px;
 }
 
+.signup-password-error {
+  font-size: 13px;
+}
+
 // Signin Page
 .signin-body > h2 {
   font-size: 35px;
@@ -115,4 +119,12 @@ a {
 
 .signin-form > input {
   font-size: 20px;
+}
+
+.signin-error {
+  font-size: 14px;
+}
+
+.signin-error > a {
+  text-decoration: underline;
 }

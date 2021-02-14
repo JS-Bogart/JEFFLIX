@@ -38,8 +38,8 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props.signup(this.state);
   }
-
-  renderErrors() {
+  
+  renderEmailError() {
     if (this.props.errors[0] === "Email has already been taken") {
       return(
         <div className="signup-email-error">
@@ -50,6 +50,16 @@ class Signup extends React.Component {
             <a href="/#/login">that account</a>
             <p>or try using a different email.</p>
           </div>
+        </div>
+      )
+    }
+  }
+
+  renderPasswordError() {
+    if (this.props.errors[0] === "Password is too short (minimum is 6 characters)") {
+      return (
+        <div className="signup-password-error">
+          <p>Password should be at least 6 characters.</p>
         </div>
       )
     }
@@ -73,7 +83,7 @@ class Signup extends React.Component {
           </a>
         </header>
         <div className="signup-body">
-          {this.renderErrors()}
+          {this.renderEmailError()}
           <h2>Create a password to start your membership.</h2>
           <p>Just a few more steps and you're done!</p>
           <p>We hate paperwork, too.</p>
@@ -90,6 +100,7 @@ class Signup extends React.Component {
               value={this.state.password}
               onChange={this.handleInput('password')}
             />
+            {this.renderPasswordError()}
             <div 
               onClick={this.handleSubmit}
               className="signup-link"
