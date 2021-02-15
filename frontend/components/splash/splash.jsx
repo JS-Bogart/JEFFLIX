@@ -7,10 +7,19 @@ class Splash extends React.Component {
       splashEmail: ''
     };
     this.handleInput = this.handleInput.bind(this);
+    this.demoSubmit = this.demoSubmit.bind(this);
+    this.demo = {
+      email: 'demo@demo.com',
+      password: '123456'
+    };
   }
 
   handleInput(e) {
     this.setState({ splashEmail: e.currentTarget.value })
+  }
+
+  demoSubmit() {
+    this.props.login(this.demo);
   }
 
   componentDidMount() {
@@ -38,6 +47,12 @@ class Splash extends React.Component {
         <div className="splash-top">
           <header className="splash-header">
             <img src={window.splashLogo} alt="splashLogo"/>
+            <div
+              onClick={this.demoSubmit}
+              className="demo-btn"
+            >
+              Demo User
+            </div>
             <a
               href="/#/login"
               className="login-link-btn"
