@@ -46,7 +46,7 @@ class Splash extends React.Component {
         <img src={window.splashbg} alt="splashLogo" className="splashbg"/>
         <div className="splash-top">
           <header className="splash-header">
-            <img src={window.splashLogo} alt="splashLogo"/>
+            <img src={window.splashLogo} alt="splashLogo" className="splash-logo"/>
             <div
               onClick={this.demoSubmit}
               className="demo-btn"

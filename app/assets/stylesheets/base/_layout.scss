@@ -1,18 +1,23 @@
 html{
-    min-height:100%;
-    position:relative;
+  min-height:100%;
+  position:relative;
 }
 body{
-    height:100%;
+  height:100%;
 }
+
+input {
+  padding-left: 20px;
+}
+
 .app {
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    overflow:hidden;
-    height: 100%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  height: 100%;
 }
 
 // Splash page
@@ -36,14 +41,22 @@ body{
   margin: 20px;
 }
 
+.splash-logo {
+  position: absolute;
+  top: 1rem;
+  left: 4rem;
+}
+
 .login-link-btn {
+  position: absolute;
+  right: 3.5rem;
   border-radius: 3px;
   margin: 0.5rem;
   height: 34px;
   width: 84px;
 }
 
-.demo-btn {
+.splash-header > .demo-btn {
   position: absolute;
   right: 10rem;
   border-radius: 3px;
@@ -95,18 +108,19 @@ body{
 
 .signup > header {
   width: 100%;
+  height: 80px;
   padding: 15px;
 }
 
 .logo-signup-link {
-  position: relative;
-  top: 0rem;
-  left: 3.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 4rem;
 }
 
 .login-link {
-  position: relative;
-  top: 2rem;
+  position: absolute;
+  top: 3rem;
   right: 4rem;
 } 
 
@@ -211,7 +225,13 @@ body{
   height: 50px;
   border-radius: 4px;
   margin-top: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
+}
+
+.signin-form > .demo-btn {
+  height: 50px;
+  border-radius: 4px;
+  margin-bottom: 40px;
 }
 
 .signup-now-link {

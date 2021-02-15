@@ -120,16 +120,12 @@ a {
   text-decoration: underline;
 }
 
-// .signup-now > p {
-//   color: grey;
-// }
-
 .signin-form > label {
   font-size: 12px;
 }
 
 .signin-form > input {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .signin-error {
@@ -142,4 +138,8 @@ a {
 
 .signin-btn:hover {
   cursor: pointer;
+}
+
+.signin-form > .demo-btn {
+  line-height: 3;
 }
