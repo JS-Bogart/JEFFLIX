@@ -87,7 +87,7 @@ class Signup extends React.Component {
           <h2>Create a password to start your membership.</h2>
           <p>Just a few more steps and you're done!</p>
           <p>We hate paperwork, too.</p>
-          <form className="signup-form">
+          <form className="signup-form" onSubmit={this.handleSubmit}>
             <label className="email-label">Email</label>
             <input 
               type="text"
@@ -101,12 +101,11 @@ class Signup extends React.Component {
               onChange={this.handleInput('password')}
             />
             {this.renderPasswordError()}
-            <div 
-              onClick={this.handleSubmit}
+            <input
+              type="submit"
               className="signup-link"
-            >
-              Continue
-            </div>
+              value="Continue"
+            />
           </form>
         </div>
       </div>

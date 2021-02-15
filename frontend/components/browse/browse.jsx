@@ -7,19 +7,24 @@ class Browse extends React.Component {
     return (
       <div className="browse">
         <header>
-          <Link
-            to="/browse"
+          <a
+            href="/#/browse"
             className="logo-browse-link"
           >
-            JEFFLIX
-          </Link>
-          <Link
-            onClick={this.props.logout}
-            to="/login"
-            className="logout-link"
-          >
-            Sign out of Jefflix
-          </Link>
+            <img src={window.browselogo} alt="browselogo" />
+          </a>
+          <div className="browse-icon">
+            <img src={window.profilepic} alt="profilepic" />
+            <div className="logout-dropdown">
+              <a
+                onClick={this.props.logout}
+                href="/#/login"
+                className="logout-link"
+              >
+                Sign out of Jefflix
+              </a>
+            </div>
+          </div>
         </header>
       </div>
     );

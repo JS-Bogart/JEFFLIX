@@ -85,11 +85,6 @@ input:focus{
   color: white;
 }
 
-.signin-btn {
-  background-color: #DB202C;
-  color: white;
-}
-
 .signup-now-link {
   color: white;
 }
@@ -100,6 +95,11 @@ input:focus{
 
 .signin-form > input {
   background-color: rgb(56, 56, 56);
+  color: white;
+}
+
+.signin-form > .signin-btn {
+  background-color: #DB202C;
   color: white;
 }
 

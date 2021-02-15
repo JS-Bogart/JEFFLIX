@@ -61,7 +61,7 @@ class Login extends React.Component {
           <div className="signin-body">
             <h2>Sign In</h2>
             {this.renderErrors()}
-            <form className="signin-form">
+            <form className="signin-form" onSubmit={this.handleSubmit}>
               <label>Email</label>
               <input 
                 type="text"
@@ -74,12 +74,11 @@ class Login extends React.Component {
                 value={this.state.password}
                 onChange={this.handleInput('password')}
               />
-              <div
-                onClick={this.handleSubmit}
+              <input 
+                type="submit"
                 className="signin-btn"
-              >
-                Sign In
-              </div>
+                value="Sign In"
+              />
               <div
                 onClick={this.demoSubmit}
                 className="demo-btn"
