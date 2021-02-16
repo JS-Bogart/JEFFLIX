@@ -12,8 +12,8 @@ class Api::GenresController < ApplicationController
 
   private
 
-  def genre_params
-    params.require(:genre).permit(:genre)
-  end
+  # def genre_params
+  #   params.require(:genre).permit(:genre)
+  # end
 
 end

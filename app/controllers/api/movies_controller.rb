@@ -18,10 +18,10 @@ class Api::MoviesController < ApplicationController
   #   end
   # end
 
-  private
+  # private
 
-  def movie_params
-    params.require(:movie).permit(:title, :year, :synopsis)
-  end
+  # def movie_params
+  #   params.require(:movie).permit(:title, :year, :synopsis)
+  # end
 
 end
