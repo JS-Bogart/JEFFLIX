@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+MovieGenre.destroy_all
 Movie.destroy_all
 Genre.destroy_all
-MovieGenre.destroy_all
 
 User.create(email: "demo@demo.com", password: "123456")
 
@@ -101,106 +101,202 @@ genre8 = Genre.create(genre: "Fantasy")
 genre9 = Genre.create(genre: "Action")
 
 #Animated
-MovieGenre.create(movie_id: movie25.id, genre_id: genre1.id)
-MovieGenre.create(movie_id: movie26.id, genre_id: genre1.id)
-MovieGenre.create(movie_id: movie27.id, genre_id: genre1.id)
-MovieGenre.create(movie_id: movie34.id, genre_id: genre1.id)
-MovieGenre.create(movie_id: movie35.id, genre_id: genre1.id)
-MovieGenre.create(movie_id: movie36.id, genre_id: genre1.id)
+# MovieGenre.create(movie_id: movie25.id, genre_id: genre1.id)
+# MovieGenre.create(movie_id: movie26.id, genre_id: genre1.id)
+# MovieGenre.create(movie_id: movie27.id, genre_id: genre1.id)
+# MovieGenre.create(movie_id: movie34.id, genre_id: genre1.id)
+# MovieGenre.create(movie_id: movie35.id, genre_id: genre1.id)
+# MovieGenre.create(movie_id: movie36.id, genre_id: genre1.id)
+genre1.movies << movie25
+genre1.movies << movie26
+genre1.movies << movie27
+genre1.movies << movie34
+genre1.movies << movie35
+genre1.movies << movie36
+genre1.save
 
 #Suspense
-MovieGenre.create(movie_id: movie17.id, genre_id: genre2.id)
-MovieGenre.create(movie_id: movie19.id, genre_id: genre2.id)
-MovieGenre.create(movie_id: movie20.id, genre_id: genre2.id)
-MovieGenre.create(movie_id: movie28.id, genre_id: genre2.id)
-MovieGenre.create(movie_id: movie29.id, genre_id: genre2.id)
-MovieGenre.create(movie_id: movie30.id, genre_id: genre2.id)
+# MovieGenre.create(movie_id: movie17.id, genre_id: genre2.id)
+# MovieGenre.create(movie_id: movie19.id, genre_id: genre2.id)
+# MovieGenre.create(movie_id: movie20.id, genre_id: genre2.id)
+# MovieGenre.create(movie_id: movie28.id, genre_id: genre2.id)
+# MovieGenre.create(movie_id: movie29.id, genre_id: genre2.id)
+# MovieGenre.create(movie_id: movie30.id, genre_id: genre2.id)
+genre2.movies << movie17
+genre2.movies << movie19
+genre2.movies << movie20
+genre2.movies << movie28
+genre2.movies << movie29
+genre2.movies << movie30
+genre2.save
 
 #Comedy
-MovieGenre.create(movie_id: movie6.id, genre_id: genre3.id)
-MovieGenre.create(movie_id: movie7.id, genre_id: genre3.id)
-MovieGenre.create(movie_id: movie16.id, genre_id: genre3.id)
-MovieGenre.create(movie_id: movie21.id, genre_id: genre3.id)
-MovieGenre.create(movie_id: movie31.id, genre_id: genre3.id)
-MovieGenre.create(movie_id: movie32.id, genre_id: genre3.id)
+# MovieGenre.create(movie_id: movie6.id, genre_id: genre3.id)
+# MovieGenre.create(movie_id: movie7.id, genre_id: genre3.id)
+# MovieGenre.create(movie_id: movie16.id, genre_id: genre3.id)
+# MovieGenre.create(movie_id: movie21.id, genre_id: genre3.id)
+# MovieGenre.create(movie_id: movie31.id, genre_id: genre3.id)
+# MovieGenre.create(movie_id: movie32.id, genre_id: genre3.id)
+genre3.movies << movie6
+genre3.movies << movie7
+genre3.movies << movie16
+genre3.movies << movie21
+genre3.movies << movie31
+genre3.movies << movie32
+genre3.save
 
 #Drama
-MovieGenre.create(movie_id: movie2.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie3.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie4.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie8.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie10.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie11.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie12.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie13.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie14.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie15.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie17.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie18.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie23.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie30.id, genre_id: genre4.id)
-MovieGenre.create(movie_id: movie33.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie2.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie3.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie4.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie8.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie10.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie11.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie12.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie13.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie14.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie15.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie17.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie18.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie23.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie30.id, genre_id: genre4.id)
+# MovieGenre.create(movie_id: movie33.id, genre_id: genre4.id)
+genre4.movies << movie2
+genre4.movies << movie3
+genre4.movies << movie4
+genre4.movies << movie8
+genre4.movies << movie10
+genre4.movies << movie11
+genre4.movies << movie12
+genre4.movies << movie13
+genre4.movies << movie14
+genre4.movies << movie15
+genre4.movies << movie17
+genre4.movies << movie18
+genre4.movies << movie23
+genre4.movies << movie30
+genre4.movies << movie33
+genre4.save
 
 #Surreal
-MovieGenre.create(movie_id: movie1.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie3.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie4.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie7.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie9.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie11.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie17.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie19.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie22.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie25.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie26.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie27.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie29.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie31.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie34.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie35.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie36.id, genre_id: genre5.id)
-MovieGenre.create(movie_id: movie39.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie1.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie3.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie4.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie7.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie9.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie11.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie17.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie19.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie22.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie25.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie26.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie27.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie29.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie31.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie34.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie35.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie36.id, genre_id: genre5.id)
+# MovieGenre.create(movie_id: movie39.id, genre_id: genre5.id)
+genre5.movies << movie1
+genre5.movies << movie3
+genre5.movies << movie4
+genre5.movies << movie7
+genre5.movies << movie9
+genre5.movies << movie11
+genre5.movies << movie17
+genre5.movies << movie19
+genre5.movies << movie22
+genre5.movies << movie25
+genre5.movies << movie26
+genre5.movies << movie27
+genre5.movies << movie29
+genre5.movies << movie31
+genre5.movies << movie34
+genre5.movies << movie35
+genre5.movies << movie36
+genre5.movies << movie39
+genre5.save
 
 #Sci-Fi
-MovieGenre.create(movie_id: movie26.id, genre_id: genre6.id)
-MovieGenre.create(movie_id: movie34.id, genre_id: genre6.id)
-MovieGenre.create(movie_id: movie36.id, genre_id: genre6.id)
-MovieGenre.create(movie_id: movie37.id, genre_id: genre6.id)
-MovieGenre.create(movie_id: movie38.id, genre_id: genre6.id)
-MovieGenre.create(movie_id: movie39.id, genre_id: genre6.id)
+# MovieGenre.create(movie_id: movie26.id, genre_id: genre6.id)
+# MovieGenre.create(movie_id: movie34.id, genre_id: genre6.id)
+# MovieGenre.create(movie_id: movie36.id, genre_id: genre6.id)
+# MovieGenre.create(movie_id: movie37.id, genre_id: genre6.id)
+# MovieGenre.create(movie_id: movie38.id, genre_id: genre6.id)
+# MovieGenre.create(movie_id: movie39.id, genre_id: genre6.id)
+genre6.movies << movie26
+genre6.movies << movie34
+genre6.movies << movie36
+genre6.movies << movie37
+genre6.movies << movie38
+genre6.movies << movie39
+genre6.save
 
 #Crime
-MovieGenre.create(movie_id: movie5.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie8.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie13.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie14.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie16.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie18.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie30.id, genre_id: genre7.id)
-MovieGenre.create(movie_id: movie38.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie5.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie8.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie13.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie14.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie16.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie18.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie30.id, genre_id: genre7.id)
+# MovieGenre.create(movie_id: movie38.id, genre_id: genre7.id)
+genre7.movies << movie5
+genre7.movies << movie8
+genre7.movies << movie13
+genre7.movies << movie14
+genre7.movies << movie16
+genre7.movies << movie18
+genre7.movies << movie30
+genre7.movies << movie38
+genre7.save
 
 #Fantasy
-MovieGenre.create(movie_id: movie1.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie9.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie20.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie22.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie25.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie27.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie34.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie36.id, genre_id: genre8.id)
-MovieGenre.create(movie_id: movie37.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie1.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie9.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie20.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie22.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie25.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie27.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie34.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie36.id, genre_id: genre8.id)
+# MovieGenre.create(movie_id: movie37.id, genre_id: genre8.id)
+genre8.movies << movie1
+genre8.movies << movie9
+genre8.movies << movie20
+genre8.movies << movie22
+genre8.movies << movie25
+genre8.movies << movie27
+genre8.movies << movie34
+genre8.movies << movie36
+genre8.movies << movie37
+genre8.save
 
 #Action
-MovieGenre.create(movie_id: movie2.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie5.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie8.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie11.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie12.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie24.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie26.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie31.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie34.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie36.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie37.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie38.id, genre_id: genre9.id)
-MovieGenre.create(movie_id: movie39.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie2.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie5.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie8.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie11.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie12.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie24.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie26.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie31.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie34.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie36.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie37.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie38.id, genre_id: genre9.id)
+# MovieGenre.create(movie_id: movie39.id, genre_id: genre9.id)
+genre9.movies << movie2
+genre9.movies << movie5
+genre9.movies << movie8
+genre9.movies << movie11
+genre9.movies << movie12
+genre9.movies << movie24
+genre9.movies << movie26
+genre9.movies << movie31
+genre9.movies << movie34
+genre9.movies << movie36
+genre9.movies << movie37
+genre9.movies << movie38
+genre9.movies << movie39
+genre9.save
