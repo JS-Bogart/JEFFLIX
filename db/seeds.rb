@@ -14,91 +14,91 @@ MovieGenre.destroy_all
 User.create(email: "demo@demo.com", password: "123456")
 
 
-movie1 = Movie.create("The Holy Mountain", 1973, "An alchemist bring together a group to displace 
+movie1 = Movie.create(title: "The Holy Mountain", year: 1973, synopsis: "An alchemist bring together a group to displace 
 the gods who rule the universe.")
-movie2 = Movie.create("Seven Samurai", 1954, "Seven warriors defend a village from invading bandits.")
-movie3 = Movie.create("Amarcord", 1973, "A coming of age story set under the shadow of fascist Italy.")
-movie4 = Movie.create("The Seventh Seal", 1957, "A knight returns from the crusades to a plague 
+movie2 = Movie.create(title: "Seven Samurai", year: 1954, synopsis: "Seven warriors defend a village from invading bandits.")
+movie3 = Movie.create(title: "Amarcord", year: 1973, synopsis: "A coming of age story set under the shadow of fascist Italy.")
+movie4 = Movie.create(title: "The Seventh Seal", year: 1957, synopsis: "A knight returns from the crusades to a plague 
 ridden Sweden, where he challenges death to a game of chess.")
-movie5 = Movie.create("Yojimbo", 1961, "A ronin turns a turf war between two clans to his own advantage.")
-movie6 = Movie.create("Withnail and I", 1986, "Two unemployed actors take drugs and go on a vacation 
+movie5 = Movie.create(title: "Yojimbo", year: 1961, synopsis: "A ronin turns a turf war between two clans to his own advantage.")
+movie6 = Movie.create(title: "Withnail and I", year: 1986, synopsis: "Two unemployed actors take drugs and go on a vacation 
 to the countryside.")
-movie7 = Movie.create("The Ruling Class", 1972, "An aristocrat who thinks he is God ascends to the 
+movie7 = Movie.create(title: "The Ruling Class", year: 1972, synopsis: "An aristocrat who thinks he is God ascends to the 
 British peerage.")
-movie8 = Movie.create("Rashomon", 1950, "Four people give different accounts of a man’s murder and 
+movie8 = Movie.create(title: "Rashomon", year: 1950, synopsis: "Four people give different accounts of a man’s murder and 
 the rape of his wife.")
-movie9 = Movie.create("8½", 1963, "A director struggles with his current film, a creative crisis, 
+movie9 = Movie.create(title: "8½", year: 1963, synopsis: "A director struggles with his current film, a creative crisis, 
 and his love life.")
-movie10 = Movie.create("La strada", 1954, "A woman is sold by her mother into a traveling circus.")
-movie11 = Movie.create("Kagemusha", 1980, "When a warlord dies, a peasant thief is called upon to 
+movie10 = Movie.create(title: "La strada", year: 1954, synopsis: "A woman is sold by her mother into a traveling circus.")
+movie11 = Movie.create(title: "Kagemusha", year: 1980, synopsis: "When a warlord dies, a peasant thief is called upon to 
 impersonate him.")
-movie12 = Movie.create("Harakiri", 1962, "An unemployed samurai arrives at the manor of Lord Iyi, 
+movie12 = Movie.create(title: "Harakiri", year: 1962, synopsis: "An unemployed samurai arrives at the manor of Lord Iyi, 
 begging to be allowed to commit ritual suicide on the property.")
-movie13 = Movie.create("The Virgin Spring", 1960, "A father in medieval Sweden seeks vengence against 
+movie13 = Movie.create(title: "The Virgin Spring", year: 1960, synopsis: "A father in medieval Sweden seeks vengence against 
 his daughter's murderers.")
-movie14 = Movie.create("Bicycle Thieves", 1948, "A man and his son search for his stolen bike, 
+movie14 = Movie.create(title: "Bicycle Thieves", year: 1948, synopsis: "A man and his son search for his stolen bike, 
 which he needs for work.")
-movie15 = Movie.create("Pierrot le fou", 1965, "A man runs away from his home life with his ex-lover.")
-movie16 = Movie.create("Bottle Rocket", 1996, "Three friends rob a bookstore and go on the run.")
-movie17 = Movie.create("The Exterminating Angel", 1962, "A group of high-society friends are invited 
+movie15 = Movie.create(title: "Pierrot le fou", year: 1965, synopsis: "A man runs away from his home life with his ex-lover.")
+movie16 = Movie.create(title: "Bottle Rocket", year: 1996, synopsis: "Three friends rob a bookstore and go on the run.")
+movie17 = Movie.create(title: "The Exterminating Angel", year: 1962, synopsis: "A group of high-society friends are invited 
 to a mansion for dinner and find themselves inexplicably unable to leave.")
-movie18 = Movie.create("Paths of Glory", 1957, "A colonel goes head-to-head with the army’s ruthless 
+movie18 = Movie.create(title: "Paths of Glory", year: 1957, synopsis: "A colonel goes head-to-head with the army’s ruthless 
 top brass when his men are accused of cowardice after being unable to carry out 
 an impossible mission.")
-movie19 = Movie.create("House", 1977, "A girl who travels with six classmates to her ailing aunt’s 
+movie19 = Movie.create(title: "House", year: 1977, synopsis: "A girl who travels with six classmates to her ailing aunt’s 
 country home and comes face-to-face with evil spirits.")
-movie20 = Movie.create("Cronos", 1993, "An antiques dealer happens upon a golden device which grants 
+movie20 = Movie.create(title: "Cronos", year: 1993, synopsis: "An antiques dealer happens upon a golden device which grants 
 him addictive powers.")
-movie21 = Movie.create("The Great Dictator", 1940, "A Jewish barber gets mistaken for a cruel dictator.")
-movie22 = Movie.create("Black Moon", 1975, "A young woman escapes the horrors of war at a remote farmhouse.")
-movie23 = Movie.create("Casablanca", 1942, "A cynical expatriate American cafe owner struggles to 
+movie21 = Movie.create(title: "The Great Dictator", year: 1940, synopsis: "A Jewish barber gets mistaken for a cruel dictator.")
+movie22 = Movie.create(title: "Black Moon", year: 1975, synopsis: "A young woman escapes the horrors of war at a remote farmhouse.")
+movie23 = Movie.create(title: "Casablanca", year: 1942, synopsis: "A cynical expatriate American cafe owner struggles to 
 decide whether or not to help his former lover and her fugitive husband escape 
 the Nazis in French Morocco.")
-movie24 = Movie.create("Come and See", 1985, "After finding an old rifle, a young boy joins the Soviet 
+movie24 = Movie.create(title: "Come and See", year: 1985, synopsis: "After finding an old rifle, a young boy joins the Soviet 
 resistance movement against ruthless German forces and experiences the horrors 
 of World War II.")
-movie25 = Movie.create("Belladonna of Sadness", 1973, "A peasant woman makes a deal with the devil 
+movie25 = Movie.create(title: "Belladonna of Sadness", year: 1973, synopsis: "A peasant woman makes a deal with the devil 
 to get revenge on a cruel baron.")
-movie26 = Movie.create("Akira", 1988, "A secret military project endangers Neo-Tokyo.")
-movie27 = Movie.create("Spirited Away", 2001, "A sullen 10-year-old girl wanders into a world ruled 
+movie26 = Movie.create(title: "Akira", year: 1988, synopsis: "A secret military project endangers Neo-Tokyo.")
+movie27 = Movie.create(title: "Spirited Away", year: 2001, synopsis: "A sullen 10-year-old girl wanders into a world ruled 
 by gods, witches, and spirits.")
-movie28 = Movie.create("The Witch", 1915, "A family in 1630s New England is torn apart by the forces 
+movie28 = Movie.create(title: "The Witch", year: 1915, synopsis: "A family in 1630s New England is torn apart by the forces 
 of witchcraft, black magic, and possession.")
-movie29 = Movie.create("Suspiria", 1977, "A newcomer to a prestigious German ballet academy comes to 
+movie29 = Movie.create(title: "Suspiria", year: 1977, synopsis: "A newcomer to a prestigious German ballet academy comes to 
 realize that the school is a front for something sinister.")
-movie30 = Movie.create("The Night of the Hunter", 1955, "A religious fanatic marries a gullible widow 
+movie30 = Movie.create(title: "The Night of the Hunter", year: 1955, synopsis: "A religious fanatic marries a gullible widow 
 whose young children are reluctant to tell him where their real dad hid the 
 $10,000 he'd stolen in a robbery.")
-movie31 = Movie.create("The Life Aquatic with Steve Zissou", 2004, "An oceanographer hunts the shark 
+movie31 = Movie.create(title: "The Life Aquatic with Steve Zissou", year: 2004, synopsis: "An oceanographer hunts the shark 
 that ate his friend and meets a man who may or may not be his son.")
-movie32 = Movie.create("Manhattan", 1979, "The life of a divorced television writer is complicated 
+movie32 = Movie.create(title: "Manhattan", year: 1979, synopsis: "The life of a divorced television writer is complicated 
 when he falls in love with his best friend's mistress.")
-movie33 = Movie.create("Hannah and Her Sisters", 1986, "Hannah's husband falls in love with her sister 
+movie33 = Movie.create(title: "Hannah and Her Sisters", year: 1986, synopsis: "Hannah's husband falls in love with her sister 
 Lee, while her hypochondriac ex-husband rekindles his relationship with her sister Holly.")
-movie34 = Movie.create("Heavy Metal", 1981, "A glowing green orb terrorizes a young girl with an 
+movie34 = Movie.create(title: "Heavy Metal", year: 1981, synopsis: "A glowing green orb terrorizes a young girl with an 
 anthology of bizarre and fantastic stories.")
-movie35 = Movie.create("Heavy Traffic", 1973, "A cartoonist contends with life in the inner city.")
-movie36 = Movie.create("Wizards", 1977, "A wizard and his faire folk comrades fight an evil wizard 
+movie35 = Movie.create(title: "Heavy Traffic", year: 1973, synopsis: "A cartoonist contends with life in the inner city.")
+movie36 = Movie.create(title: "Wizards", year: 1977, synopsis: "A wizard and his faire folk comrades fight an evil wizard 
 who's using technology in his bid for conquest.")
-movie37 = Movie.create("Star Wars: Episode IV - A New Hope", 1977, "A group of 
+movie37 = Movie.create(title: "Star Wars: Episode IV - A New Hope", year: 1977, synopsis: "A group of 
 heroes join together to save the galaxy from the Empire's world-destroying battle station")
-movie38 = Movie.create("The Running Man", 1987, "A falsely convicted man gets his 
+movie38 = Movie.create(title: "The Running Man", year: 1987, synopsis: "A falsely convicted man gets his 
 shot at freedom when he must forcibly participate in a TV game show where convicts, 
 runners, must battle killers for their freedom.")
-movie39 = Movie.create("The Adventures of Buckaroo Banzai Across the 8th Dimension", 
-1984, "Buckaroo Banzai and his crime-fighting team must stop evil alien invaders 
+movie39 = Movie.create(title: "The Adventures of Buckaroo Banzai Across the 8th Dimension", 
+year: 1984, synopsis: "Buckaroo Banzai and his crime-fighting team must stop evil alien invaders 
 from the eighth dimension who are planning to conquer Earth.")
 
 
-genre1 = Genre.create("Animated")
-genre2 = Genre.create("Suspense")
-genre3 = Genre.create("Comedy")
-genre4 = Genre.create("Drama")
-genre5 = Genre.create("Surreal")
-genre6 = Genre.create("Sci-Fi")
-genre7 = Genre.create("Crime")
-genre8 = Genre.create("Fantasy")
-genre9 = Genre.create("Action")
+genre1 = Genre.create(genre: "Animated")
+genre2 = Genre.create(genre: "Suspense")
+genre3 = Genre.create(genre: "Comedy")
+genre4 = Genre.create(genre: "Drama")
+genre5 = Genre.create(genre: "Surreal")
+genre6 = Genre.create(genre: "Sci-Fi")
+genre7 = Genre.create(genre: "Crime")
+genre8 = Genre.create(genre: "Fantasy")
+genre9 = Genre.create(genre: "Action")
 
 #Animated
 MovieGenre.create(movie_id: movie25.id, genre_id: genre1.id)

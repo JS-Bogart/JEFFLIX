@@ -10,10 +10,18 @@ class Api::GenresController < ApplicationController
     render "api/genres/show"
   end
 
+  def create
+    @genre = Genre.new(genre_params)
+    if @genre.save
+    else
+      render json: @genre.errors.full_messages, status: 401
+    end
+  end
+
   private
 
-  # def genre_params
-  #   params.require(:genre).permit(:genre)
-  # end
+  def genre_params
+    params.require(:genre).permit(:genre)
+  end
 
 end
