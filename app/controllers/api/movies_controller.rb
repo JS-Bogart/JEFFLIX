@@ -10,18 +10,18 @@ class Api::MoviesController < ApplicationController
     render "api/movies/show"
   end
 
-  def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
-    else
-      render json: @movie.errors.full_messages, status: 401
-    end
-  end
+  # def create
+  #   @movie = Movie.new(movie_params)
+  #   if @movie.save
+  #   else
+  #     render json: @movie.errors.full_messages, status: 401
+  #   end
+  # end
 
-  private
+  # private
 
-  def movie_params
-    params.require(:movie).permit(:title, :year, :synopsis)
-  end
+  # def movie_params
+  #   params.require(:movie).permit(:title, :year, :synopsis)
+  # end
 
 end
