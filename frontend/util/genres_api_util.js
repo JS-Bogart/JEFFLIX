@@ -1,11 +1,11 @@
-export const fetchAllMovies = () => {
+export const fetchAllGenres = () => {
   return $.ajax({
     method: "GET",
-    url: "/api/movies"
+    url: "/api/genres"
   })
 };
 
-export const fetchMovie = (id) => {
+export const fetchGenre = (id) => {
   return $.ajax({
     method: "GET",
     url: `/api/movies/${id}`
