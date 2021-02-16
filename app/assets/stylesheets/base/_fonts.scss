@@ -144,3 +144,20 @@ a {
 .signin-form > .demo-btn {
   line-height: 3;
 }
+
+// Browse page
+.logout-link {
+  text-decoration: none;
+}
+
+.logout-link:hover {
+  text-decoration: underline;
+}
+
+.browse-icon > span {
+  font-size: 20px;
+}
+
+.logout-dropdown > span {
+  font-size: 25px;
+}

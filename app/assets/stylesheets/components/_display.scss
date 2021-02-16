@@ -1,3 +1,4 @@
+// Splash Page
 .splash {
   display: flex;
 }
@@ -14,6 +15,7 @@
   display: flex;
 }
 
+// Signup Page
 .signup {
   display: flex;
 }
@@ -34,6 +36,7 @@
   display: flex;
 }
 
+// Signin Page
 .signin {
   display: flex;
 }
@@ -56,4 +59,25 @@
 
 .signin-error {
   display: flex;
+}
+
+// Browse page
+.browse {
+  display: flex;
+}
+
+.browse > header {
+  display: flex;
+}
+
+.logout-dropdown {
+  display: none;
+}
+
+.browse-icon:hover {
+  cursor: pointer;
+}
+
+.browse-icon:hover .logout-dropdown {
+  display: block;
 }

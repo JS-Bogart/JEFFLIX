@@ -119,3 +119,25 @@ input:focus{
 .signin-form > .demo-btn {
   background-color: #DB202C;
 }
+
+// Browse page
+.browse > header {
+  background-color: rgb(47, 47, 47);
+}
+
+.logout-dropdown > div {
+  background-color: rgba(0,0,0,0.9);
+  border: 1px solid grey;
+}
+
+.logout-link {
+  color: white;
+}
+
+.browse-icon > span {
+  color: white;
+}
+
+.logout-dropdown > span {
+  color: white;
+}

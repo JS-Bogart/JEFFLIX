@@ -252,3 +252,55 @@ input {
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
+// Browse page
+.browse {
+  height: 100%;
+}
+
+.browse > header {
+  width: 100%;
+  height: 69px;
+}
+
+.logo-browse-link {
+  position: relative;
+  top: 0.5rem;
+  left: 3.3rem;
+}
+
+.browse-icon {
+  position: relative;
+  top: 1rem;
+  left: 89%;
+}
+
+.browse-icon > span {
+  position: relative;
+  top: -0.6rem;
+  right: -0.4rem;
+}
+
+.profilepic {
+  height: 35px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.logout-dropdown {
+  position: absolute;
+  top: 2rem;
+  right: -0.5rem;
+}
+
+.logout-dropdown > div {
+  width: 122px;
+  padding: 10px;
+  border-radius: 1px;
+}
+
+.logout-dropdown > span {
+  position: relative;
+  left: 6.3rem;
+  top: 0.4rem;
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class Browse extends React.Component {
 
@@ -14,15 +13,19 @@ class Browse extends React.Component {
             <img src={window.browselogo} alt="browselogo" />
           </a>
           <div className="browse-icon">
-            <img src={window.profilepic} alt="profilepic" />
+            <img src={window.profilepic} alt="profilepic" className="profilepic"/>
+            <span>&#x25BE;</span>
             <div className="logout-dropdown">
-              <a
-                onClick={this.props.logout}
-                href="/#/login"
-                className="logout-link"
-              >
-                Sign out of Jefflix
-              </a>
+              <span>&#x25B4;</span>
+              <div>
+                <a
+                  onClick={this.props.logout}
+                  href="/#/login"
+                  className="logout-link"
+                >
+                  Sign out of Jefflix
+                </a>
+              </div>
             </div>
           </div>
         </header>
