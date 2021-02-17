@@ -1,5 +1,5 @@
 import React from 'react';
-import BrowseItem from './browse_item';
+import DemoSlider from './demo_slider';
 
 class Browse extends React.Component {
   constructor(props){
@@ -42,43 +42,28 @@ class Browse extends React.Component {
           <div className="browse-genre-rows">
             <div className="browse-row">
               <h2>Popular on Jefflix</h2>
-              <ul>
+              {/* <ul>
                 {this.props.movies.map((movie) => (
                   <BrowseItem key={movie.id} movie={movie} />
                 ))}
-              </ul>
+              </ul> */}
+              <DemoSlider movies={this.props.movies}/>
             </div>
             <div className="browse-row">
               <h2>Trending Now</h2>
-              <ul>
-                {this.props.movies.map((movie) => (
-                  <BrowseItem key={movie.id} movie={movie} />
-                ))}
-              </ul>
+              <DemoSlider movies={this.props.movies} />
             </div>
             <div className="browse-row">
               <h2>New Releases</h2>
-              <ul>
-                {this.props.movies.map((movie) => (
-                  <BrowseItem key={movie.id} movie={movie} />
-                ))}
-              </ul>
+              <DemoSlider movies={this.props.movies} />
             </div>
             <div className="browse-row">
               <h2>Hidden Gems For You</h2>
-              <ul>
-                {this.props.movies.map((movie) => (
-                  <BrowseItem key={movie.id} movie={movie} />
-                ))}
-              </ul>
+              <DemoSlider movies={this.props.movies} />
             </div>
             <div className="browse-row">
               <h2>Watch It Again</h2>
-              <ul>
-                {this.props.movies.map((movie) => (
-                  <BrowseItem key={movie.id} movie={movie} />
-                ))}
-              </ul>
+              <DemoSlider movies={this.props.movies} />
             </div>
           </div>
         </div>

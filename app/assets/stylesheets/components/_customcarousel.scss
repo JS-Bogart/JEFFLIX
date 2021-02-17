@@ -1,0 +1,11 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: row;
+}
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';
