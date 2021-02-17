@@ -32402,3 +32402,16 @@ FOREIGN KEY ("genre_id")
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:215
   [1m[36mMovieGenre Load (1.9ms)[0m  [1m[34mSELECT "movie_genres".* FROM "movie_genres"[0m
+  [1m[36mMovie Load (7.8ms)[0m  [1m[34mSELECT "movies"."synopsis" FROM "movies" WHERE "movies"."title" = $1[0m  [["title", "Casablancaa"]]
+  [1m[36mMovie Load (2.0ms)[0m  [1m[34mSELECT "movies"."synopsis" FROM "movies" WHERE "movies"."title" = $1[0m  [["title", "Casablanca"]]
+  [1m[36mMovie Load (2.5ms)[0m  [1m[34mSELECT "movies"."id", "movies"."synopsis" FROM "movies" WHERE "movies"."title" = $1[0m  [["title", "Casablanca"]]
+  [1m[36mMovie Load (10.7ms)[0m  [1m[34mSELECT "movies"."id", "movies"."title" FROM "movies" INNER JOIN "movie_genres" ON "movie_genres"."movie_id" = "movies"."id" INNER JOIN "genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "genres"."genre" = $1[0m  [["genre", "Comedy"]]
+  [1m[36mGenre Load (54.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[36mGenre Load (17.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  [1m[36mMovie Load (5.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "movie_genres" ON "movies"."id" = "movie_genres"."movie_id" WHERE "movie_genres"."genre_id" = $1[0m  [["genre_id", 82]]
+  [1m[36mGenre Load (3.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 82], ["LIMIT", 1]]
+  [1m[36mMovie Load (2.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = $1 LIMIT $2[0m  [["id", 352], ["LIMIT", 1]]
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "movie_genres" ON "genres"."id" = "movie_genres"."genre_id" WHERE "movie_genres"."movie_id" = $1[0m  [["movie_id", 352]]

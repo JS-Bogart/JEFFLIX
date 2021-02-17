@@ -1,1 +1,1 @@
-json.extract! movie, :id, :title, :years, :synopsis
+json.extract! movie, :id, :title, :years, :synopsis #maybe add genres later

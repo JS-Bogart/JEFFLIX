@@ -3,7 +3,7 @@ export const fetchAllMovies = () => {
     method: "GET",
     url: "/api/movies"
   })
-};
+}; //Might not use
 
 export const fetchMovie = (id) => {
   return $.ajax({
