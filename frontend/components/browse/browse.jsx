@@ -42,11 +42,6 @@ class Browse extends React.Component {
           <div className="browse-genre-rows">
             <div className="browse-row">
               <h2>Popular on Jefflix</h2>
-              {/* <ul>
-                {this.props.movies.map((movie) => (
-                  <BrowseItem key={movie.id} movie={movie} />
-                ))}
-              </ul> */}
               <DemoSlider movies={this.props.movies}/>
             </div>
             <div className="browse-row">
