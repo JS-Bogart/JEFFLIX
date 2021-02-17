@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoSlider from './demo_slider';
+import DemoSlider from './carousels/demo_carousel';
 
 class Browse extends React.Component {
   constructor(props){
