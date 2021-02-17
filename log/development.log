@@ -32707,3 +32707,972 @@ Processing by Api::MoviesController#index as JSON
 Completed 200 OK in 232ms (Views: 228.9ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for ::1 at 2021-02-16 19:23:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.1ms)
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1242ms (Views: 1196.8ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 19:23:03 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (3.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (3.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (1.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (248.3ms)
+Completed 200 OK in 274ms (Views: 268.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 19:24:08 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1351ms (Views: 1332.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 19:24:10 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (11.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.7ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (161.9ms)
+Completed 200 OK in 206ms (Views: 193.2ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:05:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.2ms)
+  [1m[36mUser Load (14.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 2485ms (Views: 2445.6ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:05:45 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (17.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.9ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (1.0ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (154.8ms)
+Completed 200 OK in 179ms (Views: 160.5ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:06:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1961ms (Views: 1942.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:06:03 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.9ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (2.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (276.6ms)
+Completed 200 OK in 310ms (Views: 308.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:06:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1066ms (Views: 1047.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:06:27 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (3.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (170.8ms)
+Completed 200 OK in 220ms (Views: 218.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:06:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1222ms (Views: 1204.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:06:57 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (7.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (137.0ms)
+Completed 200 OK in 164ms (Views: 156.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:07:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 94ms (Views: 85.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:07:03 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (151.6ms)
+Completed 200 OK in 181ms (Views: 179.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:07:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1291ms (Views: 1279.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:07:47 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (48.0ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/index.json.jbuilder (176.9ms)
+Completed 200 OK in 233ms (Views: 231.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:53:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (17.5ms)
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1105ms (Views: 1083.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:53:32 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (6.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (1.7ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (182.3ms)
+Completed 200 OK in 209ms (Views: 201.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 21:59:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (37.5ms)
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 2186ms (Views: 2166.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 21:59:46 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (10.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (3.0ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (181.2ms)
+Completed 200 OK in 211ms (Views: 199.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:02:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.6ms)
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1105ms (Views: 1048.0ms | ActiveRecord: 26.1ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:02:06 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (8.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (0.9ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (140.9ms)
+Completed 200 OK in 171ms (Views: 162.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:02:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1232ms (Views: 1214.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:02:31 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (2.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (147.9ms)
+Completed 200 OK in 179ms (Views: 176.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:03:32 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1018ms (Views: 1004.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:03:34 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (5.9ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (151.9ms)
+Completed 200 OK in 185ms (Views: 182.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:04:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (18.9ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1487ms (Views: 1472.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:04:16 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (1.0ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.6ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.5ms)
+  Rendered api/movies/_movie.json.jbuilder (1.8ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (266.7ms)
+Completed 200 OK in 310ms (Views: 307.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:05:26 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1500ms (Views: 1483.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:05:28 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (1.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (141.3ms)
+Completed 200 OK in 175ms (Views: 173.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:06:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 891ms (Views: 883.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:06:29 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (2.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (2.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.4ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (189.6ms)
+Completed 200 OK in 219ms (Views: 216.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-16 22:22:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (18.6ms)
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "0eysF8jPm03fgIqWkubbhQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 5654ms (Views: 5621.5ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-02-16 22:22:47 -0800
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (4.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  Rendered api/movies/_movie.json.jbuilder (1.9ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.3ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/_movie.json.jbuilder (0.1ms)
+  Rendered api/movies/_movie.json.jbuilder (0.2ms)
+  Rendered api/movies/index.json.jbuilder (137.6ms)
+Completed 200 OK in 163ms (Views: 157.9ms | ActiveRecord: 4.3ms)
+
+

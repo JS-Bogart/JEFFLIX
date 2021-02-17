@@ -8,7 +8,10 @@ class BrowseItem extends React.Component{
   render(){
     return(
       <li className="browse-item">
-        {this.props.movie.title}
+        <p>
+          {/* {this.props.movie.title} */}
+          <img src={window.thepest} alt="thepest" />
+        </p>
       </li>
     )
   }

@@ -81,3 +81,11 @@
 .browse-icon:hover .logout-dropdown {
   display: block;
 }
+
+.browse-genre-rows {
+  display: flex;
+}
+
+.browse-row > ul {
+  display: flex;
+}

@@ -2,10 +2,6 @@ input:focus{
     outline: none;
 }
 
-.splash {
-  background-color: black;
-}
-
 .app-logo {
   color: #DB202C;
 }
@@ -16,6 +12,10 @@ input:focus{
 }
 
 // Splash
+.splash {
+  background-color: black;
+}
+
 .splash-top {
   background-color: rgba(0,0,0,0.6);
 }

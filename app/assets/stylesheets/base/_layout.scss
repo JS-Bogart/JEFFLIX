@@ -306,6 +306,29 @@ input {
   top: 0.4rem;
 }
 
+.browse-body {
+  overflow: auto;
+}
+
 .billboard {
   height: 500px;
+}
+
+.browse-genre-rows {
+  flex-direction: column;
+}
+
+.browse-row > ul{
+  flex-direction: row;
+  // overflow: hidden;
+}
+
+.browse-item {
+  height: 170px;
+  width: 300px;
+  border: 2px solid black;
+}
+
+.browse-item > p {
+  width: 300px;
 }
