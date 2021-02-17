@@ -259,6 +259,7 @@ input {
 }
 
 .browse > header {
+  position: fixed;
   width: 100%;
   height: 69px;
 }
@@ -303,4 +304,8 @@ input {
   position: relative;
   left: 6.3rem;
   top: 0.4rem;
+}
+
+.billboard {
+  height: 500px;
 }

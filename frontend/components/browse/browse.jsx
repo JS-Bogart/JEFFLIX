@@ -1,6 +1,14 @@
 import React from 'react';
+import BrowseItem from './browse_item';
 
 class Browse extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount(){
+    this.props.requestAllMovies()
+  }
 
   render() {
     return (
@@ -29,6 +37,49 @@ class Browse extends React.Component {
             </div>
           </div>
         </header>
+        <div className="browse-body">
+          <div className="billboard"></div>
+          <div className="browse-row">
+            <h2>Popular on Jefflix</h2>
+            <ul>
+              {this.props.movies.map((movie) => (
+                <BrowseItem key={movie.id} movie={movie} />
+              ))}
+            </ul>
+          </div>
+          <div className="browse-row">
+            <h2>Trending Now</h2>
+            <ul>
+              {this.props.movies.map((movie) => (
+                <BrowseItem key={movie.id} movie={movie} />
+              ))}
+            </ul>
+          </div>
+          <div className="browse-row">
+            <h2>New Releases</h2>
+            <ul>
+              {this.props.movies.map((movie) => (
+                <BrowseItem key={movie.id} movie={movie} />
+              ))}
+            </ul>
+          </div>
+          <div className="browse-row">
+            <h2>Hidden Gems For You</h2>
+            <ul>
+              {this.props.movies.map((movie) => (
+                <BrowseItem key={movie.id} movie={movie} />
+              ))}
+            </ul>
+          </div>
+          <div className="browse-row">
+            <h2>Watch It Again</h2>
+            <ul>
+              {this.props.movies.map((movie) => (
+                <BrowseItem key={movie.id} movie={movie} />
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
