@@ -1,5 +1,6 @@
 import React from 'react';
 import DemoCarousel from './carousels/demo_carousel';
+import Billboard from './billboard';
 
 class Browse extends React.Component {
   constructor(props){
@@ -38,11 +39,7 @@ class Browse extends React.Component {
           </div>
         </header>
         <div className="browse-body">
-          <div className="billboard">
-            <img src={window.flashgordonimg} alt="flashgordonimg"/>
-            <video src={window.flashgordon} autoPlay={true} muted />
-            <p>A football player and his friends travel to the planet Mongo and find themselves fighting the tyranny of Ming the Merciless to save Earth.</p>
-          </div>
+          <Billboard/>
           <div className="browse-genre-rows">
             <div className="browse-row">
               <h2>Popular on Jefflix</h2>
