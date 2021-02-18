@@ -38,7 +38,9 @@ class Browse extends React.Component {
           </div>
         </header>
         <div className="browse-body">
-          <div className="billboard"></div>
+          <div className="billboard">
+            <video src={window.flashgordon} autoPlay={true} muted />
+          </div>
           <div className="browse-genre-rows">
             <div className="browse-row">
               <h2>Popular on Jefflix</h2>
