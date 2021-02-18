@@ -1,75 +1,91 @@
 import React from 'react';
 
-const DemoSlides = (num) => {
-  if (num === 0) {
-    return (
-      <div className="slider-wrap">
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
+class DemoSlides extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      currentSliderItem: props.currentSliderItem
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.currentSliderItem !== prevState.currentSliderItem) {
+      return { currentSliderItem: nextProps.currentSliderItem };
+    }
+    else return null;
+  }
+
+  render() {
+    if (this.state.currentSliderItem === 0) {
+      return (
+        <div className="slider-wrap">
+          <div className="slider-item">
+            <img src={window.thepest} alt="thepest" />
+          </div>
+          <div className="slider-item">
+            <img src={window.thepest} alt="thepest" />
+          </div>
+          <div className="slider-item">
+            <img src={window.thepest} alt="thepest" />
+          </div>
+          <div className="slider-item">
+            <img src={window.thepest} alt="thepest" />
+          </div>
+          <div className="slider-item">
+            <img src={window.thepest} alt="thepest" />
+          </div>
+          <div className="slider-item">
+            <img src={window.thepest} alt="thepest" />
+          </div>
         </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
+      )
+    } else if (this.state.currentSliderItem === 1) {
+      return (
+        <div className="slider-wrap">
+          <div className="slider-item">
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
+          <div className="slider-item">
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
+          <div className="slider-item">
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
+          <div className="slider-item">
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
+          <div className="slider-item">
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
+          <div className="slider-item">
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
         </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
+      )
+    } else if (this.state.currentSliderItem === 2) {
+      return (
+        <div className="slider-wrap">
+          <div className="slider-item">
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
+          <div className="slider-item">
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
+          <div className="slider-item">
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
+          <div className="slider-item">
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
+          <div className="slider-item">
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
+          <div className="slider-item">
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
         </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-      </div>
-    )
-  } else if (num === 1) {
-    return (
-      <div className="slider-wrap">
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <div className="slider-wrap">
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-      </div>
-    )
+      )
+    } 
   }
 }
 

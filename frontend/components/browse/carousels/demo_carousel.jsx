@@ -8,10 +8,12 @@ class DemoCarousel extends React.Component{
     this.state = {
       currentSliderItem: 0
     };
+    this.previousSlide = this.previousSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this);
   }
 
   previousSlide() {
-    const lastIndex = 3;
+    const lastIndex = 2;
     const { currentSliderItem } = this.state;
     const shouldResetIndex = currentSliderItem === 0;
     const index = shouldResetIndex ? lastIndex : currentSliderItem - 1;
@@ -22,7 +24,7 @@ class DemoCarousel extends React.Component{
   }
 
   nextSlide() {
-    const lastIndex = 3;
+    const lastIndex = 2;
     const { currentSliderItem } = this.state;
     const shouldResetIndex = currentSliderItem === lastIndex;
     const index = shouldResetIndex ? 0 : currentSliderItem + 1;
@@ -40,8 +42,8 @@ class DemoCarousel extends React.Component{
           clickFunction={this.previousSlide}
           glyph="‹" />
 
-        <DemoSlides num={this.state.currentSliderItem}/>
-        
+        <DemoSlides currentSliderItem={this.state.currentSliderItem}/>
+
         <Arrow
           direction="right"
           clickFunction={this.nextSlide}
