@@ -39,7 +39,9 @@ class Browse extends React.Component {
         </header>
         <div className="browse-body">
           <div className="billboard">
+            <img src={window.flashgordonimg} alt="flashgordonimg"/>
             <video src={window.flashgordon} autoPlay={true} muted />
+            <p>A football player and his friends travel to the planet Mongo and find themselves fighting the tyranny of Ming the Merciless to save Earth.</p>
           </div>
           <div className="browse-genre-rows">
             <div className="browse-row">

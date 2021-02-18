@@ -314,14 +314,29 @@ input {
 
 .billboard > video {
   position: relative;
-  top: -3.7rem;
+  top: -10.6rem;
   width: 100%;
   height: auto;
   z-index: 2;
 }
 
+.billboard > img {
+  position: relative;
+  top: 27rem;
+  left: 3rem;
+  z-index: 3;
+}
+
+.billboard > p {
+  position: relative;
+  width: 600px;
+  top: -40rem;
+  left: 3.5rem;
+  z-index: 3;
+}
+
 .browse-genre-rows {
-  top: -9rem;
+  top: -23rem;
   position: relative;
   z-index: 3;
 }
