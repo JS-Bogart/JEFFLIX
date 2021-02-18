@@ -1,7 +1,8 @@
 import React from 'react';
-import { Arrow } from '../../../util/carousel_util';
+import Arrow from './arrow';
+import DemoSlides from './demo_slides';
 
-class DemoSlider extends React.Component{
+class DemoCarousel extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -9,79 +10,27 @@ class DemoSlider extends React.Component{
     };
   }
 
-  Slides = (num) => {
-    if (num === 0) {
-      return (
-        <div className="slider-wrap">
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-        </div>
-      )
-    } else if (num === 1){
-      return(
-        <div className="slider-wrap">
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-        </div>
-      )
-    } else {
-      return (
-        <div className="slider-wrap">
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-        </div>
-      )
-    }
+  previousSlide() {
+    const lastIndex = 3;
+    const { currentSliderItem } = this.state;
+    const shouldResetIndex = currentSliderItem === 0;
+    const index = shouldResetIndex ? lastIndex : currentSliderItem - 1;
+
+    this.setState({
+      currentSliderItem: index
+    });
   }
 
+  nextSlide() {
+    const lastIndex = 3;
+    const { currentSliderItem } = this.state;
+    const shouldResetIndex = currentSliderItem === lastIndex;
+    const index = shouldResetIndex ? 0 : currentSliderItem + 1;
+
+    this.setState({
+      currentSliderItem: index
+    });
+  }
 
   render(){
     return(
@@ -91,7 +40,7 @@ class DemoSlider extends React.Component{
           clickFunction={this.previousSlide}
           glyph="‹" />
 
-        <Slides num={this.state.currentSliderItem}/>
+        <DemoSlides num={this.state.currentSliderItem}/>
         
         <Arrow
           direction="right"
@@ -102,4 +51,4 @@ class DemoSlider extends React.Component{
   }
 }
 
-export default DemoSlider;
+export default DemoCarousel;

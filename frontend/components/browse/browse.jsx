@@ -1,9 +1,9 @@
 import React from 'react';
-import DemoSlider from './carousels/demo_carousel';
+import DemoCarousel from './carousels/demo_carousel';
 
 class Browse extends React.Component {
   constructor(props){
-    super(props)
+    super(props);
   }
 
   componentDidMount(){
@@ -42,23 +42,23 @@ class Browse extends React.Component {
           <div className="browse-genre-rows">
             <div className="browse-row">
               <h2>Popular on Jefflix</h2>
-              <DemoSlider movies={this.props.movies}/>
+              <DemoCarousel movies={this.props.movies} props={this.props}/>
             </div>
             <div className="browse-row">
               <h2>Trending Now</h2>
-              <DemoSlider movies={this.props.movies} />
+              <DemoCarousel movies={this.props.movies} props={this.props} />
             </div>
             <div className="browse-row">
               <h2>New Releases</h2>
-              <DemoSlider movies={this.props.movies} />
+              <DemoCarousel movies={this.props.movies} props={this.props} />
             </div>
             <div className="browse-row">
               <h2>Hidden Gems For You</h2>
-              <DemoSlider movies={this.props.movies} />
+              <DemoCarousel movies={this.props.movies} props={this.props} />
             </div>
             <div className="browse-row">
               <h2>Watch It Again</h2>
-              <DemoSlider movies={this.props.movies} />
+              <DemoCarousel movies={this.props.movies} props={this.props} />
             </div>
           </div>
         </div>
