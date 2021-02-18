@@ -65,6 +65,7 @@ class Browse extends React.Component {
               <DemoCarousel movies={this.props.movies} props={this.props} />
             </div>
           </div>
+          <footer></footer>
         </div>
       </div>
     );

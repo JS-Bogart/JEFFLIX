@@ -10,6 +10,10 @@ input {
   padding-left: 20px;
 }
 
+footer {
+  height: 150px;
+}
+
 .app {
   position:absolute;
   top:0;
@@ -339,6 +343,7 @@ input {
   top: -23rem;
   position: relative;
   z-index: 3;
+  height: 100%;
 }
 
 .browse-row {
