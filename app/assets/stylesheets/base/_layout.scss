@@ -362,9 +362,11 @@ footer {
   margin: 2px;
   border-radius: 4px;
   transition: 500ms all;
+  transition-delay: 0ms;
       
     &:hover {
       transform: scale(1.7);
+      transition-delay: 500ms;
     }
 }
 
