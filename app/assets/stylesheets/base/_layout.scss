@@ -360,6 +360,12 @@ footer {
 // Carousel
 .slider-item {
   margin: 2px;
+  border-radius: 4px;
+  transition: 500ms all;
+      
+    &:hover {
+      transform: scale(1.7);
+    }
 }
 
 .slider-item > img {

@@ -20,7 +20,6 @@ a {
 .demo-btn {
   text-align: center;
   line-height: 2.3;
-  cursor: pointer;
 }
 
 .splash-body > h1 {
@@ -102,10 +101,6 @@ a {
   font-size: 13px;
 }
 
-.signup-link{
-  cursor: pointer;
-}
-
 // Signin Page
 .signin-body > h2 {
   font-size: 35px;
@@ -135,10 +130,6 @@ a {
 
 .signin-error > a {
   text-decoration: underline;
-}
-
-.signin-btn:hover {
-  cursor: pointer;
 }
 
 .signin-form > .demo-btn {

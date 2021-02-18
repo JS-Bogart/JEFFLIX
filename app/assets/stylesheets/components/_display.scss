@@ -15,6 +15,10 @@
   display: flex;
 }
 
+.demo-btn {
+  cursor: pointer;
+}
+
 // Signup Page
 .signup {
   display: flex;
@@ -34,6 +38,10 @@
 
 .signup-email-error > div {
   display: flex;
+}
+
+.signup-link{
+  cursor: pointer;
 }
 
 // Signin Page
@@ -59,6 +67,10 @@
 
 .signin-error {
   display: flex;
+}
+
+.signin-btn:hover {
+  cursor: pointer;
 }
 
 // Browse page
@@ -93,4 +105,16 @@
 
 .slider-wrap {
   display: flex;
+}
+
+.slide-arrow-left {
+  cursor: pointer;
+}
+
+.slide-arrow-right {
+  cursor: pointer;
+}
+
+.slider-item {
+  cursor: pointer;
 }
