@@ -122,7 +122,8 @@ input:focus{
 
 // Browse page
 .browse > header {
-  background-color: rgb(47, 47, 47);
+  background-color: rgb(23, 23, 23);
+  border-bottom: 2px solid red;
 }
 
 .logout-dropdown > div {
@@ -141,3 +142,10 @@ input:focus{
 .logout-dropdown > span {
   color: white;
 }
+
+.browse-body {
+  background-color: rgb(23, 23, 23);
+  color: white;
+}
+
+// Carousel
