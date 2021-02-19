@@ -23,8 +23,6 @@ class DemoCarousel extends React.Component{
     });
   }
 
-
-
   nextSlide() {
     const lastIndex = 2;
     const { currentSliderItem } = this.state;

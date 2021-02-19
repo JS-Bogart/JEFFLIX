@@ -319,7 +319,7 @@ footer {
 
 .billboard > video {
   position: relative;
-  top: -10.6rem;
+  top: -10.7rem;
   width: 100%;
   height: auto;
   z-index: 2;
@@ -340,19 +340,28 @@ footer {
   z-index: 3;
 }
 
+#bb-rating {
+  position: relative;
+  top: -43rem;
+  left: 110rem;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .billboard-mute-btn {
   position: relative;
-  top: -35rem;
-  left: 110rem;
+  top: -39.5rem;
+  left: 106rem;
   z-index: 3;
   width: 0;
 }
 
 .browse-genre-rows {
-  top: -23rem;
+  top: -38rem;
   position: relative;
   z-index: 3;
-  height: 100%;
+  height: 75%;
 }
 
 .browse-row {

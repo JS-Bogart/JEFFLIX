@@ -38,6 +38,7 @@ class Billboard extends React.Component{
         <div className="billboard-mute-btn" onClick={this.unMute}>
           {muteButton}
         </div>
+        <p id="bb-rating">PG</p>
       </div>
     )
   }
