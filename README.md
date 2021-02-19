@@ -11,3 +11,7 @@ The live working demo can be found here: [https://jefflixfsp.herokuapp.com/#/](h
 ## Featured Code
 
 ## To-do
++ Add fullscreen watch pages
++ Add genre pages
++ Add a MyList feature which allows the user to save a list of movies to watch
++ Add a search feature
