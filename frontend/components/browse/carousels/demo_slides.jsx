@@ -16,76 +16,133 @@ class DemoSlides extends React.Component {
   }
 
   render() {
-    if (this.state.currentSliderItem === 0) {
-      return (
-        <div className="slider-wrap">
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
-          <div className="slider-item">
-            <img src={window.thepest} alt="thepest" />
-          </div>
+    return (
+      <div className="slider-wrap" slide={this.state.currentSliderItem}>
+        <div className="slider-item">
+          <img src={window.thepest} alt="thepest" />
         </div>
-      )
-    } else if (this.state.currentSliderItem === 1) {
-      return (
-        <div className="slider-wrap">
-          <div className="slider-item">
-            <img src={window.kindergartencop} alt="kindergartencop" />
-          </div>
-          <div className="slider-item">
-            <img src={window.kindergartencop} alt="kindergartencop" />
-          </div>
-          <div className="slider-item">
-            <img src={window.kindergartencop} alt="kindergartencop" />
-          </div>
-          <div className="slider-item">
-            <img src={window.kindergartencop} alt="kindergartencop" />
-          </div>
-          <div className="slider-item">
-            <img src={window.kindergartencop} alt="kindergartencop" />
-          </div>
-          <div className="slider-item">
-            <img src={window.kindergartencop} alt="kindergartencop" />
-          </div>
+        <div className="slider-item">
+          <img src={window.thepest} alt="thepest" />
         </div>
-      )
-    } else if (this.state.currentSliderItem === 2) {
-      return (
-        <div className="slider-wrap">
-          <div className="slider-item">
-            <img src={window.surfninjas} alt="surfninjas" />
-          </div>
-          <div className="slider-item">
-            <img src={window.surfninjas} alt="surfninjas" />
-          </div>
-          <div className="slider-item">
-            <img src={window.surfninjas} alt="surfninjas" />
-          </div>
-          <div className="slider-item">
-            <img src={window.surfninjas} alt="surfninjas" />
-          </div>
-          <div className="slider-item">
-            <img src={window.surfninjas} alt="surfninjas" />
-          </div>
-          <div className="slider-item">
-            <img src={window.surfninjas} alt="surfninjas" />
-          </div>
+        <div className="slider-item">
+          <img src={window.thepest} alt="thepest" />
         </div>
+        <div className="slider-item">
+          <img src={window.thepest} alt="thepest" />
+        </div>
+        <div className="slider-item">
+          <img src={window.thepest} alt="thepest" />
+        </div>
+        <div className="slider-item">
+          <img src={window.thepest} alt="thepest" />
+        </div>
+        <div className="slider-item">
+          <img src={window.kindergartencop} alt="kindergartencop" />
+        </div>
+        <div className="slider-item">
+          <img src={window.kindergartencop} alt="kindergartencop" />
+        </div>
+        <div className="slider-item">
+          <img src={window.kindergartencop} alt="kindergartencop" />
+        </div>
+        <div className="slider-item">
+          <img src={window.kindergartencop} alt="kindergartencop" />
+        </div>
+        <div className="slider-item">
+          <img src={window.kindergartencop} alt="kindergartencop" />
+        </div>
+        <div className="slider-item">
+          <img src={window.kindergartencop} alt="kindergartencop" />
+        </div>
+        <div className="slider-item">
+          <img src={window.surfninjas} alt="surfninjas" />
+        </div>
+        <div className="slider-item">
+          <img src={window.surfninjas} alt="surfninjas" />
+        </div>
+        <div className="slider-item">
+          <img src={window.surfninjas} alt="surfninjas" />
+        </div>
+        <div className="slider-item">
+          <img src={window.surfninjas} alt="surfninjas" />
+        </div>
+        <div className="slider-item">
+          <img src={window.surfninjas} alt="surfninjas" />
+        </div>
+        <div className="slider-item">
+          <img src={window.surfninjas} alt="surfninjas" />
+        </div>
+      </div>
+
+
+    //     <div className="slider-wrap" slide={this.state.slideDirection}>
+    //       <div className="slider-item">
+    //         <img src={window.thepest} alt="thepest" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.thepest} alt="thepest" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.thepest} alt="thepest" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.thepest} alt="thepest" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.thepest} alt="thepest" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.thepest} alt="thepest" />
+    //       </div>
+    //     </div>
+    //   )
+    // } else if (this.state.currentSliderItem === 1) {
+    //   return (
+    //     <div className="slider-wrap" slide={this.state.slideDirection}>
+    //       <div className="slider-item">
+    //         <img src={window.kindergartencop} alt="kindergartencop" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.kindergartencop} alt="kindergartencop" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.kindergartencop} alt="kindergartencop" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.kindergartencop} alt="kindergartencop" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.kindergartencop} alt="kindergartencop" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.kindergartencop} alt="kindergartencop" />
+    //       </div>
+    //     </div>
+    //   )
+    // } else if (this.state.currentSliderItem === 2) {
+    //   return (
+    //     <div className="slider-wrap" slide={this.state.slideDirection}>
+    //       <div className="slider-item">
+    //         <img src={window.surfninjas} alt="surfninjas" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.surfninjas} alt="surfninjas" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.surfninjas} alt="surfninjas" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.surfninjas} alt="surfninjas" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.surfninjas} alt="surfninjas" />
+    //       </div>
+    //       <div className="slider-item">
+    //         <img src={window.surfninjas} alt="surfninjas" />
+    //       </div>
+    //     </div>
       )
-    } 
+    // } 
   }
 }
 

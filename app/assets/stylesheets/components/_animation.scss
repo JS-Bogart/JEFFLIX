@@ -1,0 +1,26 @@
+.slider-wrap[slide='0'] {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transform: translate(112.1rem);
+}
+
+.slider-wrap[slide='1'] {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transform: translate(0rem)
+}
+
+.slider-wrap[slide='2'] {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  transform: translate(-112.1rem)
+}

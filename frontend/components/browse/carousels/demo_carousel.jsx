@@ -23,6 +23,8 @@ class DemoCarousel extends React.Component{
     });
   }
 
+
+
   nextSlide() {
     const lastIndex = 2;
     const { currentSliderItem } = this.state;
@@ -40,13 +42,17 @@ class DemoCarousel extends React.Component{
         <Arrow
           direction="left"
           clickFunction={this.previousSlide}
+          currentSliderItem={this.state.currentSliderItem}
           glyph="‹" />
 
-        <DemoSlides currentSliderItem={this.state.currentSliderItem}/>
+        <DemoSlides 
+          currentSliderItem={this.state.currentSliderItem}
+        />
 
         <Arrow
           direction="right"
           clickFunction={this.nextSlide}
+          currentSliderItem={this.state.currentSliderItem}
           glyph="›" />
       </div>
     )

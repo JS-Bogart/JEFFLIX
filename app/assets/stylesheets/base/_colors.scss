@@ -157,8 +157,12 @@ input:focus{
 
     &:hover {
       color: white;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.7);
     }
+}
+
+.slide-arrow-left[slide='1'], .slide-arrow-left[slide='2']{
+  background-color: rgba(0,0,0,0.6);
 }
 
 .slide-arrow-right {
@@ -166,6 +170,10 @@ input:focus{
 
     &:hover {
       color: white;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.7);
     }
+}
+
+.slide-arrow-right[slide='0'], .slide-arrow-right[slide='1']{
+  background-color: rgba(0,0,0,0.6);
 }
