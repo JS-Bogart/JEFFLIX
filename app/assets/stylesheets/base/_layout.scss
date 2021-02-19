@@ -26,12 +26,15 @@ footer {
 
 // Splash page
 .splash {
+  overflow: hidden;
   height: 100%;
 }
 
 .splashbg {
   position: absolute;
   z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .splash-top {
@@ -108,6 +111,8 @@ footer {
 
 .signup {
   height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 .signup > header {
