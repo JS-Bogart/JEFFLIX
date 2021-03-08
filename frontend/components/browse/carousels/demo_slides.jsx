@@ -16,62 +16,34 @@ class DemoSlides extends React.Component {
   }
 
   render() {
-    return (
+  
+    const movies = [];
+
+    for (let i = 0; i < 18; i++) {
+      if (i < 6) {
+        movies.push(
+          <div className="slider-item" key={i}>
+            <img src={window.thepest} alt="thepest" />
+          </div>
+        )
+      } else if (i >= 6 && i < 12) {
+        movies.push(
+          <div className="slider-item" key={i}>
+            <img src={window.kindergartencop} alt="kindergartencop" />
+          </div>
+        )
+      } else {
+        movies.push(
+          <div className="slider-item" key={i}>
+            <img src={window.surfninjas} alt="surfninjas" />
+          </div>
+        )
+      }
+    }
+
+    return(
       <div className="slider-wrap" slide={this.state.currentSliderItem}>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.thepest} alt="thepest" />
-        </div>
-        <div className="slider-item">
-          <img src={window.kindergartencop} alt="kindergartencop" />
-        </div>
-        <div className="slider-item">
-          <img src={window.kindergartencop} alt="kindergartencop" />
-        </div>
-        <div className="slider-item">
-          <img src={window.kindergartencop} alt="kindergartencop" />
-        </div>
-        <div className="slider-item">
-          <img src={window.kindergartencop} alt="kindergartencop" />
-        </div>
-        <div className="slider-item">
-          <img src={window.kindergartencop} alt="kindergartencop" />
-        </div>
-        <div className="slider-item">
-          <img src={window.kindergartencop} alt="kindergartencop" />
-        </div>
-        <div className="slider-item">
-          <img src={window.surfninjas} alt="surfninjas" />
-        </div>
-        <div className="slider-item">
-          <img src={window.surfninjas} alt="surfninjas" />
-        </div>
-        <div className="slider-item">
-          <img src={window.surfninjas} alt="surfninjas" />
-        </div>
-        <div className="slider-item">
-          <img src={window.surfninjas} alt="surfninjas" />
-        </div>
-        <div className="slider-item">
-          <img src={window.surfninjas} alt="surfninjas" />
-        </div>
-        <div className="slider-item">
-          <img src={window.surfninjas} alt="surfninjas" />
-        </div>
+        {movies}
       </div>
     )
   }
