@@ -8,4 +8,8 @@ class Movie < ApplicationRecord
     through: :movie_genres,
     source: :genre
 
+  has_one_attached :poster
+
+  has_one_attached :trailer
+
 end

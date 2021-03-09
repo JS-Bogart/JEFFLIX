@@ -120,5 +120,15 @@
 }
 
 .slider-item {
+  display: flex;
   cursor: pointer;
+}
+
+.slider-item .slider-item-info {
+  display: flex;
+  visibility: hidden;
+}
+
+.slider-item:hover .slider-item-info {
+  visibility: visible;
 }

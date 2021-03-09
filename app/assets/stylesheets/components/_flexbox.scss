@@ -79,3 +79,11 @@
   flex-direction: row;
 }
 
+.slider-item {
+  flex-direction: column;
+}
+
+.slider-item-info {
+  align-items: center;
+  justify-content: space-between;
+}
