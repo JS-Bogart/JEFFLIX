@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 User.destroy_all
 MovieGenre.destroy_all
@@ -89,7 +90,26 @@ movie39 = Movie.create(title: "The Adventures of Buckaroo Banzai Across the 8th 
 year: 1984, synopsis: "Buckaroo Banzai and his crime-fighting team must stop evil alien invaders 
 from the eighth dimension who are planning to conquer Earth.")
 
+movie1.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/holy_mountain.jpg'), filename: 'holy_mountain.jpg')
+movie3.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/amarcord.jpg'), filename: 'amarcord.jpg')
+movie4.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/seventh_seal.png'), filename: 'seventh_seal.png')
+movie7.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/ruling_class.jpg'), filename: 'ruling_class.jpg')
+movie9.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/8_12.jpg'), filename: '8_12.jpg')
+movie11.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/kagemusha.jpg'), filename: 'kagemusha.jpg')
+movie17.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/exterminating_angel.jpg'), filename: 'exterminating_angel.jpg')
+movie19.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/house.jpg'), filename: 'house.jpg')
+movie22.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/black_moon.jpg'), filename: 'black_moon.jpg')
+movie25.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/belladonna_of_sadness.jpg'), filename: 'belladonna_of_sadness.jpg')
+movie26.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/akira.jpg'), filename: 'akira.jpg')
+movie27.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/spirited_away.jpg'), filename: 'spirited_away.jpg')
+movie29.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/suspiria.jpg'), filename: 'suspiria.jpg')
+movie31.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/life_aquatic.jpg'), filename: 'life_aquatic.jpg')
+movie34.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/heavy_metal.png'), filename: 'heavy_metal.png')
+movie35.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/heavy_traffic.jpeg'), filename: 'heavy_traffic.jpeg')
+movie36.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/wizards.jpg'), filename: 'wizards.jpg')
+movie39.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/buckaroo_bonzai.jpg'), filename: 'buckaroo_bonzai.jpg')
 
+#Genres
 genre1 = Genre.create(genre: "Animated")
 genre2 = Genre.create(genre: "Suspense")
 genre3 = Genre.create(genre: "Comedy")
