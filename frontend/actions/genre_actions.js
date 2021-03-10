@@ -12,3 +12,13 @@ const receiveGenre = (genre) => ({
   type: RECEIVE_GENRE,
   genre
 })
+
+export const requestAllGenres = () => dispatch => {
+  return APIUtil.fetchAllGenres()
+  .then(genres => dispatch(receiveAllGenres(genres)))
+}
+
+export const requestGenre = id => dispatch => {
+  return APIUtil.fetchGenre(id)
+  .then(genre => dispatch(receiveGenre(genre)))
+}

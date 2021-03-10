@@ -8,6 +8,6 @@ export const fetchAllGenres = () => {
 export const fetchGenre = (id) => {
   return $.ajax({
     method: "GET",
-    url: `/api/movies/${id}`
+    url: `/api/genres/${id}`
   })
 };
