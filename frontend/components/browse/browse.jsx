@@ -8,7 +8,8 @@ class Browse extends React.Component {
   }
 
   componentDidMount(){
-    this.props.requestAllMovies()
+    this.props.requestAllMovies();
+    this.props.requestAllGenres();
   }
 
   render() {
@@ -43,23 +44,38 @@ class Browse extends React.Component {
           <div className="browse-genre-rows">
             <div className="browse-row">
               <h2>Popular on Jefflix</h2>
-              <DemoCarousel movies={this.props.movies} props={this.props}/>
+              <DemoCarousel 
+                movies={this.props.movies} 
+                props={this.props}
+              />
             </div>
             <div className="browse-row">
               <h2>Trending Now</h2>
-              <DemoCarousel movies={this.props.movies} props={this.props} />
+              <DemoCarousel 
+                movies={this.props.movies} 
+                props={this.props} 
+              />
             </div>
             <div className="browse-row">
               <h2>New Releases</h2>
-              <DemoCarousel movies={this.props.movies} props={this.props} />
+              <DemoCarousel 
+                movies={this.props.movies} 
+                props={this.props} 
+              />
             </div>
             <div className="browse-row">
               <h2>Hidden Gems For You</h2>
-              <DemoCarousel movies={this.props.movies} props={this.props} />
+              <DemoCarousel 
+                movies={this.props.movies} 
+                props={this.props} 
+              />
             </div>
             <div className="browse-row">
               <h2>Watch It Again</h2>
-              <DemoCarousel movies={this.props.movies} props={this.props} />
+              <DemoCarousel 
+                movies={this.props.movies} 
+                props={this.props} 
+              />
             </div>
           </div>
           <footer></footer>
