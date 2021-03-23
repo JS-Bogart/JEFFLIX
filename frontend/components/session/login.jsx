@@ -25,13 +25,20 @@ class Login extends React.Component {
       this.setState({ [field]: e.currentTarget.value })
     }
   }
+
+  getData() {
+    this.props.requestAllMovies();
+    this.props.requestAllGenres();
+  }
   
   handleSubmit(e) {
     e.preventDefault();
+    this.getData();
     this.props.login(this.state);
   }
 
   demoSubmit() {
+    this.getData();
     this.props.login(this.demo);
   }
 

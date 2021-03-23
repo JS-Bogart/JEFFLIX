@@ -28,6 +28,11 @@ class Signup extends React.Component {
     }
   }
 
+  getData() {
+    this.props.requestAllMovies();
+    this.props.requestAllGenres();
+  }
+
   handleInput(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })
@@ -36,6 +41,7 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.getData();
     this.props.signup(this.state);
   }
   

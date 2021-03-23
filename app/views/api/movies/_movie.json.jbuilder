@@ -1,1 +1,2 @@
-json.extract! movie, :id, :title, :year, :synopsis #maybe add genres later
+json.extract! movie, :id, :title, :year, :synopsis, :genres
+json.imageUrl url_for(movie.poster)

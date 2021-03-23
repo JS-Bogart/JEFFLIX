@@ -12,6 +12,25 @@ class Browse extends React.Component {
     this.props.requestAllGenres();
   }
 
+  getGenres() {
+    const genres = [this.props.genres[4], this.props.genres[4], this.props.genres[4], this.props.genres[4]]
+    if (genres[0] && this.props.movies.length > 0) {
+      return (
+        <div className="browse-genre-rows">
+          {genres.map(genre => (
+            <div className="browse-row">
+              <h2>{genre.genre}</h2>
+              <DemoCarousel
+                movies={this.props.movies}
+                genre={genre}
+              />
+            </div>
+          ))}
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="browse">
@@ -41,43 +60,7 @@ class Browse extends React.Component {
         </header>
         <div className="browse-body">
           <Billboard/>
-          <div className="browse-genre-rows">
-            <div className="browse-row">
-              <h2>Popular on Jefflix</h2>
-              <DemoCarousel 
-                movies={this.props.movies} 
-                props={this.props}
-              />
-            </div>
-            <div className="browse-row">
-              <h2>Trending Now</h2>
-              <DemoCarousel 
-                movies={this.props.movies} 
-                props={this.props} 
-              />
-            </div>
-            <div className="browse-row">
-              <h2>New Releases</h2>
-              <DemoCarousel 
-                movies={this.props.movies} 
-                props={this.props} 
-              />
-            </div>
-            <div className="browse-row">
-              <h2>Hidden Gems For You</h2>
-              <DemoCarousel 
-                movies={this.props.movies} 
-                props={this.props} 
-              />
-            </div>
-            <div className="browse-row">
-              <h2>Watch It Again</h2>
-              <DemoCarousel 
-                movies={this.props.movies} 
-                props={this.props} 
-              />
-            </div>
-          </div>
+          {this.getGenres()}
           <footer></footer>
         </div>
       </div>

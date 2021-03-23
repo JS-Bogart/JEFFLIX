@@ -45,6 +45,8 @@ class DemoCarousel extends React.Component{
 
         <DemoSlides 
           currentSliderItem={this.state.currentSliderItem}
+          movies={this.props.movies}
+          genre={this.props.genre}
         />
 
         <Arrow

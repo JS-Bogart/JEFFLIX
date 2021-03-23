@@ -1,1 +1,1 @@
-json.extract! genre, :id, :genre #maybe add movies later
+json.extract! genre, :id, :genre, :movies
