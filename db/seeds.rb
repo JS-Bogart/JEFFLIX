@@ -89,6 +89,112 @@ runners, must battle killers for their freedom.", rating: "R")
 movie39 = Movie.create(title: "The Adventures of Buckaroo Banzai Across the 8th Dimension", 
 year: 1984, synopsis: "Buckaroo Banzai and his crime-fighting team must stop evil alien invaders 
 from the eighth dimension who are planning to conquer Earth.", rating: "PG")
+movie40 = Movie.create(title: "Neon Genesis Evangelion: The End of Evangelion", 
+year: 1997, synopsis: "Shinji Ikari is pushed to the limits of his sanity as he 
+is forced to decide the fate of humanity.", rating: "NR")
+movie41 = Movie.create(title: "Lupin the 3rd: Castle of Cagliostro", year: 1979, 
+synopsis: "A thief, his gang of desperadoes, and an intrepid policeman struggle 
+to free a princess from an evil count's clutches", rating: "PG-13")
+movie42 = Movie.create(title: "Princess Mononoke", year: 1997, synopsis: "On a 
+journey to find the cure for a curse, Ashitaka finds himself in the middle of a 
+war between the forest gods and a mining colony.", rating: "PG-13")
+movie43 = Movie.create(title: "Howl's Moving Castle", year: 2004, synopsis: "When 
+a young woman is cursed by a witch, her only chance of breaking the spell lies with 
+a young wizard and his walking castle.", rating: "PG")
+movie44 = Movie.create(title: "My Neighbor Totoro", year: 1988, synopsis: "When two 
+girls move to the country to be near their ailing mother, they have adventures 
+with the wondrous forest spirits who live nearby.", rating: "G")
+movie45 = Movie.create(title: "The Tale of The Princess Kaguya", year: 2013, 
+synopsis: "Found inside a shining stalk of bamboo by an old bamboo cutter and his 
+wife, a tiny girl grows rapidly into a mysterious young princess.", rating: "PG")
+movie46 = Movie.create(title: "Watership Down", year: 1978, synopsis: "Hoping to 
+escape destruction by human developers and save their community, a colony of 
+rabbits seek out a safe place to set up a new warren.", rating: "PG")
+movie47 = Movie.create(title: "Fantastic Planet", year: 1973, synopsis: "On a 
+faraway planet where blue giants rule, oppressed humanoids rebel against their 
+machine-like leaders.", rating: "PG")
+movie48 = Movie.create(title: "The Triplets of Belleville", year: 2003, synopsis: 
+"When her grandson is kidnapped during the Tour de France, Madame Souza teams up 
+with the Belleville Sisters to rescue him.", rating: "PG-13")
+movie49 = Movie.create(title: "Who Framed Roger Rabbit", year: 1988, synopsis: 
+"A toon-hating detective is a cartoon rabbit's only hope to prove his innocence 
+when he is accused of murder.", rating: "PG")
+movie50 = Movie.create(title: "The Secret of Kells", year: 2009, synopsis: "A young 
+boy in a remote medieval outpost is beckoned to adventure when a celebrated master 
+illuminator arrives with an ancient book.", rating: "NR")
+movie51 = Movie.create(title: "Song of the Sea", year: 2014, synopsis: "Ben and 
+his little sister Saoirse go on an adventure to free the fairies and save the 
+spirit world.", rating: "PG")
+movie52 = Movie.create(title: "Three Days of the Condor", year: 1975, synopsis: 
+"A bookish CIA researcher finds all his co-workers dead, and must outwit those 
+responsible until he figures out who he can really trust.", rating: "R")
+movie53 = Movie.create(title: "The Big Sleep", year: 1946, synopsis: "Private 
+detective Philip Marlowe is hired by a wealthy family. Before the complex case is 
+over, he's seen murder, blackmail, and what might be love.", rating: "NR")
+movie54 = Movie.create(title: "Alien", year: 1979, synopsis: "After a space vessel 
+receives a distress call, one of the crew is attacked by a mysterious life form and 
+they soon realize that its life cycle has merely begun.", rating: "R")
+movie55 = Movie.create(title: "The Omen", year: 1976, synopsis: "Mysterious deaths 
+surround an American ambassador. Could the child that he is raising actually be 
+the Antichrist?", rating: "R")
+movie56 = Movie.create(title: "The Face of Another", year: 1966, synopsis: "A 
+businessman with a disfigured face obtains a lifelike mask from his doctor, but 
+the mask starts altering his personality.", rating: "NR")
+movie57 = Movie.create(title: "Pan's Labyrinth", year: 2006, synopsis: "In the 
+Falangist Spain of 1944, the bookish young stepdaughter of a sadistic army officer 
+escapes into an eerie but captivating fantasy world.", rating: "R")
+movie58 = Movie.create(title: "Eyes Wide Shut", year: 1999, synopsis: "A New York 
+City doctor embarks on a harrowing, night-long odyssey of sexual and moral discovery 
+after his wife reveals a painful secret to him.", rating: "R")
+movie59 = Movie.create(title: "The Usual Suspects", year: 1995, synopsis: "A sole 
+survivor tells of the twisty events leading up to a horrific gun battle on a boat, 
+which began when five criminals met at a seemingly random police lineup.", rating: "R")
+movie60 = Movie.create(title: "The Shining", year: 1980, synopsis: "A family heads 
+to an isolated hotel for the winter where a sinister presence influences the father 
+into violence, while his psychic son sees horrific forebodings from both past and 
+future.", rating: "R")
+movie61 = Movie.create(title: "The Wicker Man", year: 1973, synopsis: "A puritan 
+Police Sergeant arrives in a Scottish island village in search of a missing girl 
+who the locals claim never existed.", rating: "R")
+movie62 = Movie.create(title: "The Killing of a Sacred Deer", year: 2017, synopsis: 
+"A surgeon is forced to make an unthinkable sacrifice after his life starts to fall 
+apart, when the behavior of a teenage boy he has taken under his wing turns sinister.", rating: "R")
+movie63 = Movie.create(title: "Uncut Gems", year: 2019, synopsis: "A fast-talking 
+New York City jeweler risks everything in hope of staying afloat and alive.", rating: "R")
+movie64 = Movie.create(title: "The Big Lebowski", year: 1998, synopsis: "Jeff 'The Dude' 
+Lebowski, mistaken for a millionaire of the same name, seeks restitution for his 
+ruined rug and enlists his bowling buddies to help get it.", rating: "R")
+movie65 = Movie.create(title: "Duck Soup", year: 1933, synopsis: "Rufus T. Firefly 
+is named president/dictator of bankrupt Freedonia and declares war on neighboring 
+Sylvania over the love of wealthy Mrs. Teasdale.", rating: "NR")
+movie66 = Movie.create(title: "Superbad", year: 2007, synopsis: "Two co-dependent 
+high school seniors are forced to deal with separation anxiety after their plan 
+to stage a booze-soaked party goes awry.", rating: "R")
+movie67 = Movie.create(title: "Raising Arizona", year: 1987, synopsis: "When a 
+childless couple decide to help themselves to one of another family's quintuplets, 
+their lives become more complicated than they anticipated.", rating: "PG-13")
+movie68 = Movie.create(title: "Tampopo", year: 1985, synopsis: "A truck driver stops 
+at a small family-run noodle shop and decides to help its fledgling business.", rating: "NR")
+movie69 = Movie.create(title: "Clue", year: 1985, synopsis: "Six guests are anonymously 
+invited to a strange mansion for dinner, but after their host is killed, they must 
+cooperate with the staff to identify the murderer.", rating: "PG")
+movie70 = Movie.create(title: "Monty Python and the Holy Grail", year: 1975, synopsis: 
+"King Arthur and his Knights of the Round Table embark on a surreal, low-budget 
+search for the Holy Grail.", rating: "PG")
+movie71 = Movie.create(title: "The Meaning of Life", year: 1983, synopsis: "The 
+comedy team takes a look at life in all of its stages in their own uniquely silly way.", rating: "R")
+movie72 = Movie.create(title: "Monty Python's Life of Brian", year: 1979, synopsis: 
+"Born on the original Christmas in the stable next door to Jesus Christ, Brian of 
+Nazareth spends his life being mistaken for a messiah.", rating: "R")
+movie73 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie74 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie75 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie76 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie77 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie78 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie79 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie80 = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie = Movie.create(title: "", year: , synopsis: "", rating: "")
 
 movie1.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/holy_mountain.jpg'), filename: 'holy_mountain.jpg')
 movie2.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/seven_samurai.jpeg'), filename: 'seven_samurai.jpeg')
@@ -148,15 +254,40 @@ genre1.movies << movie27
 genre1.movies << movie34
 genre1.movies << movie35
 genre1.movies << movie36
+genre1.movies << movie40
+genre1.movies << movie41
+genre1.movies << movie42
+genre1.movies << movie43
+genre1.movies << movie44
+genre1.movies << movie45
+genre1.movies << movie46
+genre1.movies << movie47
+genre1.movies << movie48
+genre1.movies << movie49
+genre1.movies << movie50
+genre1.movies << movie51
 genre1.save
 
 #Suspense
 genre2.movies << movie17
 genre2.movies << movie19
 genre2.movies << movie20
+genre2.movies << movie23
 genre2.movies << movie28
 genre2.movies << movie29
 genre2.movies << movie30
+genre2.movies << movie52
+genre2.movies << movie53
+genre2.movies << movie54
+genre2.movies << movie55
+genre2.movies << movie56
+genre2.movies << movie57
+genre2.movies << movie58
+genre2.movies << movie59
+genre2.movies << movie60
+genre2.movies << movie61
+genre2.movies << movie62
+genre2.movies << movie63
 genre2.save
 
 #Comedy
@@ -166,6 +297,17 @@ genre3.movies << movie16
 genre3.movies << movie21
 genre3.movies << movie31
 genre3.movies << movie32
+genre3.movies << movie33
+genre3.movies << movie49
+genre3.movies << movie64
+genre3.movies << movie65
+genre3.movies << movie66
+genre3.movies << movie67
+genre3.movies << movie68
+genre3.movies << movie69
+genre3.movies << movie70
+genre3.movies << movie71
+genre3.movies << movie72
 genre3.save
 
 #Drama
@@ -184,6 +326,15 @@ genre4.movies << movie18
 genre4.movies << movie23
 genre4.movies << movie30
 genre4.movies << movie33
+genre4.movies << movie46
+genre4.movies << movie52
+genre4.movies << movie53
+genre4.movies << movie56
+genre4.movies << movie57
+genre4.movies << movie58
+genre4.movies << movie59
+genre4.movies << movie62
+genre4.movies << movie63
 genre4.save
 
 #Surreal
@@ -205,6 +356,19 @@ genre5.movies << movie34
 genre5.movies << movie35
 genre5.movies << movie36
 genre5.movies << movie39
+genre5.movies << movie40
+genre5.movies << movie42
+genre5.movies << movie43
+genre5.movies << movie44
+genre5.movies << movie45
+genre5.movies << movie47
+genre5.movies << movie48
+genre5.movies << movie50
+genre5.movies << movie51
+genre5.movies << movie57
+genre5.movies << movie60
+genre5.movies << movie70
+genre5.movies << movie71
 genre5.save
 
 #Sci-Fi
@@ -214,6 +378,10 @@ genre6.movies << movie36
 genre6.movies << movie37
 genre6.movies << movie38
 genre6.movies << movie39
+genre6.movies << movie40
+genre6.movies << movie47
+genre6.movies << movie54
+genre6.movies << movie56
 genre6.save
 
 #Crime
@@ -225,6 +393,16 @@ genre7.movies << movie16
 genre7.movies << movie18
 genre7.movies << movie30
 genre7.movies << movie38
+genre7.movies << movie41
+genre7.movies << movie48
+genre7.movies << movie49
+genre7.movies << movie52
+genre7.movies << movie53
+genre7.movies << movie59
+genre7.movies << movie61
+genre7.movies << movie63
+genre7.movies << movie64
+genre7.movies << movie67
 genre7.save
 
 #Fantasy
@@ -237,6 +415,15 @@ genre8.movies << movie27
 genre8.movies << movie34
 genre8.movies << movie36
 genre8.movies << movie37
+genre8.movies << movie42
+genre8.movies << movie43
+genre8.movies << movie44
+genre8.movies << movie45
+genre8.movies << movie47
+genre8.movies << movie50
+genre8.movies << movie51
+genre8.movies << movie57
+genre8.movies << movie70
 genre8.save
 
 #Action
@@ -246,6 +433,7 @@ genre9.movies << movie8
 genre9.movies << movie11
 genre9.movies << movie12
 genre9.movies << movie24
+genre9.movies << movie25
 genre9.movies << movie26
 genre9.movies << movie31
 genre9.movies << movie34
@@ -253,4 +441,7 @@ genre9.movies << movie36
 genre9.movies << movie37
 genre9.movies << movie38
 genre9.movies << movie39
+genre9.movies << movie40
+genre9.movies << movie41
+genre9.movies << movie42
 genre9.save
