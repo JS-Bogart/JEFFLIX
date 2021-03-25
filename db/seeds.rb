@@ -156,8 +156,6 @@ future.", rating: "R")
 movie61 = Movie.create(title: "The Wicker Man", year: 1973, synopsis: "A puritan 
 Police Sergeant arrives in a Scottish island village in search of a missing girl 
 who the locals claim never existed.", rating: "R")
-
-
 movie62 = Movie.create(title: "The Killing of a Sacred Deer", year: 2017, synopsis: 
 "A surgeon is forced to make an unthinkable sacrifice after his life starts to fall 
 apart, when the behavior of a teenage boy he has taken under his wing turns sinister.", rating: "R")
