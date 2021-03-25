@@ -156,6 +156,8 @@ future.", rating: "R")
 movie61 = Movie.create(title: "The Wicker Man", year: 1973, synopsis: "A puritan 
 Police Sergeant arrives in a Scottish island village in search of a missing girl 
 who the locals claim never existed.", rating: "R")
+
+
 movie62 = Movie.create(title: "The Killing of a Sacred Deer", year: 2017, synopsis: 
 "A surgeon is forced to make an unthinkable sacrifice after his life starts to fall 
 apart, when the behavior of a teenage boy he has taken under his wing turns sinister.", rating: "R")
@@ -186,15 +188,38 @@ comedy team takes a look at life in all of its stages in their own uniquely sill
 movie72 = Movie.create(title: "Monty Python's Life of Brian", year: 1979, synopsis: 
 "Born on the original Christmas in the stable next door to Jesus Christ, Brian of 
 Nazareth spends his life being mistaken for a messiah.", rating: "R")
-movie73 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie74 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie75 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie76 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie77 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie78 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie79 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie80 = Movie.create(title: "", year: , synopsis: "", rating: "")
-movie = Movie.create(title: "", year: , synopsis: "", rating: "")
+movie73 = Movie.create(title: "I Love You, Man", year: 2009, synopsis: "Friendless 
+Peter Klaven goes on a series of man-dates to find a Best Man for his wedding.", rating: "R")
+movie74 = Movie.create(title: "The Dark Crystal", year: 1982, synopsis: "On another 
+planet in the distant past, a Gelfling embarks on a quest to find the missing shard 
+of a magical crystal, and so restore order to his world.", rating: "PG")
+movie75 = Movie.create(title: "2001: A Space Odyssey", year: 1968, synopsis: "After 
+discovering a mysterious artifact buried beneath the Lunar surface, mankind sets off 
+on a quest to find its origins", rating: "G")
+movie76 = Movie.create(title: "Brazil", year: 1985, synopsis: "A bureaucrat in a dystopic 
+society becomes an enemy of the state as he pursues the woman of his dreams.", rating: "R")
+movie77 = Movie.create(title: "Star Wars: Episode V - The Empire Strikes Back", year: 1980, 
+synopsis: "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, 
+Luke Skywalker begins Jedi training with Yoda.", rating: "PG")
+movie78 = Movie.create(title: "Star Wars: Episode VI - Return of the Jedi", year: 1983, 
+synopsis: "After a daring mission to rescue Han Solo from Jabba the Hutt, the Rebels 
+dispatch to Endor to destroy the second Death Star.", rating: "PG")
+movie79 = Movie.create(title: "Total Recall", year: 1990, synopsis: "A man goes in 
+to have virtual vacation memories of the planet Mars implanted in his mind", rating: "R")
+movie80 = Movie.create(title: "Blade Runner", year: 1982, synopsis: "A blade runner 
+must pursue and terminate four replicants who stole a ship in space, and have returned 
+to Earth to find their creator.", rating: "R")
+movie81 = Movie.create(title: "Flash Gordon", year: 1980, synopsis: "A football player 
+and his friends travel to the planet Mongo and find themselves fighting the tyranny of 
+Ming the Merciless to save Earth.", rating: "PG")
+movie82 = Movie.create(title: "Starship Troopers", year: 1997, synopsis: "Humans in a 
+fascist, militaristic future wage war with giant alien bugs.", rating: "R")
+movie83 = Movie.create(title: "Miller's Crossing", year: 1990, synopsis: "An advisor 
+to a Prohibition-era crime boss, tries to keep the peace between warring mobs but 
+gets caught in divided loyalties.", rating: "R")
+movie84 = Movie.create(title: "Reservoir Dogs", year: 1992, synopsis: "When a simple 
+jewelry heist goes horribly wrong, the surviving criminals begin to suspect that one 
+of them is a police informant.", rating: "R")
 
 movie1.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/holy_mountain.jpg'), filename: 'holy_mountain.jpg')
 movie2.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/seven_samurai.jpeg'), filename: 'seven_samurai.jpeg')
@@ -308,6 +333,7 @@ genre3.movies << movie69
 genre3.movies << movie70
 genre3.movies << movie71
 genre3.movies << movie72
+genre3.movies << movie73
 genre3.save
 
 #Drama
@@ -369,6 +395,9 @@ genre5.movies << movie57
 genre5.movies << movie60
 genre5.movies << movie70
 genre5.movies << movie71
+genre5.movies << movie74
+genre5.movies << movie75
+genre5.movies << movie76
 genre5.save
 
 #Sci-Fi
@@ -382,6 +411,14 @@ genre6.movies << movie40
 genre6.movies << movie47
 genre6.movies << movie54
 genre6.movies << movie56
+genre6.movies << movie75
+genre6.movies << movie76
+genre6.movies << movie77
+genre6.movies << movie78
+genre6.movies << movie79
+genre6.movies << movie80
+genre6.movies << movie81
+genre6.movies << movie82
 genre6.save
 
 #Crime
@@ -403,6 +440,9 @@ genre7.movies << movie61
 genre7.movies << movie63
 genre7.movies << movie64
 genre7.movies << movie67
+genre7.movies << movie80
+genre7.movies << movie83
+genre7.movies << movie84
 genre7.save
 
 #Fantasy
@@ -424,6 +464,10 @@ genre8.movies << movie50
 genre8.movies << movie51
 genre8.movies << movie57
 genre8.movies << movie70
+genre8.movies << movie74
+genre8.movies << movie77 
+genre8.movies << movie78
+genre8.movies << movie81
 genre8.save
 
 #Action
@@ -444,4 +488,11 @@ genre9.movies << movie39
 genre9.movies << movie40
 genre9.movies << movie41
 genre9.movies << movie42
+genre9.movies << movie77
+genre9.movies << movie78
+genre9.movies << movie79
+genre9.movies << movie80
+genre9.movies << movie81
+genre9.movies << movie82
+genre9.movies << movie84
 genre9.save
