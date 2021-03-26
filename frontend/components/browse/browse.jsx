@@ -21,7 +21,7 @@ class Browse extends React.Component {
   }
 
   getGenres() {
-    const genres = [this.props.genres[4], this.props.genres[4], this.props.genres[4], this.props.genres[4]]
+    const genres = this.shuffle(this.props.genres);
     if (genres[0] && this.props.movies.length > 0) {
       return (
         <div className="browse-genre-rows">

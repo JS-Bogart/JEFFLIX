@@ -84,6 +84,26 @@
 }
 
 .slider-item-info {
-  align-items: center;
+  flex-direction: column;
+}
+
+.item-title-play {
   justify-content: space-between;
+  align-items: center;
+}
+
+.item-title-play p {
+  margin-left: 0.6rem;
+}
+
+.item-details {
+  justify-content: space-between;
+}
+
+.item-genre li {
+  margin-right: 0.4rem;
+}
+
+.browse-row:last-of-type {
+  padding-bottom: 3rem;
 }
