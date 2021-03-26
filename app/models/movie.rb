@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
 
-  validates :title, :year, :synopsis, presence: true
+  validates :title, :year, :synopsis, :rating, presence: true
 
   has_many :movie_genres
 

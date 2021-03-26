@@ -17,8 +17,8 @@ class Browse extends React.Component {
     if (genres[0] && this.props.movies.length > 0) {
       return (
         <div className="browse-genre-rows">
-          {genres.map(genre => (
-            <div className="browse-row">
+          {genres.map((genre, index) => (
+            <div className="browse-row" key={index}>
               <h2>{genre.genre}</h2>
               <DemoCarousel
                 movies={this.props.movies}

@@ -279,7 +279,7 @@ movie57.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com
 movie58.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/eye_wide_shut.jpeg'), filename: 'eye_wide_shut.jpeg')
 movie59.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/usual_suspects.jpeg'), filename: 'usual_suspects.jpeg')
 movie60.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/shining.jpg'), filename: 'shining.jpg')
-movie61.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/wicker_man.jpeg'), filename: '')
+movie61.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/wicker_man.jpeg'), filename: 'wicker_man.jpeg')
 movie62.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/killing_of_a_sacred_deer.png'), filename: 'killing_of_a_sacred_deer.png')
 movie63.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/uncut_gems.jpeg'), filename: 'uncut_gems.jpeg')
 movie64.poster.attach(io: open('https://jefflix-seeds.s3-us-west-1.amazonaws.com/posters/big_lebowski.jpeg'), filename: 'big_lebowski.jpeg')

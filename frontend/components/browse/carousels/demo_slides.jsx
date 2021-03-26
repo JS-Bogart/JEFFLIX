@@ -7,6 +7,7 @@ class DemoSlides extends React.Component {
       currentSliderItem: props.currentSliderItem
     };
     this.getMovies = this.getMovies.bind(this);
+    this.shuffle = this.shuffle.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -14,6 +15,14 @@ class DemoSlides extends React.Component {
       return { currentSliderItem: nextProps.currentSliderItem };
     }
     else return null;
+  }
+
+  shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+    }
+    return(array)
   }
 
   getMovies() {
@@ -29,14 +38,12 @@ class DemoSlides extends React.Component {
       })
     })
 
-    return(genreMovies.slice(0, 18));
-
+    const shuffledMovies = this.shuffle(genreMovies);
+    return (shuffledMovies.slice(0, 18));
   }
 
   render() {
     const movieList = this.getMovies();
-    console.log(movieList);
-
     const movies = [];
 
     movieList.forEach((movie, index) => {
@@ -46,13 +53,13 @@ class DemoSlides extends React.Component {
           <div className="slider-item-info">
             <div>
               <div className="item-rating">
-                <p>{movie.year}</p>
+                <p>{movie.rating}</p>
               </div>
-              <div className="item-genre">
-                {movie.genres.map(genre => {
-                  <p>{genre}</p>
+              <ul className="item-genre">
+                {movie.genres.map((genre, index) => {
+                  <li key={index}>{genre.genre}</li>
                 })}
-              </div>
+              </ul>
             </div>
             <div className="item-play-btn">
               <p className="play-circle">&#11044;</p>
