@@ -12,6 +12,14 @@ class Browse extends React.Component {
     this.props.requestAllGenres();
   }
 
+  shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return (array)
+  }
+
   getGenres() {
     const genres = [this.props.genres[4], this.props.genres[4], this.props.genres[4], this.props.genres[4]]
     if (genres[0] && this.props.movies.length > 0) {
