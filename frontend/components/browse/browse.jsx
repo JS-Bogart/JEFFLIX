@@ -49,6 +49,14 @@ class Browse extends React.Component {
           >
             <img src={window.browselogo} alt="browselogo" />
           </a>
+          <div className="navbar-links">
+            <a 
+              href="/#/browse"
+              className="home-link"
+            >
+              Home
+            </a>
+          </div>
           <div className="browse-icon">
             <img src={window.profilepic} alt="profilepic" className="profilepic"/>
             <span>&#x25BE;</span>

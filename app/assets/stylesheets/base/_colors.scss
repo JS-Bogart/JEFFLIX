@@ -125,6 +125,14 @@ input:focus{
   background-color: rgb(23, 23, 23);
 }
 
+.navbar-links a {
+  color: white;
+}
+
+.navbar-links a:hover {
+  color: rgb(189, 189, 189);
+}
+
 .logout-dropdown > div {
   background-color: rgba(0,0,0,0.9);
   border: 1px solid grey;

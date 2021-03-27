@@ -137,6 +137,11 @@ a {
 }
 
 // Browse page
+
+.navbar-links {
+  text-decoration: none;
+}
+
 .logout-link {
   text-decoration: none;
 }
@@ -177,7 +182,6 @@ a {
 
 .item-play-btn .play-circle {
   font-size: 27px;
-  // font-size: 40px;
 }
 
 .item-play-btn .play-arrow {
@@ -191,20 +195,3 @@ a {
 .item-genre {
   font-size: 11px;
 }
-
-// .item-play-btn .play-circle {
-//   font-size: 20px;
-// }
-
-// .item-play-btn .play-arrow {
-//   font-size: 9px;
-//   color: red;
-// }
-
-// .item-rating {
-//   font-size: 5.5px;
-// }
-
-// .item-genre {
-//   font-size: 5.5px;
-// }
