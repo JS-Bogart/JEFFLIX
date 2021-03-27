@@ -6,6 +6,12 @@ class User < ApplicationRecord
   validates :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :my_lists
+
+  has_many :movies,
+    through: :my_lists,
+    source: :movie
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
