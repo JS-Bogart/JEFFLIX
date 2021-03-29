@@ -3,8 +3,7 @@ import MyList from './my_list';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser,
-    movies: Object.values(state.movies)
+    currentUser: state.session.currentUser
   }
 }
 

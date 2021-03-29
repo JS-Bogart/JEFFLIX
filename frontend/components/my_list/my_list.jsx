@@ -5,9 +5,9 @@ class MyList extends React.Component {
     super(props)
   }
 
-  getMovies() {
-    
-  }
+  // getMovies() {
+
+  // }
 
   render() {
     return null
