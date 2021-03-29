@@ -1,8 +1,8 @@
 class Api::MoviesController < ApplicationController
 
   def index
-    if :user_id
-      @movies = Movie.where(user_id: params[:user_id])
+    if params[:user_id]
+      @movies = Movie.joins(my_lists: :user).where(users: {id: :user_id})
     else
       @movies = Movie.all
     end
