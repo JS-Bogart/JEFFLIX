@@ -16,3 +16,12 @@ export const remove = id => {
     })
   )
 }
+
+export const getMyList = userId => {
+  return(
+    $.ajax({
+      method: 'GET',
+      url: `/api/users/${userId}/movies`
+    })
+  )
+}

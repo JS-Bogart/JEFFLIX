@@ -1,13 +1,9 @@
 class Api::MyListsController < ApplicationController
 
-  def index
-    @my_list = MyList.where(user_id: params[:user_id])
-    render "api/my_lists/show"
-  end
-
   def create
     @my_list = MyList.new(my_list_params)
     if @my_list.save
+      render "api/users/show"
     else
       render json: @my_list.errors.full_messages, status: 401
     end

@@ -3,6 +3,13 @@ class Api::UsersController < ApplicationController
   # before_action :redirect_if_logged_in
   skip_before_action :verify_authenticity_token
 
+  def show
+    @user = User.find_by(id: params[:id])
+    if @user
+      render "api/users/show"
+    end
+  end
+
   def create
     @user = User.new(user_params)
 

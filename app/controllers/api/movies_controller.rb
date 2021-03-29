@@ -1,7 +1,11 @@
 class Api::MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
+    if :user_id
+      @movies = Movie.where(user_id: params[:user_id])
+    else
+      @movies = Movie.all
+    end
     render "api/movies/index"
   end
 
