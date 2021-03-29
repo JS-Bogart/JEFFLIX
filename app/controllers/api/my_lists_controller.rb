@@ -2,11 +2,7 @@ class Api::MyListsController < ApplicationController
 
   def create
     @my_list = MyList.new(my_list_params)
-    if @my_list.save
-      render "api/users/show"
-    else
-      render json: @my_list.errors.full_messages, status: 401
-    end
+    @my_list.save!
   end
 
   def delete

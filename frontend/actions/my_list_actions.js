@@ -30,5 +30,5 @@ export const addMovie = movie => dispatch => (
 
 export const deleteMovie = id => dispatch => (
   APIUtil.deleteMovieFromList(id)
-    .then(() => dispatch(deleteMovieFromList()))
+    .then(id => dispatch(deleteMovieFromList(id)))
 );
