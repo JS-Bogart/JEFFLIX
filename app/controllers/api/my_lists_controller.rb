@@ -1,5 +1,10 @@
 class Api::MyListsController < ApplicationController
 
+  def index
+    @my_list = MyList.where(user_id: params[:user_id])
+    render "api/my_lists/show"
+  end
+
   def create
     @my_list = MyList.new(my_list_params)
     if @my_list.save
