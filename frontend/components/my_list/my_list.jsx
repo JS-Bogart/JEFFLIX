@@ -5,6 +5,10 @@ class MyList extends React.Component {
     super(props)
   }
 
+  getMovies() {
+    
+  }
+
   render() {
     return null
   }

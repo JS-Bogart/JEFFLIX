@@ -6,6 +6,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import SplashContainer from './splash/splash_container';
 import BrowseContainer from './browse/browse_container';
+import MyListContainer from './my_list/my_list_container';
 
 const App = () => (
   <div className="app">
@@ -14,6 +15,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
+      <ProtectedRoute path="/browse/my-list" component={MyListContainer} />
       <Redirect to="/" />
     </Switch>
   </div>
