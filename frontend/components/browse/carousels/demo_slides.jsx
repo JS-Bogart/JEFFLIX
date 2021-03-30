@@ -62,7 +62,7 @@ class DemoSlides extends React.Component {
             <div className="item-buttons">
               <p
                 className="my-list-btn"
-                onClick={() => this.removeFromList(movieId)}
+                onClick={() => this.removeFromList(movie, index)}
               >⊖</p>
               <div className="item-play-btn">
                 <p className="play-circle">&#11044;</p>

@@ -15,7 +15,7 @@ class MyList extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if (prevProps.myList.length < 1) {
+    if (prevProps.myList !== this.props.myList && this.state.movies.length < 1) {
       this.getMovies();
     }
   }
