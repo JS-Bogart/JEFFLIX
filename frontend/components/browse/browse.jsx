@@ -5,12 +5,22 @@ import Billboard from './billboard';
 class Browse extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      genresLoaded: false,
+      genres: []
+    };
   }
 
   componentDidMount(){
     this.props.requestAllMovies();
     this.props.requestAllGenres();
     this.props.getMyList(this.props.currentUser.id);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.genres !== this.props.genres) {
+      this.loadGenres();
+    }
   }
 
   shuffle(array) {
@@ -21,9 +31,16 @@ class Browse extends React.Component {
     return (array)
   }
 
+  loadGenres() {
+    if (!this.state.genresLoaded) {
+      const genres = this.shuffle(this.props.genres);
+      this.setState({ genresLoaded: true, genres: genres });
+    }
+  }
+
   getGenres() {
-    const genres = this.shuffle(this.props.genres);
-    if (genres[0] && this.props.movies.length > 0) {
+    const genres = this.state.genres;
+    if (this.state.genresLoaded && this.props.movies.length > 0) {
       return (
         <div className="browse-genre-rows">
           {genres.map((genre, index) => (
