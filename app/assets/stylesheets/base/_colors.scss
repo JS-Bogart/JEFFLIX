@@ -1,3 +1,7 @@
+html {
+  background-color: rgb(23, 23, 23);
+}
+
 input:focus{
     outline: none;
 }
@@ -43,6 +47,10 @@ input:focus{
 }
 
 // Signup
+.signup {
+  background-color: white;
+}
+
 .signup > header {
   border-bottom: 1px solid lightgray;
 }
