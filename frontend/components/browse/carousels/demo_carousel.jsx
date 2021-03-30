@@ -49,6 +49,8 @@ class DemoCarousel extends React.Component{
           genre={this.props.genre}
           addMovie={this.props.addMovie}
           userId={this.props.userId}
+          myList={this.props.myList}
+          deleteMovie={this.props.deleteMovie}
         />
 
         <Arrow

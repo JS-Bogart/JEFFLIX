@@ -10,6 +10,7 @@ class Browse extends React.Component {
   componentDidMount(){
     this.props.requestAllMovies();
     this.props.requestAllGenres();
+    this.props.getMyList(this.props.currentUser.id);
   }
 
   shuffle(array) {
@@ -33,6 +34,8 @@ class Browse extends React.Component {
                 genre={genre}
                 addMovie={this.props.addMovie}
                 userId={this.props.currentUser.id}
+                myList={this.props.myList}
+                deleteMovie={this.props.deleteMovie}
               />
             </div>
           ))}

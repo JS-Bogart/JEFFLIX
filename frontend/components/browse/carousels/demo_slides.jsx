@@ -8,6 +8,8 @@ class DemoSlides extends React.Component {
     };
     this.getMovies = this.getMovies.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
+    this.listButton = this.listButton.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -46,6 +48,39 @@ class DemoSlides extends React.Component {
     this.props.addMovie({ my_list: {user_id: this.props.userId, movie_id: movieId} })
   }
 
+  removeFromList(movieId){
+    debugger
+    const userId = this.props.userId;
+    const movieListId = { user_id: userId, movie_id: movieId }
+    this.props.deleteMovie(movieListId);
+  }
+
+  listButton(movie) {
+    const myList = this.props.myList;
+    const movieId =  movie.id;
+    let check = false;
+    myList.forEach(movie => {
+      if (movie.id === movieId) {
+        check = true;
+      }
+    })
+    if (check) {
+      return(
+        <p 
+          className="my-list-btn" 
+          onClick={() => this.removeFromList(movieId)}
+        >⊖</p>
+      )
+    } else {
+      return(
+        <p 
+          className="my-list-btn" 
+          onClick={() => this.addToList(movieId)}
+        >⊕</p>
+      )
+    }
+  }
+
   render() {
     const movieList = this.getMovies();
     const movies = [];
@@ -58,7 +93,8 @@ class DemoSlides extends React.Component {
             <div className="item-title-play">
               <p>{movie.title}</p>
               <div className="item-buttons">
-                <p className="my-list-btn" onClick={() => this.addToList(movie.id)}>⊕</p>
+                {/* <p className="my-list-btn" onClick={() => this.addToList(movie.id)}>⊕</p> */}
+                {this.listButton(movie)}
                 <div className="item-play-btn">
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
