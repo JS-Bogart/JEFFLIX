@@ -14,8 +14,9 @@ const addMovieToList = movie => ({
   movie
 });
 
-const deleteMovieFromList = () => ({
-  type: REMOVE_LIST_ITEM
+const deleteMovieFromList = (movie) => ({
+  type: REMOVE_LIST_ITEM,
+  movie
 });
 
 export const getMyList = userId => dispatch => (
@@ -28,7 +29,7 @@ export const addMovie = movie => dispatch => (
     .then(movie => (dispatch(addMovieToList(movie))))
 );
 
-export const deleteMovie = id => dispatch => (
-  APIUtil.remove(id)
-    .then(id => dispatch(deleteMovieFromList(id)))
+export const deleteMovie = movie => dispatch => (
+  APIUtil.remove(movie)
+    .then(movie => dispatch(deleteMovieFromList(movie)))
 );

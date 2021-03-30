@@ -20,8 +20,10 @@ class MyList extends React.Component {
   getMovies() {
     const movieList = this.shuffle(this.props.myList);
     const movies = [];
+    const userId = this.props.currentUser.id;
 
     movieList.forEach((movie, index) => {
+      const movieListId = {user_id: userId, movie_id: movie.id}
       movies.push(
         <div className="my-list-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
@@ -29,7 +31,9 @@ class MyList extends React.Component {
             <div className="item-title-play">
               <p>{movie.title}</p>
               <div className="item-buttons">
-                <p className="my-list-btn" onClick={() => this.addToList(movie.id)}>⊕</p>
+                <p className="my-list-btn" onClick={
+                  () => this.props.deleteMovie(movieListId)
+                }>⊖</p>
                 <div className="item-play-btn">
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>

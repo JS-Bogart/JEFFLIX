@@ -8,11 +8,12 @@ export const add = myList => {
   )
 }
 
-export const remove = id => {
+export const remove = movie => {
   return(
     $.ajax({
       method: 'DELETE',
-      url: `/api/my_lists/${id}`
+      url: `/api/my_lists/${movie.movie_id}`,
+      data: movie
     })
   )
 }

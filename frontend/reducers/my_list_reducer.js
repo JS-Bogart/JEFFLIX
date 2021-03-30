@@ -7,7 +7,7 @@ const myListReducer = (state = {}, action) => {
     case GET_USER_LIST:
       return Object.assign({}, action.movies, state)
     case REMOVE_LIST_ITEM:
-      delete nextState[action.id];
+      delete nextState[action.movie.movie_id];
       return nextState;
     default:
       return state;
