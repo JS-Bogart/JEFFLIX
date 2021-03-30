@@ -284,10 +284,14 @@ footer {
   left: 6rem;
 }
 
+.navbar-links a {
+  margin-right: 1.5rem;
+}
+
 .browse-icon {
-  position: relative;
+  position: absolute;
   top: 1rem;
-  left: 86%;
+  right: 5rem;
 }
 
 .browse-icon > span {
