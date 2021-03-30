@@ -58,6 +58,12 @@ class Browse extends React.Component {
             >
               Home
             </a>
+            <a
+              href="/#/browse/my-list"
+              className="home-link"
+            >
+              My List
+            </a>
           </div>
           <div className="browse-icon">
             <img src={window.profilepic} alt="profilepic" className="profilepic"/>
