@@ -152,3 +152,36 @@
 .item-genre {
   display: flex;
 }
+
+// My List
+
+.my-list {
+  display: flex;
+}
+
+.my-list > header {
+  display: flex;
+}
+
+.my-list-body {
+  display: flex;
+  border: 2px solid red;
+}
+
+.my-list-list {
+  display: flex;
+}
+
+.my-list-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.my-list-item .my-list-item-info {
+  display: flex;
+  visibility: hidden;
+}
+
+.my-list-item:hover .my-list-item-info {
+  visibility: visible;
+}

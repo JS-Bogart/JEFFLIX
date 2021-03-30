@@ -23,14 +23,10 @@ export const getMyList = userId => dispatch => (
     .then(movies => dispatch(receiveUserList(movies)))
 )
 
-export const addMovie = movie => dispatch => {
-  const film = movie;
-  console.log(film);
-  debugger
-  return(
-    APIUtil.add(movie)
-      .then(movie => (dispatch(addMovieToList(movie))))
-)}
+export const addMovie = movie => dispatch => (
+  APIUtil.add(movie)
+    .then(movie => (dispatch(addMovieToList(movie))))
+);
 
 export const deleteMovie = id => dispatch => (
   APIUtil.remove(id)

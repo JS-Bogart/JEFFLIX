@@ -99,3 +99,26 @@
 .item-details {
   justify-content: space-between;
 }
+
+// My List
+
+.my-list {
+  flex-direction: column;
+}
+
+.my-list-body {
+  flex-direction: column;
+}
+
+.my-list-list {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.my-list-item {
+  flex-direction: column;
+}
+
+.my-list-item-info {
+  flex-direction: column;
+}
