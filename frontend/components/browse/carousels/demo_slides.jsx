@@ -7,6 +7,7 @@ class DemoSlides extends React.Component {
       currentSliderItem: props.currentSliderItem
     };
     this.getMovies = this.getMovies.bind(this);
+    this.addToList = this.addToList.bind(this);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -41,6 +42,10 @@ class DemoSlides extends React.Component {
     return (shuffledMovies.slice(0, 18));
   }
 
+  addToList(movieId) {
+    this.props.addMovie({ my_list: {user_id: this.props.userId, movie_id: movieId} })
+  }
+
   render() {
     const movieList = this.getMovies();
     const movies = [];
@@ -52,9 +57,12 @@ class DemoSlides extends React.Component {
           <div className="slider-item-info">
             <div className="item-title-play">
               <p>{movie.title}</p>
-              <div className="item-play-btn">
-                <p className="play-circle">&#11044;</p>
-                <p className="play-arrow">▶</p>
+              <div className="item-buttons">
+                <p className="my-list-btn" onClick={() => this.addToList(movie.id)}>⊕</p>
+                <div className="item-play-btn">
+                  <p className="play-circle">&#11044;</p>
+                  <p className="play-arrow">▶</p>
+                </div>
               </div>
             </div>
             <div className="item-details">

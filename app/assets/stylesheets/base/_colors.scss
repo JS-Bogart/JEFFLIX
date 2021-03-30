@@ -199,6 +199,14 @@ input:focus{
   background-color: rgb(23, 23, 23);
 }
 
+.item-play-btn:hover .play-circle {
+  color: rgb(214, 214, 214);
+}
+
+.my-list-btn:hover {
+  color: rgb(214, 214, 214);
+}
+
 .item-play-btn .play-arrow {
   color: rgb(23, 23, 23);
 }

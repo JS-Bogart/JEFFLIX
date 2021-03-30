@@ -15,7 +15,7 @@ Genre.destroy_all
 User.create(email: "demo@demo.com", password: "123456")
 
 
-movie1 = Movie.create(title: "The Holy Mountain", year: 1973, synopsis: "An alchemist bring together a group to displace 
+movie1 = Movie.create(title: "The Holy Mountain", year: 1973, synopsis: "An alchemist brings together a group to displace 
 the gods who rule the universe.", rating: "R")
 movie2 = Movie.create(title: "Seven Samurai", year: 1954, synopsis: "Seven warriors defend a village from invading bandits.", rating: "NR")
 movie3 = Movie.create(title: "Amarcord", year: 1973, synopsis: "A coming of age story set under the shadow of fascist Italy.", rating: "R")

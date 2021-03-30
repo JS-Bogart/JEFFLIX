@@ -1,9 +1,9 @@
-export const add = movie => {
+export const add = myList => {
   return(
     $.ajax({
       method: 'POST',
       url: '/api/my_lists',
-      data: { movie }
+      data: myList
     })
   )
 }

@@ -1,5 +1,7 @@
 class Api::MyListsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def create
     @my_list = MyList.new(my_list_params)
     @my_list.save!

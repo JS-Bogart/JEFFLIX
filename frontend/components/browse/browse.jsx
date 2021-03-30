@@ -31,6 +31,8 @@ class Browse extends React.Component {
               <DemoCarousel
                 movies={this.props.movies}
                 genre={genre}
+                addMovie={this.props.addMovie}
+                userId={this.props.currentUser.id}
               />
             </div>
           ))}

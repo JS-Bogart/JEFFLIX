@@ -3,6 +3,7 @@ import Browse from './browse';
 import { logout } from '../../actions/session_actions';
 import { requestAllMovies, requestMovie } from '../../actions/movie_actions';
 import { requestAllGenres } from '../../actions/genre_actions';
+import { addMovie, deleteMovie } from '../../actions/my_list_actions';
 
 const mapStateToProps = state => {
   return {
@@ -17,7 +18,9 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     requestAllMovies: () => dispatch(requestAllMovies()),
     requestMovie: (movieId) => dispatch(requestMovie(movieId)),
-    requestAllGenres: () => dispatch(requestAllGenres())
+    requestAllGenres: () => dispatch(requestAllGenres()),
+    addMovie: (movie) => dispatch(addMovie(movie)),
+    deleteMovie: (movieId) => dispatch(deleteMovie(movieId))
   }
 }
 
