@@ -3,10 +3,21 @@ import React from 'react';
 class MyList extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      movies: []
+    };
+
+    this.removeFromList = this.removeFromList.bind(this);
   }
 
   componentDidMount(){
     this.props.getMyList(this.props.currentUser.id);
+  }
+
+  componentDidUpdate(prevProps){
+    if (prevProps.myList.length < 1) {
+      this.getMovies();
+    }
   }
 
   shuffle(array) {
@@ -20,10 +31,8 @@ class MyList extends React.Component {
   getMovies() {
     const movieList = this.shuffle(this.props.myList);
     const movies = [];
-    const userId = this.props.currentUser.id;
 
     movieList.forEach((movie, index) => {
-      const movieListId = {user_id: userId, movie_id: movie.id}
       movies.push(
         <div className="my-list-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
@@ -32,7 +41,7 @@ class MyList extends React.Component {
               <p>{movie.title}</p>
               <div className="item-buttons">
                 <p className="my-list-btn" onClick={
-                  () => this.props.deleteMovie(movieListId)
+                  () => this.removeFromList(movie, index)
                 }>⊖</p>
                 <div className="item-play-btn">
                   <p className="play-circle">&#11044;</p>
@@ -55,7 +64,16 @@ class MyList extends React.Component {
       )
     })
     
-    return(movies);
+    this.setState({ movies: movies })
+  }
+
+  removeFromList(movie, index) {
+    const userId = this.props.currentUser.id;
+    const movieListId = { user_id: userId, movie_id: movie.id }
+    this.props.deleteMovie(movieListId);
+    let movies = this.state.movies;
+    movies.splice(index, 1);
+    this.setState({ movies: movies })
   }
 
   render() {
@@ -101,7 +119,7 @@ class MyList extends React.Component {
         </header>
         <div className="my-list-body">
           <div className="my-list-list">
-            {this.getMovies()}
+            {this.state.movies}
           </div>
         </div>
       </div>
