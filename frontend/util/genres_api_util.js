@@ -11,3 +11,12 @@ export const fetchGenre = (id) => {
     url: `/api/genres/${id}`
   })
 };
+
+export const fetchGenreMovies = genreId => {
+  return(
+    $.ajax({
+      method: 'GET',
+      url: `/api/users/${genreId}/movies`
+    })
+  )
+}
