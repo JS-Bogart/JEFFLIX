@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Browse from './browse';
 import { logout } from '../../actions/session_actions';
-import { requestAllMovies, requestMovie } from '../../actions/movie_actions';
+import { requestAllMovies } from '../../actions/movie_actions';
 import { requestAllGenres } from '../../actions/genre_actions';
 import { getMyList, addMovie, deleteMovie } from '../../actions/my_list_actions';
 

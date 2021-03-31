@@ -16,7 +16,7 @@ export const fetchGenreMovies = genreId => {
   return(
     $.ajax({
       method: 'GET',
-      url: `/api/users/${genreId}/movies`
+      url: `/api/genres/${genreId}/movies`
     })
   )
 }
