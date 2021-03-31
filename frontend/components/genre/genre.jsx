@@ -13,7 +13,7 @@ class Genre extends React.Component {
     const { id } = this.props.match.params;
     const genreId = parseInt(id);
     this.setState({ genreId: genreId})
-    this.props.getMyList(this.props.currentUser.id);
+    this.props.getMyList(this.props.userId);
     this.props.requestGenreMovies(genreId);
   }
 
