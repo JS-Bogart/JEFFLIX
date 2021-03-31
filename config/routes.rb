@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :users do
       resources :movies, only: [:index]
     end
+    resources :genres do
+      resources :movies, only: [:index]
+    end
   end
   
 end
