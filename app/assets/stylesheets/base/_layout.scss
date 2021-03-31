@@ -497,11 +497,23 @@ footer {
 }
 
 .my-list-body {
-  top: 7rem;
+  top: 5rem;
   position: relative;
   z-index: 3;
   height: 100%;
-  padding: 69px;
+}
+
+.my-list-body > h1 {
+  margin-left: 4rem;
+}
+
+.my-list-body > p {
+  margin-top: 12rem;
+}
+
+.my-list-list {
+  margin-top: 5rem;
+  padding-bottom: 69px;
 }
 
 .my-list-item {

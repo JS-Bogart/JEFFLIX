@@ -76,6 +76,20 @@ class MyList extends React.Component {
     this.setState({ movies: movies })
   }
 
+  getList() {
+    if (this.state.movies.length > 0) {
+      return(
+        <div className="my-list-list">
+          {this.state.movies}
+        </div>
+      )
+    } else {
+      return(
+        <p>You haven't added any titles to your list yet.</p>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="my-list">
@@ -118,9 +132,8 @@ class MyList extends React.Component {
           </div>
         </header>
         <div className="my-list-body">
-          <div className="my-list-list">
-            {this.state.movies}
-          </div>
+          <h1>My List</h1>
+          {this.getList()}
         </div>
       </div>
     );
