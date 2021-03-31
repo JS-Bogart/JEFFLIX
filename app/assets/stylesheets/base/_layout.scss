@@ -537,3 +537,58 @@ footer {
   transition-delay: 500ms;
   position: relative;
 }
+
+// Genre Page
+
+.genre-page {
+  height: 100%;
+}
+
+.genre-page > header {
+  position: fixed;
+  width: 100%;
+  height: 69px;
+  z-index: 5;
+}
+
+.genre-body {
+  top: 7rem;
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 69px;
+}
+
+.genre-item {
+  height: 250px;
+  width: 295px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  transition: 500ms all;
+  transition-delay: 0ms;
+  
+  &:hover {
+      position: relative;
+      transform: scale(1.6) translateY(-25px);
+      transition-delay: 500ms;
+      box-shadow: 0px 0px 10px 1px black;
+      z-index: 3;
+    }
+}
+
+.genre-item > img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.genre-item-info {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.genre-item:hover .genre-item-info {
+  transform: scale(1);
+  transition-delay: 500ms;
+  position: relative;
+}

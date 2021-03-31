@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router-dom';
 
 class Genre extends React.Component {
   constructor(props){
@@ -62,9 +61,9 @@ class Genre extends React.Component {
     this.props.addMovie({ my_list: { user_id: this.props.userId, movie_id: movie.id } })
     let movies = this.state.movies;
     movies[index] =
-      <div className="slider-item" key={index}>
+      <div className="genre-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
-        <div className="slider-item-info">
+        <div className="genre-item-info">
           <div className="item-title-play">
             <p>{movie.title}</p>
             <div className="item-buttons">
@@ -99,9 +98,9 @@ class Genre extends React.Component {
     this.props.deleteMovie(movieListId);
     let movies = this.state.movies;
     movies[index] =
-      <div className="slider-item" key={index}>
+      <div className="genre-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
-        <div className="slider-item-info">
+        <div className="genre-item-info">
           <div className="item-title-play">
             <p>{movie.title}</p>
             <div className="item-buttons">
@@ -136,9 +135,9 @@ class Genre extends React.Component {
 
     movieList.forEach((movie, index) => {
       movies.push(
-        <div className="my-list-item" key={index}>
+        <div className="genre-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
-          <div className="my-list-item-info">
+          <div className="genre-item-info">
             <div className="item-title-play">
               <p>{movie.title}</p>
               <div className="item-buttons">
@@ -169,7 +168,7 @@ class Genre extends React.Component {
 
   render(){
     return (
-      <div className="my-list">
+      <div className="genre-page">
         <header>
           <a
             href="/#/browse"

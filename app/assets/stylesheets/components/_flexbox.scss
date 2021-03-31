@@ -122,3 +122,26 @@
 .my-list-item-info {
   flex-direction: column;
 }
+
+// Genre Page
+
+.genre-page {
+  flex-direction: column;
+}
+
+.genre-body {
+  flex-direction: column;
+}
+
+.genre-list {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genre-item {
+  flex-direction: column;
+}
+
+.genre-item-info {
+  flex-direction: column;
+}

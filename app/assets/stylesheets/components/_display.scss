@@ -184,3 +184,34 @@
 .my-list-item:hover .my-list-item-info {
   visibility: visible;
 }
+
+// Genre Page
+.genre-page {
+  display: flex;
+}
+
+.genre-page > header {
+  display: flex;
+}
+
+.genre-body {
+  display: flex;
+}
+
+.genre-list {
+  display: flex;
+}
+
+.genre-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.genre-item .genre-item-info {
+  display: flex;
+  visibility: hidden;
+}
+
+.genre-item:hover .genre-item-info {
+  visibility: visible;
+}
