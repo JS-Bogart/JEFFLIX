@@ -72,10 +72,6 @@
   align-items: flex-start;
 }
 
-.genre-menu-title {
-  align-items: center;
-}
-
 .browse-genre-list {
   flex-direction: column;
   flex-wrap: wrap;
@@ -144,6 +140,14 @@
 
 .genre-body {
   flex-direction: column;
+}
+
+.genre-menu-title {
+  align-items: center;
+}
+
+.genre-title-box {
+  align-items: center;
 }
 
 .genre-list {

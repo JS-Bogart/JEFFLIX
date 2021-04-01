@@ -7,7 +7,7 @@ import LoginContainer from './session/login_container';
 import SplashContainer from './splash/splash_container';
 import BrowseContainer from './browse/browse_container';
 import MyListContainer from './my_list/my_list_container';
-import GenreContainer from './genre/genre_container';
+import GenreContainer from './genre_page/genre_container';
 
 const App = () => (
   <div className="app">

@@ -13,8 +13,12 @@ class Browse extends React.Component {
   }
 
   componentDidMount(){
-    this.props.requestAllMovies();
-    this.props.requestAllGenres();
+    if (this.props.movies.length < 1) {
+      this.props.requestAllMovies();
+    }
+    if (this.props.genres.length < 1) {
+      this.props.requestAllGenres();
+    }
     this.props.getMyList(this.props.currentUser.id);
   }
 
@@ -35,7 +39,10 @@ class Browse extends React.Component {
   loadGenres() {
     if (!this.state.genresLoaded) {
       const genres = this.shuffle(this.props.genres);
-      this.setState({ genresLoaded: true, genres: genres });
+      this.setState({ 
+        genresLoaded: true, 
+        genres: genres});
+        debugger
     }
   }
 
@@ -68,7 +75,7 @@ class Browse extends React.Component {
       return(
         <ul className="browse-genre-list">
           {genres.map((genre, index) => (
-            <a href={`/#/browse/genre/${genre.id}`} key={index}>
+            <a href={`/#/browse/genre/${genre.genre}+${genre.id}`} key={index}>
               {genre.genre}
             </a>
           ))}

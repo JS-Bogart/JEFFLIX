@@ -12,22 +12,22 @@ class Genre extends React.Component {
 
   componentDidMount(){
     const { id } = this.props.match.params;
-    const genreId = parseInt(id);
+    const paramsArray = id.split("+");
+    const genreId = parseInt(paramsArray[1]);
+    const genre = paramsArray[0];
     this.setState({ 
       genreId: genreId,
-      genre: this.props.genres[genreId].genre
+      genre: genre
     });
-    this.props.getMyList(this.props.userId);
     this.props.requestGenreMovies(genreId);
-    debugger
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.genreMovies !== this.props.genreMovies && this.state.movies.length < 1) {
+    if (prevProps.genreMovies !== this.props.genreMovies 
+      && this.state.movies.length < 1){
       this.getMovies();
-    } else if (prevProps.genreId !== this.props.genreId) {
-      this.getMovies();
-    }
+      this.props.getMyList(this.props.userId);
+    } 
   }
 
   shuffle(array) {
@@ -216,8 +216,9 @@ class Genre extends React.Component {
         </header>
         <div className="genre-body">
           <div className="genre-title-box">
-            <p>{"Movies >"}</p>
-            <p className="genre-title">{this.state.genre}</p>
+            <p>Movies</p>
+            <p>{">"}</p>
+            <h1 className="genre-title">{this.state.genre}</h1>
           </div>
           <div className="genre-list">
             {this.state.movies}
