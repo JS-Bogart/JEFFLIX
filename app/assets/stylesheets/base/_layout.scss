@@ -330,6 +330,38 @@ footer {
   z-index: 1;
 }
 
+.browse-title {
+  position: relative;
+  z-index: 4;
+  top: 5rem;
+  left: 4rem;
+  border: 2px solid blue;
+}
+
+.genre-menu {
+  margin-left: 3rem;
+  cursor: pointer;
+}
+
+.genre-menu-title {
+  width: 7rem;
+  padding: 0.5rem;
+}
+
+.genre-menu-title p:first-of-type {
+  margin-right: 2rem;
+}
+
+.browse-genre-list {
+  padding: 0.5rem;
+  height: 7.5rem;
+  width: 9.4rem;
+}
+
+.browse-genre-list a:hover {
+  text-decoration: underline;
+}
+
 .billboard > video {
   position: relative;
   top: -10.7rem;

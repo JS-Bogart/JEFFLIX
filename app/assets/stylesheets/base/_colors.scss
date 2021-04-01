@@ -158,13 +158,27 @@ input:focus{
   color: white;
 }
 
+.browse {
+  background-color: rgb(23, 23, 23);
+}
+
 .browse-body {
   background-color: rgb(23, 23, 23);
   color: white;
 }
 
-.browse {
-  background-color: rgb(23, 23, 23);
+.genre-menu-title {
+  background-color: black;
+  border: 1px solid white;
+}
+
+.genre-dropdown {
+  background-color: rgba(0,0,0,0.8);
+  border: 2px solid red;
+}
+
+.genre-dropdown a {
+  color: white;
 }
 
 #bb-rating {

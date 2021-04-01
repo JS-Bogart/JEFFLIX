@@ -68,6 +68,19 @@
   align-items: center;
 }
 
+.browse-title {
+  align-items: center;
+}
+
+.genre-menu-title {
+  align-items: center;
+}
+
+.browse-genre-list {
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .browse-genre-rows {
   flex-direction: column;
 }

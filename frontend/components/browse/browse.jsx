@@ -9,6 +9,7 @@ class Browse extends React.Component {
       genresLoaded: false,
       genres: []
     };
+    this.getGenreList = this.getGenreList.bind(this);
   }
 
   componentDidMount(){
@@ -61,6 +62,21 @@ class Browse extends React.Component {
     }
   }
 
+  getGenreList(){
+    const genres = this.state.genres;
+    if (this.state.genres.length) {
+      return(
+        <ul className="browse-genre-list">
+          {genres.map((genre, index) => (
+            <a href={`/#/browse/genre/${genre.id}`} key={index}>
+              {genre.genre}
+            </a>
+          ))}
+        </ul>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="browse">
@@ -103,6 +119,18 @@ class Browse extends React.Component {
           </div>
         </header>
         <div className="browse-body">
+          <div className="browse-title">
+            <h1>Movies</h1>
+            <div className="genre-menu">
+              <div className="genre-menu-title">
+                <p>Genres</p>
+                <p>&#x25BE;</p>
+              </div>
+              <div className="genre-dropdown">
+                {this.getGenreList()}
+              </div>
+            </div>
+          </div>
           <Billboard/>
           {this.getGenres()}
           <footer></footer>
