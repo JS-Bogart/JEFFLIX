@@ -5,7 +5,6 @@ const genreMoviesReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_GENRE_MOVIES:
-      // return Object.assign({}, action.movies, state)
       nextState = action.movies;
       return nextState;
     default:
