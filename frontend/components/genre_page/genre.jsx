@@ -20,6 +20,8 @@ class Genre extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.genreMovies !== this.props.genreMovies && this.state.movies.length < 1) {
       this.getMovies();
+    } else if (prevProps.genreId !== this.props.genreId) {
+      this.getMovies();
     }
   }
 
