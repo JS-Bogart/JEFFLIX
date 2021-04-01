@@ -42,7 +42,6 @@ class Browse extends React.Component {
       this.setState({ 
         genresLoaded: true, 
         genres: genres});
-        debugger
     }
   }
 
