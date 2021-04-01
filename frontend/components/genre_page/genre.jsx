@@ -5,6 +5,7 @@ class Genre extends React.Component {
     super(props)
     this.state = {
       genreId: null,
+      genre: null,
       movies: []
     };
   }
@@ -12,9 +13,13 @@ class Genre extends React.Component {
   componentDidMount(){
     const { id } = this.props.match.params;
     const genreId = parseInt(id);
-    this.setState({ genreId: genreId})
+    this.setState({ 
+      genreId: genreId,
+      genre: this.props.genres[genreId].genre
+    });
     this.props.getMyList(this.props.userId);
     this.props.requestGenreMovies(genreId);
+    debugger
   }
 
   componentDidUpdate(prevProps) {
@@ -210,6 +215,10 @@ class Genre extends React.Component {
           </div>
         </header>
         <div className="genre-body">
+          <div className="genre-title-box">
+            <p>{"Movies >"}</p>
+            <p className="genre-title">{this.state.genre}</p>
+          </div>
           <div className="genre-list">
             {this.state.movies}
           </div>
