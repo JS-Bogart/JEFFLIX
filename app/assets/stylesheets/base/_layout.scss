@@ -335,21 +335,27 @@ footer {
   z-index: 4;
   top: 5rem;
   left: 4rem;
-  border: 2px solid blue;
 }
 
 .genre-menu {
+  position: relative;
   margin-left: 3rem;
-  cursor: pointer;
+  width: 7rem;
 }
 
 .genre-menu-title {
   width: 7rem;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .genre-menu-title p:first-of-type {
   margin-right: 2rem;
+}
+
+.genre-dropdown {
+  position: absolute;
+  cursor: pointer;
 }
 
 .browse-genre-list {
@@ -364,7 +370,7 @@ footer {
 
 .billboard > video {
   position: relative;
-  top: -10.7rem;
+  top: -13.2rem;
   width: 100%;
   height: auto;
   z-index: 2;
@@ -372,7 +378,7 @@ footer {
 
 .billboard > img {
   position: relative;
-  top: 27rem;
+  top: 24.5rem;
   left: 3rem;
   z-index: 3;
 }
@@ -380,14 +386,14 @@ footer {
 .billboard > p {
   position: relative;
   width: 600px;
-  top: -40rem;
+  top: -42.5rem;
   left: 3.5rem;
   z-index: 3;
 }
 
 #bb-rating {
   position: relative;
-  top: -43rem;
+  top: -45.5rem;
   left: 110rem;
   padding-left: 15px;
   padding-top: 5px;
@@ -396,14 +402,14 @@ footer {
 
 .billboard-mute-btn {
   position: relative;
-  top: -39.5rem;
+  top: -42rem;
   left: 106rem;
   z-index: 3;
   width: 0;
 }
 
 .browse-genre-rows {
-  top: -38rem;
+  top: -40.5rem;
   position: relative;
   z-index: 3;
   height: 75%;

@@ -167,6 +167,10 @@ input:focus{
   color: white;
 }
 
+.genre-menu:hover .genre-menu-title {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .genre-menu-title {
   background-color: black;
   border: 1px solid white;
@@ -174,7 +178,6 @@ input:focus{
 
 .genre-dropdown {
   background-color: rgba(0,0,0,0.8);
-  border: 2px solid red;
 }
 
 .genre-dropdown a {

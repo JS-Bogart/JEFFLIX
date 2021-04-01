@@ -101,9 +101,16 @@
 .browse-title {
   display: flex;
 }
+.genre-menu:hover .genre-dropdown {
+  display: block;
+}
 
 .genre-menu-title {
   display: flex;
+}
+
+.genre-dropdown {
+  display: none;
 }
 
 .browse-genre-list {
