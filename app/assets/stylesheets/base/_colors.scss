@@ -158,6 +158,16 @@ input:focus{
   color: white;
 }
 
+.search-bar {
+  border: 1px solid white;
+}
+
+.search-bar > input {
+  color: white;
+  background-color: rgb(23, 23, 23);
+  border: none;
+}
+
 // Browse page
 .browse {
   background-color: rgb(23, 23, 23);

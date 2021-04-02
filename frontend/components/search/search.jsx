@@ -8,6 +8,7 @@ class Search extends React.Component {
       searching: false,
       movies: []
     }
+    this.changeSearchStatus = this.changeSearchStatus.bind(this);
   }
 
   componentDidMount() {
@@ -17,12 +18,25 @@ class Search extends React.Component {
     });
   }
 
+  changeSearchStatus() {
+    if (this.state.searching) {
+      this.setState({searching: false})
+    } else {
+      this.setState({ searching: true })
+    }
+  }
+
   getSearchBar() {
     if (this.state.searching) {
-      return null;
+      return (
+        <div className="search-bar">
+          <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
+          <input type="text" />
+        </div>
+      )
     } else {
       return(
-        <p>&#128269;</p>
+        <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
       );
     }
   }

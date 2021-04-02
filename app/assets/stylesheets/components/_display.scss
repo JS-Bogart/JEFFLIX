@@ -82,6 +82,18 @@
   display: flex;
 }
 
+.search-bar {
+  display: flex;
+}
+
+.search-box > p:hover {
+  cursor: pointer;
+}
+
+.search-bar > p:hover {
+  cursor: pointer;
+}
+
 // Browse page
 
 .browse {
