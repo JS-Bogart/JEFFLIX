@@ -176,7 +176,7 @@ class Genre extends React.Component {
   render(){
     return (
       <div className="genre-page">
-        <header>
+        <header className="navbar">
           <a
             href="/#/browse"
             className="logo-browse-link"

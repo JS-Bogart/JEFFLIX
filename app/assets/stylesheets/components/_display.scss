@@ -73,12 +73,18 @@
   cursor: pointer;
 }
 
-// Browse page
-.browse {
+// Navbar
+.navbar {
   display: flex;
 }
 
-.browse > header {
+.search-box {
+  display: flex;
+}
+
+// Browse page
+
+.browse {
   display: flex;
 }
 
@@ -183,10 +189,6 @@
   display: flex;
 }
 
-.my-list > header {
-  display: flex;
-}
-
 .my-list-body {
   display: flex;
 }
@@ -211,10 +213,6 @@
 
 // Genre Page
 .genre-page {
-  display: flex;
-}
-
-.genre-page > header {
   display: flex;
 }
 

@@ -59,6 +59,12 @@
   flex-wrap: wrap;
 }
 
+// Navbar
+.search-box {
+  align-items: center;
+  justify-content: flex-end;
+}
+
 // Browse page
 .browse {
   flex-direction: column;

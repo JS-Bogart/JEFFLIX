@@ -86,7 +86,7 @@ class Browse extends React.Component {
   render() {
     return (
       <div className="browse">
-        <header>
+        <header className="navbar">
           <a
             href="/#/browse"
             className="logo-browse-link"

@@ -261,12 +261,8 @@ footer {
   margin-bottom: 2px;
 }
 
-// Browse page
-.browse {
-  height: 100%;
-}
-
-.browse > header {
+// Navbar
+.navbar {
   position: fixed;
   width: 100%;
   height: 69px;
@@ -322,6 +318,25 @@ footer {
   position: relative;
   left: 6.3rem;
   top: 0.4rem;
+}
+
+.search-box {
+  position: absolute;
+  top: 1rem;
+  right: 10rem;
+  height: 2rem;
+  width: 17rem;
+
+  border: 2px solid red;
+}
+
+.search-box > p {
+  margin-right: 0.5rem;
+}
+
+// Browse page
+.browse {
+  height: 100%;
 }
 
 .browse-body {
@@ -537,13 +552,6 @@ footer {
   height: 100%;
 }
 
-.my-list > header {
-  position: fixed;
-  width: 100%;
-  height: 69px;
-  z-index: 5;
-}
-
 .my-list-body {
   top: 5rem;
   position: relative;
@@ -602,13 +610,6 @@ footer {
 
 .genre-page {
   height: 100%;
-}
-
-.genre-page > header {
-  position: fixed;
-  width: 100%;
-  height: 69px;
-  z-index: 5;
 }
 
 .genre-list {

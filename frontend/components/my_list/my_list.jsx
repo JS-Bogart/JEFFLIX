@@ -93,7 +93,7 @@ class MyList extends React.Component {
   render() {
     return (
       <div className="my-list">
-        <header>
+        <header className="navbar">
           <a
             href="/#/browse"
             className="logo-browse-link"

@@ -128,8 +128,8 @@ input:focus{
   background-color: #DB202C;
 }
 
-// Browse page
-.browse > header {
+// Navbar
+.navbar {
   background-color: rgb(23, 23, 23);
 }
 
@@ -158,6 +158,7 @@ input:focus{
   color: white;
 }
 
+// Browse page
 .browse {
   background-color: rgb(23, 23, 23);
 }
@@ -242,10 +243,6 @@ input:focus{
   background-color: rgb(23, 23, 23);
 }
 
-.my-list > header {
-  background-color: rgb(23, 23, 23);
-}
-
 .my-list-body {
   color: white;
   background-color: rgb(23, 23, 23);
@@ -258,10 +255,6 @@ input:focus{
 // Genre Page
 
 .genre-page {
-  background-color: rgb(23, 23, 23);
-}
-
-.genre-page > header {
   background-color: rgb(23, 23, 23);
 }
 
