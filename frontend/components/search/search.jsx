@@ -18,6 +18,13 @@ class Search extends React.Component {
       searchTerm: searchTerm
     });
     this.myRef.current.focus();
+    if (this.props.movies.length < 1) {
+      this.props.requestAllMovies();
+    }
+    if (this.props.genres.length < 1) {
+      this.props.requestAllGenres();
+    }
+    this.props.getMyList(this.props.currentUser.id);
   }
 
   changeSearchStatus() {
