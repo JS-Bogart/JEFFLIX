@@ -6,6 +6,8 @@ class Genre extends React.Component {
     this.state = {
       genreId: null,
       genre: null,
+      searchTerm: '',
+      searching: false,
       movies: []
     };
   }
@@ -173,6 +175,40 @@ class Genre extends React.Component {
     this.setState({ movies: movies })
   }
 
+  changeSearchStatus() {
+    if (this.state.searching) {
+      this.setState({ searching: false })
+    } else {
+      this.setState({ searching: true })
+    }
+  }
+
+  handleInput(field) {
+    return (e) => {
+      this.setState({ [field]: e.currentTarget.value })
+      this.props.history.push(`/search/${e.currentTarget.value}`);
+    }
+  }
+
+  getSearchBar() {
+    if (this.state.searching) {
+      return (
+        <div className="search-bar">
+          <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
+          <input
+            type="text"
+            value={this.state.searchTerm}
+            onChange={this.handleInput('searchTerm')}
+          />
+        </div>
+      )
+    } else {
+      return (
+        <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
+      );
+    }
+  }
+
   render(){
     return (
       <div className="genre-page">
@@ -196,6 +232,9 @@ class Genre extends React.Component {
             >
               My List
             </a>
+          </div>
+          <div className="search-box">
+            {this.getSearchBar()}
           </div>
           <div className="browse-icon">
             <img src={window.profilepic} alt="profilepic" className="profilepic" />
