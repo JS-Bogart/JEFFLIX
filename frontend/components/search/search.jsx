@@ -5,7 +5,7 @@ class Search extends React.Component {
     super(props);
     this.state = {
       searchTerm: '',
-      searching: false,
+      searching: true,
       movies: []
     }
     this.changeSearchStatus = this.changeSearchStatus.bind(this);
@@ -26,12 +26,23 @@ class Search extends React.Component {
     }
   }
 
+  handleInput(field) {
+    return (e) => {
+      this.setState({ [field]: e.currentTarget.value })
+      this.props.history.push(`/search/${e.currentTarget.value}`);
+    }
+  }
+
   getSearchBar() {
     if (this.state.searching) {
       return (
         <div className="search-bar">
           <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
-          <input type="text" />
+          <input 
+            type="text"
+            value={this.state.searchTerm}
+            onChange={this.handleInput('searchTerm')}
+          />
         </div>
       )
     } else {
