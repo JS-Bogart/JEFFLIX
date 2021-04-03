@@ -8,6 +8,7 @@ class Search extends React.Component {
       searching: true,
       movies: []
     }
+    this.myRef = React.createRef();
     this.changeSearchStatus = this.changeSearchStatus.bind(this);
   }
 
@@ -16,6 +17,7 @@ class Search extends React.Component {
     this.setState({
       searchTerm: searchTerm
     });
+    this.myRef.current.focus();
   }
 
   changeSearchStatus() {
@@ -39,6 +41,7 @@ class Search extends React.Component {
         <div className="search-bar">
           <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
           <input 
+            ref={this.myRef}
             type="text"
             value={this.state.searchTerm}
             onChange={this.handleInput('searchTerm')}
