@@ -5,6 +5,7 @@ class Search extends React.Component {
     super(props);
     this.state = {
       searchTerm: '',
+      previousTerm: '',
       searching: true,
       movies: []
     }
@@ -25,6 +26,18 @@ class Search extends React.Component {
       this.props.requestAllGenres();
     }
     this.props.getMyList(this.props.currentUser.id);
+    this.searchMovies();
+  }
+
+  componentDidUpdate(){
+    if (this.state.movies.length < 1) {
+      this.searchMovies();
+    } else if (this.state.previousTerm !== this.state.searchTerm) {
+      this.setState({
+        previousTerm: this.state.searchTerm
+      });
+      this.searchMovies();
+    }
   }
 
   changeSearchStatus() {
@@ -60,6 +73,143 @@ class Search extends React.Component {
         <p onClick={() => this.changeSearchStatus()}>&#128269;</p>
       );
     }
+  }
+
+  listButton(movie, index) {
+    const myList = this.props.myList;
+    const movieId = movie.id;
+    let check = false;
+    myList.forEach(movie => {
+      if (movie.id === movieId) {
+        check = true;
+      }
+    })
+    if (check) {
+      return (
+        <p
+          className="my-list-btn"
+          onClick={() => this.removeFromList(movie, index)}
+        >⊖</p>
+      )
+    } else {
+      return (
+        <p
+          className="my-list-btn"
+          onClick={() => this.addToList(movie, index)}
+        >⊕</p>
+      )
+    }
+  }
+
+  addToList(movie, index) {
+    this.props.addMovie({ my_list: { user_id: this.props.userId, movie_id: movie.id } })
+    let movies = this.state.movies;
+    movies[index] =
+      <div className="genre-item" key={index}>
+        <img src={movie.imageUrl} alt={movie.title} />
+        <div className="genre-item-info">
+          <div className="item-title-play">
+            <p>{movie.title}</p>
+            <div className="item-buttons">
+              <p
+                className="my-list-btn"
+                onClick={() => this.removeFromList(movie, index)}
+              >⊖</p>
+              <div className="item-play-btn">
+                <p className="play-circle">&#11044;</p>
+                <p className="play-arrow">▶</p>
+              </div>
+            </div>
+          </div>
+          <div className="item-details">
+            <div className="item-rating">
+              <p>{movie.rating}</p>
+            </div>
+            <ul className="item-genre">
+              {movie.genres.map((movieGenre, index) => (
+                <li key={index}>{movieGenre.genre}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    this.setState({ movies: movies })
+  }
+
+  removeFromList(movie, index) {
+    const userId = this.props.userId;
+    const movieListId = { user_id: userId, movie_id: movie.id }
+    this.props.deleteMovie(movieListId);
+    let movies = this.state.movies;
+    movies[index] =
+      <div className="genre-item" key={index}>
+        <img src={movie.imageUrl} alt={movie.title} />
+        <div className="genre-item-info">
+          <div className="item-title-play">
+            <p>{movie.title}</p>
+            <div className="item-buttons">
+              <p
+                className="my-list-btn"
+                onClick={() => this.addToList(movie, index)}
+              >⊕</p>
+              <div className="item-play-btn">
+                <p className="play-circle">&#11044;</p>
+                <p className="play-arrow">▶</p>
+              </div>
+            </div>
+          </div>
+          <div className="item-details">
+            <div className="item-rating">
+              <p>{movie.rating}</p>
+            </div>
+            <ul className="item-genre">
+              {movie.genres.map((movieGenre, index) => (
+                <li key={index}>{movieGenre.genre}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    this.setState({ movies: movies })
+  }
+
+  searchMovies(){
+    const searchResults = this.props.movies.filter(movie => 
+      movie.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    );
+    const movies = [];
+
+    searchResults.forEach((movie, index) => {
+      movies.push(
+        <div className="genre-item" key={index}>
+          <img src={movie.imageUrl} alt={movie.title} />
+          <div className="genre-item-info">
+            <div className="item-title-play">
+              <p>{movie.title}</p>
+              <div className="item-buttons">
+                {this.listButton(movie, index)}
+                <div className="item-play-btn">
+                  <p className="play-circle">&#11044;</p>
+                  <p className="play-arrow">▶</p>
+                </div>
+              </div>
+            </div>
+            <div className="item-details">
+              <div className="item-rating">
+                <p>{movie.rating}</p>
+              </div>
+              <ul className="item-genre">
+                {movie.genres.map((movieGenre, index) => (
+                  <li key={index}>{movieGenre.genre}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
+    })
+
+    this.setState({ movies: movies })
   }
 
   render(){
@@ -106,8 +256,8 @@ class Search extends React.Component {
             </div>
           </div>
         </header>
-        <div className="search-body">
-          
+        <div className="search-body">          
+          {this.state.movies}
         </div>
       </div>
     );
