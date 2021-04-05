@@ -94,12 +94,6 @@
   cursor: pointer;
 }
 
-// Browse page
-
-.browse {
-  display: flex;
-}
-
 .navbar-links {
   display: flex;
 }
@@ -114,6 +108,12 @@
 
 .browse-icon:hover .logout-dropdown {
   display: block;
+}
+
+// Browse page
+
+.browse {
+  display: flex;
 }
 
 .browse-title {
@@ -137,6 +137,14 @@
 }
 
 .browse-genre-list {
+  display: flex;
+}
+
+.browse-title-box {
+  display: flex;
+}
+
+.browse-rating-box {
   display: flex;
 }
 

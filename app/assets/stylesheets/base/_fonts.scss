@@ -146,8 +146,6 @@ a {
   font-size: 18px;
 }
 
-// Browse page
-
 .navbar-links {
   text-decoration: none;
 }
@@ -168,6 +166,8 @@ a {
   font-size: 25px;
 }
 
+// Browse page
+
 .browse-title > h1 {
   font-size: 40px;
 }
@@ -180,13 +180,17 @@ a {
   line-height: 1.5rem;
 }
 
-.billboard > p {
-  font-size: 25px;
+.browse-title-box > p {
+  font-size: 1.4vw;
   line-height: 1.5;
 }
 
 .billboard-mute-btn {
-  font-size: 50px;
+  font-size: 2.5vw;
+}
+
+#bb-rating {
+  font-size: 1.4vw;
 }
 
 .browse-row > h2 {

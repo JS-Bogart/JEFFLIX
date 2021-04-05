@@ -83,6 +83,14 @@
   align-items: flex-start;
 }
 
+.browse-title-box {
+  flex-direction: column;
+}
+
+.browse-rating-box {
+  align-items: center;
+}
+
 .browse-genre-list {
   flex-direction: column;
   flex-wrap: wrap;
