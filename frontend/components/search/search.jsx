@@ -30,7 +30,7 @@ class Search extends React.Component {
   }
 
   componentDidUpdate(){
-    if (this.state.movies.length < 1) {
+    if (this.state.movies.length < 1 && this.props.movies.length > 0 ) {
       this.searchMovies();
     } else if (this.state.previousTerm !== this.state.searchTerm) {
       this.setState({
@@ -256,8 +256,10 @@ class Search extends React.Component {
             </div>
           </div>
         </header>
-        <div className="search-body">          
-          {this.state.movies}
+        <div className="search-body"> 
+          <div className="search-list">
+            {this.state.movies}
+          </div>         
         </div>
       </div>
     );

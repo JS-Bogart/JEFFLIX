@@ -667,3 +667,13 @@ footer {
   transition-delay: 500ms;
   position: relative;
 }
+
+// Search Page
+
+.search-list {
+  top: 8rem;
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: 69px;
+}
