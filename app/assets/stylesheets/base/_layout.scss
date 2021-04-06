@@ -446,39 +446,32 @@ footer {
 }
 
 .browse-genre-rows {
-  top: -21.5rem;
+  bottom: 35%;
   position: relative;
   z-index: 3;
   height: 75%;
 }
 
-.browse-row {
-  width: 100%;
-}
-
 .browse-row > h2 {
   margin-left: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 1.5%;
 }
 
 // Carousel
+
 .slide-arrow-left {
-  position: absolute;
   width: 55px;
-  height: 175px;
+  position: absolute;
   text-align: center;
-  line-height: 2;
   left: 0;
   border-radius: 4px;
   z-index: 4;
 }
 
 .slide-arrow-right {
-  position: absolute;
   width: 55px;
-  height: 175px;
+  position: absolute;
   text-align: center;
-  line-height: 2;
   right: 0;
   border-radius: 4px;
   z-index: 4;
@@ -491,12 +484,12 @@ footer {
   transition-delay: 0ms;
   
   &:hover {
-      position: relative;
-      transform: scale(1.6) translateY(-25px);
-      transition-delay: 500ms;
-      box-shadow: 0px 0px 10px 1px black;
-      z-index: 3;
-    }
+    position: relative;
+    transform: scale(1.6) translateY(-25px);
+    transition-delay: 500ms;
+    box-shadow: 0px 0px 10px 1px black;
+    z-index: 3;
+  }
 }
 
 .slider-item > img {
@@ -509,24 +502,12 @@ footer {
   border-bottom-right-radius: 5px;
 }
 
-.item-play-btn {
-  margin-top: 0.7rem;
-  margin-right: 0.7rem;
-}
-
-.item-play-btn .play-arrow {
-  position: relative;
-  left: 0.75rem;
-  top: -1.15rem;
-}
-
 .item-rating {
   width: fit-content;
   margin-left: 0.7rem;
   margin-bottom: 0.4rem;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
-  padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   border: 0.1px solid white;
 }
@@ -556,6 +537,86 @@ footer {
 
 .browse-row:last-of-type {
   padding-bottom: 3rem;
+}
+
+@media screen and (min-width: 1441px) {
+  .slide-arrow-left {
+    height: 175px;
+    line-height: 2;
+  }
+
+  .slide-arrow-right {
+    height: 175px;
+    line-height: 2;
+  }
+
+  .item-play-btn .play-arrow {
+    position: relative;
+    left: 0.75rem;
+    top: -1.15rem;
+  }
+
+  .item-play-btn {
+    margin-top: 0.7rem;
+    margin-right: 0.7rem;
+  }
+
+  .item-rating {
+    padding-top: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .item-title-play > p {
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+  }
+
+  .slide-arrow-left {
+    height: 125px;
+    line-height: 1.5;
+  }
+
+  .slide-arrow-right {
+    height: 125px;
+    line-height: 1.5;
+  }
+
+  .slider-item {
+    width: 215px;
+  }
+
+  .item-play-btn .play-arrow {
+    position: relative;
+    left: 0.55rem;
+    top: -0.8rem;
+  }
+
+  .item-play-btn {
+    position: relative;
+    top: 0.5rem;
+    right: 1.3rem;
+  }
+
+  .my-list-btn {
+    position: relative;
+    bottom: 0.05rem;
+    right: 0.8rem;
+  }
+
+  .item-buttons {
+    padding: 0;
+    width: 55px;
+    height: 40px;
+  }
+
+  .item-details {
+    margin-top: 0.3rem;
+  }
+
+  .item-rating {
+    padding-top: 0.2rem;
+  }
 }
 
 // My List

@@ -194,10 +194,12 @@ a {
 }
 
 .browse-row > h2 {
-  font-size: 30px;
+  // font-size: 30px;
+  font-size: 2.0vw;
 }
 
 // Carousel
+
 .slide-arrow-left {
   font-size: 80px;
 }
@@ -206,24 +208,52 @@ a {
   font-size: 80px;
 }
 
-.item-play-btn .play-circle {
-  font-size: 27px;
+@media screen and (min-width: 1441px) {
+  .item-play-btn .play-circle {
+    font-size: 27px;
+  }
+
+  .item-play-btn .play-arrow {
+    font-size: 14px;
+  }
+
+  .my-list-btn {
+    font-size: 49px;
+  }
+
+  .item-genre {
+    font-size: 11px;
+  }
+
+  .item-rating {
+    font-size: 11px;
+  }
 }
 
-.item-play-btn .play-arrow {
-  font-size: 14px;
-}
+@media screen and (max-width: 1440px) {
+  .item-title-play > p {
+    font-size: 12px;
+  }
 
-.my-list-btn {
-  font-size: 49px;
-}
+  .item-play-btn .play-circle {
+    font-size: 21px;
+  }
 
-.item-rating {
-  font-size: 11px;
-}
+  .item-play-btn .play-arrow {
+    font-size: 11px;
+  }
 
-.item-genre {
-  font-size: 11px;
+  .my-list-btn {
+    font-size: 39px;
+  }
+
+  .item-genre {
+    font-size: 9px;
+  }
+
+  .item-rating {
+    font-size: 9px;
+  }
 }
 
 // My List

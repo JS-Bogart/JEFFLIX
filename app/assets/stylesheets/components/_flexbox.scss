@@ -127,6 +127,13 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 1440px) {
+  .item-genre {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
 // My List
 
 .my-list {
