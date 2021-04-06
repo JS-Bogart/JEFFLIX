@@ -7,6 +7,7 @@ class Search extends React.Component {
       searchTerm: '',
       previousTerm: '',
       searching: true,
+      searched: false,
       movies: []
     }
     this.myRef = React.createRef();
@@ -30,7 +31,8 @@ class Search extends React.Component {
   }
 
   componentDidUpdate(){
-    if (this.state.movies.length < 1 && this.props.movies.length > 0 ) {
+    if (this.state.movies.length < 1 && this.props.movies.length > 0 && 
+      !this.state.searched) {
       this.searchMovies();
     } else if (this.state.previousTerm !== this.state.searchTerm) {
       this.setState({
@@ -50,7 +52,7 @@ class Search extends React.Component {
 
   handleInput(field) {
     return (e) => {
-      this.setState({ [field]: e.currentTarget.value })
+      this.setState({ [field]: e.currentTarget.value, searched: false })
       this.props.history.push(`/search/${e.currentTarget.value}`);
     }
   }
@@ -209,10 +211,16 @@ class Search extends React.Component {
       )
     })
 
-    this.setState({ movies: movies })
+    this.setState({ movies: movies, searched: true })
   }
 
   render(){
+    let movies;
+    if (this.state.movies.length > 0) {
+      movies = this.state.movies;
+    } else {
+      movies = <p>No Results</p>
+    }
     return (
       <div className="search">
         <header className="navbar">
@@ -258,7 +266,7 @@ class Search extends React.Component {
         </header>
         <div className="search-body"> 
           <div className="search-list">
-            {this.state.movies}
+            {movies}
           </div>         
         </div>
       </div>
