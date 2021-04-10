@@ -18,4 +18,6 @@ class Movie < ApplicationRecord
 
   has_one_attached :trailer
 
+  has_one_attached :trailer
+
 end
