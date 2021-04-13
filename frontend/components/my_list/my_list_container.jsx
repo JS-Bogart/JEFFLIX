@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import MyList from './my_list';
+import { logout } from '../../actions/session_actions';
 import { getMyList, deleteMovie } from '../../actions/my_list_actions';
 
 const mapStateToProps = state => {
@@ -11,6 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    logout: () => dispatch(logout()),
     getMyList: (userId) => dispatch(getMyList(userId)),
     deleteMovie: (id) => dispatch(deleteMovie(id))
   }

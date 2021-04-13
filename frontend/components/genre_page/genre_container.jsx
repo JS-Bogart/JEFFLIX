@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Genre from './genre';
+import { logout } from '../../actions/session_actions';
 import { requestGenreMovies } from '../../actions/genre_actions';
 import { getMyList, addMovie, deleteMovie } from '../../actions/my_list_actions';
 
@@ -14,6 +15,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    logout: () => dispatch(logout()),
     requestGenreMovies: (genreId) => dispatch(requestGenreMovies(genreId)),
     getMyList: (userId) => dispatch(getMyList(userId)),
     addMovie: (movie) => dispatch(addMovie(movie)),

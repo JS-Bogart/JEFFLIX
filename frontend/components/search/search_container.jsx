@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
+import { logout } from '../../actions/session_actions';
 import { requestAllMovies } from '../../actions/movie_actions';
 import { requestAllGenres } from '../../actions/genre_actions';
 import { getMyList, addMovie, deleteMovie } from '../../actions/my_list_actions';
@@ -16,6 +17,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    logout: () => dispatch(logout()),
     requestAllMovies: () => dispatch(requestAllMovies()),
     requestAllGenres: () => dispatch(requestAllGenres()),
     getMyList: (userId) => dispatch(getMyList(userId)),
