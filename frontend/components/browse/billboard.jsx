@@ -40,7 +40,7 @@ class Billboard extends React.Component{
         </div>
         <video
           ref={this.billboardRef}
-          src={window.flashgordon}
+          src={'https://jefflix-seeds.s3-us-west-1.amazonaws.com/trailers/flash_gordon.mp4'}
           autoPlay={true}
           muted 
         />
