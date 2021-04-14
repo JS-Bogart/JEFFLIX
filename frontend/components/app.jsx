@@ -9,6 +9,7 @@ import BrowseContainer from './browse/browse_container';
 import MyListContainer from './my_list/my_list_container';
 import GenreContainer from './genre_page/genre_container';
 import SearchContainer from './search/search_container';
+import WatchContainer from './watch/watch_container';
 
 const App = () => (
   <div className="app">
@@ -17,6 +18,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/search/:searchTerm" component={SearchContainer} />
+      <ProtectedRoute path="/watch/:movieId" component={WatchContainer} />
       <ProtectedRoute path="/browse/my-list" component={MyListContainer} />
       <ProtectedRoute path="/browse/genre/:id" component={GenreContainer} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
