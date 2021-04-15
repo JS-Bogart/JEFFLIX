@@ -51,6 +51,7 @@ class DemoCarousel extends React.Component{
           userId={this.props.userId}
           myList={this.props.myList}
           deleteMovie={this.props.deleteMovie}
+          handlePlayButton={this.props.handlePlayButton}
         />
 
         <Arrow

@@ -40,6 +40,10 @@ class Genre extends React.Component {
     return (array)
   }
 
+  handlePlayButton(movie) {
+    this.props.history.push(`/watch/${movie}`);
+  }
+
   listButton(movie, index) {
     const myList = this.props.myList;
     const movieId = movie.id;
@@ -80,7 +84,10 @@ class Genre extends React.Component {
                 className="my-list-btn"
                 onClick={() => this.removeFromList(movie, index)}
               >⊖</p>
-              <div className="item-play-btn">
+              <div
+                className="item-play-btn"
+                onClick={() => this.handlePlayButton(movie.id)}
+              >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
               </div>
@@ -117,7 +124,10 @@ class Genre extends React.Component {
                 className="my-list-btn"
                 onClick={() => this.addToList(movie, index)}
               >⊕</p>
-              <div className="item-play-btn">
+              <div
+                className="item-play-btn"
+                onClick={() => this.handlePlayButton(movie.id)}
+              >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
               </div>
@@ -151,7 +161,10 @@ class Genre extends React.Component {
               <p>{movie.title}</p>
               <div className="item-buttons">
                 {this.listButton(movie, index)}
-                <div className="item-play-btn">
+                <div
+                  className="item-play-btn"
+                  onClick={() => this.handlePlayButton(movie.id)}
+                >
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
                 </div>

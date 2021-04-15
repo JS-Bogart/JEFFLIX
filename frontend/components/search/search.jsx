@@ -42,6 +42,10 @@ class Search extends React.Component {
     }
   }
 
+  handlePlayButton(movie) {
+    this.props.history.push(`/watch/${movie}`);
+  }
+
   changeSearchStatus() {
     if (this.state.searching) {
       this.setState({searching: false})
@@ -117,7 +121,10 @@ class Search extends React.Component {
                 className="my-list-btn"
                 onClick={() => this.removeFromList(movie, index)}
               >⊖</p>
-              <div className="item-play-btn">
+              <div
+                className="item-play-btn"
+                onClick={() => this.handlePlayButton(movie.id)}
+              >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
               </div>
@@ -154,7 +161,10 @@ class Search extends React.Component {
                 className="my-list-btn"
                 onClick={() => this.addToList(movie, index)}
               >⊕</p>
-              <div className="item-play-btn">
+              <div
+                className="item-play-btn"
+                onClick={() => this.handlePlayButton(movie.id)}
+              >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
               </div>
@@ -190,7 +200,10 @@ class Search extends React.Component {
               <p>{movie.title}</p>
               <div className="item-buttons">
                 {this.listButton(movie, index)}
-                <div className="item-play-btn">
+                <div
+                  className="item-play-btn"
+                  onClick={() => this.handlePlayButton(movie.id)}
+                >
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
                 </div>

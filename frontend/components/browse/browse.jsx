@@ -12,6 +12,7 @@ class Browse extends React.Component {
       genres: []
     };
     this.getGenreList = this.getGenreList.bind(this);
+    this.handlePlayButton = this.handlePlayButton.bind(this);
   }
 
   componentDidMount(){
@@ -22,7 +23,6 @@ class Browse extends React.Component {
       this.props.requestAllGenres();
     }
     this.props.getMyList(this.props.currentUser.id);
-    debugger
   }
 
   componentDidUpdate(prevProps) {
@@ -43,7 +43,6 @@ class Browse extends React.Component {
   }
 
   loadGenres() {
-    debugger
     if (!this.state.genresLoaded && this.props.movies.length > 1) {
       const genres = this.shuffle(this.props.genres);
       this.setState({ 
@@ -51,6 +50,10 @@ class Browse extends React.Component {
         genres: genres
       });
     }
+  }
+
+  handlePlayButton(movie) {
+    this.props.history.push(`/watch/${movie}`);
   }
 
   getGenres() {
@@ -68,6 +71,7 @@ class Browse extends React.Component {
                 userId={this.props.currentUser.id}
                 myList={this.props.myList}
                 deleteMovie={this.props.deleteMovie}
+                handlePlayButton={this.handlePlayButton}
               />
             </div>
           ))}

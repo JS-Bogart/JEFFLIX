@@ -30,6 +30,10 @@ class MyList extends React.Component {
     return (array)
   }
 
+  handlePlayButton(movie) {
+    this.props.history.push(`/watch/${movie}`);
+  }
+
   getMovies() {
     const movieList = this.shuffle(this.props.myList);
     const movies = [];
@@ -45,7 +49,10 @@ class MyList extends React.Component {
                 <p className="my-list-btn" onClick={
                   () => this.removeFromList(movie, index)
                 }>⊖</p>
-                <div className="item-play-btn">
+                <div
+                  className="item-play-btn"
+                  onClick={() => this.handlePlayButton(movie.id)}
+                >
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
                 </div>
