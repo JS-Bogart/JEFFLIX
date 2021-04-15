@@ -15,17 +15,21 @@ class Browse extends React.Component {
   }
 
   componentDidMount(){
-    if (this.props.movies.length < 1) {
+    if (this.props.movies.length < 2) {
       this.props.requestAllMovies();
     }
     if (this.props.genres.length < 1) {
       this.props.requestAllGenres();
     }
     this.props.getMyList(this.props.currentUser.id);
+    debugger
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.genres !== this.props.genres) {
+    if (prevProps.genres !== this.props.genres || prevProps.movies !== this.props.movies) {
+      this.setState({
+        genresLoaded: false
+      });
       this.loadGenres();
     }
   }
@@ -39,11 +43,13 @@ class Browse extends React.Component {
   }
 
   loadGenres() {
-    if (!this.state.genresLoaded) {
+    debugger
+    if (!this.state.genresLoaded && this.props.movies.length > 1) {
       const genres = this.shuffle(this.props.genres);
       this.setState({ 
         genresLoaded: true, 
-        genres: genres});
+        genres: genres
+      });
     }
   }
 

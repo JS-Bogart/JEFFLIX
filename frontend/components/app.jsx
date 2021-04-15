@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 //Containers:
 import SignupContainer from './session/signup_container';
@@ -18,7 +18,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/" component={SplashContainer} />
       <ProtectedRoute path="/search/:searchTerm" component={SearchContainer} />
-      <ProtectedRoute path="/watch/:movieId" component={WatchContainer} />
+      <ProtectedRoute path="/watch/:id" component={WatchContainer} />
       <ProtectedRoute path="/browse/my-list" component={MyListContainer} />
       <ProtectedRoute path="/browse/genre/:id" component={GenreContainer} />
       <ProtectedRoute path="/browse" component={BrowseContainer} />
