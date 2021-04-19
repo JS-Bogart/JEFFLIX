@@ -301,6 +301,10 @@
   display: flex;
 }
 
+.progress:hover {
+  cursor: pointer;
+}
+
 #control-buttons {
   display: flex;
 }
