@@ -736,3 +736,99 @@ footer {
   height: 100%;
   padding: 69px;
 }
+
+// Watch Page
+
+#videoContainer {
+  height: 100%;
+  width: auto;
+}
+
+.back-box {
+  position: absolute;
+  height: 50%;
+  width: 30%;
+}
+
+.back-btn {
+  width: 60%;
+  height: 20%;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.back-arrow {
+  margin-left: 10%;
+}
+
+.back-msg {
+  margin-left: 5%;
+}
+
+.controls-box {
+  position: absolute;
+  width: 99.5%;
+  height: 20%;
+  bottom: 0px;
+}
+
+#video {
+  position: relative;
+  z-index: -1;
+}
+
+.controls {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+#control-buttons {
+  width: 100%;
+}
+
+#control-buttons div {
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+.progress {
+  width: 100%;
+}
+
+#progress {
+  width: 98%;
+}
+
+.cb-left {
+  width: 95%;
+}
+
+#playpause {
+  margin-left: 4%;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+}
+
+#mute {
+  margin-left: 4%;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+}
+
+#watch-movie-title {
+  margin-left: 6%;
+}
+
+#fs {
+  margin-right: 4%;
+  line-height: 2;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+}

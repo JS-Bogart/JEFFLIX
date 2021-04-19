@@ -5,7 +5,9 @@ class Watch extends React.Component {
     super(props);
     this.state = {
       movieId: null,
-      movie: null
+      movie: null,
+      movieTitle: "",
+      playpause: "▶"
     }
   }
 
@@ -33,7 +35,8 @@ class Watch extends React.Component {
           type="video/mp4"
           // autoPlay={true}
           // muted
-        />
+        />,
+        movieTitle: currentMovie.title
       });
     }
   }
@@ -55,7 +58,8 @@ class Watch extends React.Component {
           type="video/mp4"
           // autoPlay={true}
           // muted
-        />
+        />,
+        movieTitle: currentMovie.title
       });
     }
     if (this.state.movie) {
@@ -111,36 +115,77 @@ class Watch extends React.Component {
   }
 
   pauseButton(){
-    if (this.video.paused) this.video.play();
-    else this.video.pause();
+    if (this.video.paused) {
+      this.video.play();
+      this.setState({
+        playpause: "❙❙"
+      })
+    } else {
+      this.video.pause();
+      this.setState({
+        playpause: "▶"
+      })
+    }
   }
 
   muteButton(){
     this.video.muted = !this.video.muted;
   }
 
+  handleBackButton() {
+    this.props.history.push(`/browse`);
+  }
+
   render() {
     return (
       <div id="videoContainer">
+        <div className="back-box">
+          <div className="back-btn">
+            <p
+              className="back-arrow"
+              onClick={() => this.handleBackButton()}
+            >←</p>
+            <p
+              className="back-msg"
+            >Back to Browse</p>
+          </div>
+        </div>
         {this.state.movie}
-        <ul id="video-controls" className="controls">
-          <li>
-            <button
-              id="playpause"
-              type="button"
-              onClick={() => this.pauseButton()}
-            >
-              Play/Pause
-            </button>
-          </li>
-          <li className="progress">
-            <progress id="progress" value="0" min="0">
-              <span id="progress-bar"></span>
-            </progress>
-          </li>
-          <li><button id="mute" type="button" onClick={() => this.muteButton()}>Mute/Unmute</button></li>
-          <li><button id="fs" type="button">Fullscreen</button></li>
-        </ul>
+        <div className="controls-box">
+          <div id="video-controls" className="controls">
+            <li className="progress">
+              <progress id="progress" value="0" min="0">
+                <span id="progress-bar"></span>
+              </progress>
+            </li>
+            <div id="control-buttons">
+              <div className="cb-left">
+                <div
+                  id="playpause"
+                  onClick={() => this.pauseButton()}
+                >
+                  {this.state.playpause}
+                </div>
+                <div
+                  id="mute" 
+                  onClick={() => this.muteButton()}
+                >
+                  &#x1f50a;
+                </div>
+                <div
+                  id="watch-movie-title"
+                >
+                  {this.state.movieTitle}
+                </div>
+              </div>
+              <div
+                id="fs" 
+              >
+                ❏
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

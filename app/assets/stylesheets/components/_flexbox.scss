@@ -194,3 +194,31 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+// Watch Page
+
+#videoContainer {
+  flex-direction: column;
+}
+
+.back-btn {
+  align-items: center;
+}
+
+.controls-box {
+  align-items: flex-end;
+}
+
+.controls {
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+}
+
+#control-buttons {
+  justify-content: space-between;
+}
+
+.cb-left {
+  align-items: center;
+}

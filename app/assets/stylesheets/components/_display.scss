@@ -263,3 +263,48 @@
 .search-list {
   display: flex;
 }
+
+// Watch Page
+
+#videoContainer {
+  display: flex;
+}
+
+.back-box {
+  display: flex;
+}
+
+.back-btn {
+  display: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.back-msg {
+  display: none;
+}
+
+.back-box:hover .back-btn {
+  display: flex;
+}
+
+.back-btn:hover .back-msg {
+  display: flex;
+}
+
+.controls {
+  display: none;
+}
+
+.controls-box:hover .controls {
+  display: flex;
+}
+
+#control-buttons {
+  display: flex;
+}
+
+.cb-left {
+  display: flex;
+}
