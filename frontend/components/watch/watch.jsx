@@ -33,8 +33,6 @@ class Watch extends React.Component {
           preload="metadata"
           src={currentMovie.videoUrl}
           type="video/mp4"
-          // autoPlay={true}
-          // muted
         />,
         movieTitle: currentMovie.title
       });
@@ -56,8 +54,6 @@ class Watch extends React.Component {
           preload="metadata"
           src={currentMovie.videoUrl}
           type="video/mp4"
-          // autoPlay={true}
-          // muted
         />,
         movieTitle: currentMovie.title
       });
