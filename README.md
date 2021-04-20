@@ -176,9 +176,3 @@ class DemoSlides extends React.Component {
   transform: translate(112.1rem);
 }
 ```
-
-## To-do:
-+ Add fullscreen watch pages
-+ Add genre pages
-+ Add a MyList feature which allows the user to save a list of movies to watch later
-+ Add a search feature
