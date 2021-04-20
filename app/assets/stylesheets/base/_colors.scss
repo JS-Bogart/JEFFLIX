@@ -301,6 +301,29 @@ input:focus{
   color: white;
 }
 
+.progress {
+  color: rgb(23, 23, 23);
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 10px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #e50914;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: #e50914;
+}
+
+#timer {
+  color: white;
+}
+
 #control-buttons div {
   color: white;
 }

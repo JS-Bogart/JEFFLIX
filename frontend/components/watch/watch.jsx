@@ -7,7 +7,9 @@ class Watch extends React.Component {
       movieId: null,
       movie: null,
       movieTitle: "",
-      playpause: "▶"
+      playpause: "▶",
+      mute: <p>&#x1f50a;</p>,
+      time: ""
     }
   }
 
@@ -66,6 +68,7 @@ class Watch extends React.Component {
       const progress = document.getElementById('progress');
       const progressBar = document.getElementById('progress-bar');
       const fullscreen = document.getElementById('fs');
+      const timer = document.getElementById("timer");
 
       const isFullScreen = function () {
         return !!(document.fullscreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
@@ -96,8 +99,17 @@ class Watch extends React.Component {
         progress.setAttribute('max', video.duration);
       });
       video.addEventListener('timeupdate', function () {
+        const timeLeft = Math.round(video.duration - video.currentTime)
+        let time;
+        if (timeLeft % 60 >= 10) {
+          time = `${Math.round(timeLeft / 60)}:${timeLeft % 60}`
+        } else {
+          time = `${Math.round(timeLeft / 60)}:${0}${timeLeft % 60}`
+        }
+
         if (!progress.getAttribute('max')) progress.setAttribute('max', video.duration);
         progress.value = video.currentTime;
+        timer.innerHTML = time;
         progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
       });
       progress.addEventListener('click', function (e) {
@@ -126,6 +138,15 @@ class Watch extends React.Component {
 
   muteButton(){
     this.video.muted = !this.video.muted;
+    if (this.video.muted) {
+      this.setState({
+        mute: <p>&#x1f507;</p>
+      })
+    } else {
+      this.setState({
+        mute: <p>&#x1f50a;</p>
+      })
+    }
   }
 
   handleBackButton() {
@@ -153,6 +174,7 @@ class Watch extends React.Component {
               <progress id="progress" value="0" min="0">
                 <span id="progress-bar"></span>
               </progress>
+              <label id="timer"></label>
             </li>
             <div id="control-buttons">
               <div className="cb-left">
@@ -166,7 +188,7 @@ class Watch extends React.Component {
                   id="mute" 
                   onClick={() => this.muteButton()}
                 >
-                  &#x1f50a;
+                  {this.state.mute}
                 </div>
                 <div
                   id="watch-movie-title"
