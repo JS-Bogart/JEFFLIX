@@ -26,6 +26,12 @@ class Signup extends React.Component {
         password: ''
       })
     }
+    if (this.props.movies.length < 2) {
+      this.props.requestAllMovies();
+    }
+    if (this.props.genres.length < 1) {
+      this.props.requestAllGenres();
+    }
   }
 
   getData() {

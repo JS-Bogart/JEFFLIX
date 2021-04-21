@@ -4,6 +4,8 @@ import Splash from './splash'
 
 const mapDispatchToProps = dispatch => {
   return {
+    requestAllMovies: () => dispatch(requestAllMovies()),
+    requestAllGenres: () => dispatch(requestAllGenres()),
     login: user => dispatch(login(user))
   };
 };

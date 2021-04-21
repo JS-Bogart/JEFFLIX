@@ -18,6 +18,12 @@ class Login extends React.Component {
 
   componentDidMount() {
     this.props.removeErrors();
+    if (this.props.movies.length < 2) {
+      this.props.requestAllMovies();
+    }
+    if (this.props.genres.length < 1) {
+      this.props.requestAllGenres();
+    }
   }
 
   handleInput(field) {

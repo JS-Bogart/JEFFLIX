@@ -14,6 +14,15 @@ class Splash extends React.Component {
     };
   }
 
+  componentDidMount() {
+    if (this.props.movies.length < 2) {
+      this.props.requestAllMovies();
+    }
+    if (this.props.genres.length < 1) {
+      this.props.requestAllGenres();
+    }
+  }
+
   handleInput(e) {
     this.setState({ splashEmail: e.currentTarget.value })
   }

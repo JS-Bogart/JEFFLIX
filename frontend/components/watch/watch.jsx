@@ -7,7 +7,7 @@ class Watch extends React.Component {
       movieId: null,
       movie: null,
       movieTitle: "",
-      playpause: "▶",
+      playpause: "❙❙",
       mute: <p>&#x1f50a;</p>,
       time: ""
     }
@@ -35,6 +35,7 @@ class Watch extends React.Component {
           preload="metadata"
           src={currentMovie.videoUrl}
           type="video/mp4"
+          autoPlay={true}
         />,
         movieTitle: currentMovie.title
       });
@@ -56,6 +57,7 @@ class Watch extends React.Component {
           preload="metadata"
           src={currentMovie.videoUrl}
           type="video/mp4"
+          autoPlay={true}
         />,
         movieTitle: currentMovie.title
       });
@@ -157,11 +159,11 @@ class Watch extends React.Component {
     return (
       <div id="videoContainer">
         <div className="back-box">
-          <div className="back-btn">
-            <p
-              className="back-arrow"
-              onClick={() => this.handleBackButton()}
-            >←</p>
+          <div 
+            className="back-btn"
+            onClick={() => this.handleBackButton()}
+          >
+            <p className="back-arrow">←</p>
             <p
               className="back-msg"
             >Back to Browse</p>
