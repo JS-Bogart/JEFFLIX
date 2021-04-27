@@ -2,6 +2,13 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import Splash from './splash'
 
+const mapStateToProps = state => {
+  return {
+    movies: Object.values(state.movies),
+    genres: Object.values(state.genres)
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     requestAllMovies: () => dispatch(requestAllMovies()),
@@ -10,4 +17,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Splash);
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

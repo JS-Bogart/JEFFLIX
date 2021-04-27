@@ -4,9 +4,11 @@ import Signup from './signup';
 import { requestAllMovies } from '../../actions/movie_actions';
 import { requestAllGenres } from '../../actions/genre_actions';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = state => {
   return {
-    errors: errors
+    errors: state.errors,
+    movies: Object.values(state.movies),
+    genres: Object.values(state.genres)
   };
 };
 
