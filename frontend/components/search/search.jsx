@@ -113,7 +113,7 @@ class Search extends React.Component {
     movies[index] =
       <div className="genre-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
-        <div className="slider-video-wrap">
+        <div className="genre-video-wrap">
           <video
             id="slider-video"
             preload="metadata"
@@ -164,7 +164,7 @@ class Search extends React.Component {
     movies[index] =
       <div className="genre-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
-        <div className="slider-video-wrap">
+        <div className="genre-video-wrap">
           <video
             id="slider-video"
             preload="metadata"
@@ -217,7 +217,7 @@ class Search extends React.Component {
       movies.push(
         <div className="genre-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
-          <div className="slider-video-wrap">
+          <div className="genre-video-wrap">
             <video
               id="slider-video"
               preload="metadata"

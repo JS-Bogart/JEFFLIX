@@ -88,7 +88,6 @@ class MyList extends React.Component {
   }
 
   removeFromList(movie, index) {
-    debugger
     const userId = this.props.currentUser.id;
     const movieListId = { user_id: userId, movie_id: movie.id }
     this.props.deleteMovie(movieListId);

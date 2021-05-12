@@ -748,6 +748,7 @@ footer {
 }
 
 .genre-item {
+  position: relative;
   height: 250px;
   width: 295px;
   margin-left: 20px;
@@ -768,6 +769,27 @@ footer {
 .genre-item > img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.genre-video-wrap {
+  position: absolute;
+  display: none;
+}
+
+.genre-item:hover .genre-video-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genre-video-wrap > video {
+  max-height: 170px;
+  max-width: 295px;
+}
+
+.genre-video-wrap {
+  height: 170px;
+  width: 295px;
 }
 
 .genre-item-info {

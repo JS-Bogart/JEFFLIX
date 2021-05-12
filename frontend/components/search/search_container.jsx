@@ -9,6 +9,7 @@ import { getMyList, addMovie, deleteMovie } from '../../actions/my_list_actions'
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
+    userId: state.session.currentUser.id,
     movies: Object.values(state.movies),
     genres: Object.values(state.genres),
     myList: Object.values(state.myList)
