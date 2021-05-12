@@ -162,6 +162,14 @@ class DemoSlides extends React.Component {
       movies.push(
         <div className="slider-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
+          <div className="slider-video-wrap">
+            <video
+              id="slider-video"
+              src={movie.videoUrl}
+              type="video/mp4"
+              autoPlay={false}
+            />
+          </div>
           <div className="slider-item-info">
             <div className="item-title-play">
               <p>{movie.title}</p>

@@ -478,6 +478,7 @@ footer {
 }
 
 .slider-item {
+  position: relative;
   margin: 2px;
   border-radius: 5px;
   transition: 500ms all;
@@ -523,6 +524,17 @@ footer {
   top: -1px;
 }
 
+.slider-video-wrap {
+  position: absolute;
+  display: none;
+}
+
+.slider-item:hover .slider-video-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .item-title-play {
   align-items: center;
 }
@@ -548,6 +560,16 @@ footer {
   .slide-arrow-right {
     height: 175px;
     line-height: 2;
+  }
+
+  .slider-video-wrap > video {
+    max-height: 170px;
+    max-width: 295px;
+  }
+
+  .slider-video-wrap {
+    height: 170px;
+    width: 295px;
   }
 
   .item-play-btn .play-arrow {
