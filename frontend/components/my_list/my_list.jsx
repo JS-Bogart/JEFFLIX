@@ -42,7 +42,7 @@ class MyList extends React.Component {
       movies.push(
         <div className="my-list-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
-          <div className="slider-video-wrap">
+          <div className="my-list-video-wrap">
             <video
               id="slider-video"
               preload="metadata"

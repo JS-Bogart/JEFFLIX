@@ -678,6 +678,7 @@ footer {
 }
 
 .my-list-item {
+  position: relative;
   height: 250px;
   width: 295px;
   margin-left: 20px;
@@ -698,6 +699,27 @@ footer {
 .my-list-item > img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.my-list-video-wrap {
+  position: absolute;
+  display: none;
+}
+
+.my-list-item:hover .my-list-video-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-list-video-wrap > video {
+  max-height: 170px;
+  max-width: 295px;
+}
+
+.my-list-video-wrap {
+  height: 170px;
+  width: 295px;
 }
 
 .my-list-item-info {
