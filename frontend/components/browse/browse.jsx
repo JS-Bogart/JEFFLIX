@@ -58,7 +58,7 @@ class Browse extends React.Component {
 
   getGenres() {
     const genres = this.state.genres;
-    if (this.state.genresLoaded && this.props.movies.length > 0) {
+    if (this.props.movies.length > 0) {
       return (
         <div className="browse-genre-rows">
           {genres.map((genre, index) => (
