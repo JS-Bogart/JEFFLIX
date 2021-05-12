@@ -42,6 +42,17 @@ class MyList extends React.Component {
       movies.push(
         <div className="my-list-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
+          <div className="slider-video-wrap">
+            <video
+              id="slider-video"
+              preload="metadata"
+              src={movie.videoUrl}
+              type="video/mp4"
+              autoPlay={true}
+              loop={true}
+              muted={true}
+            />
+          </div>
           <div className="my-list-item-info">
             <div className="item-title-play">
               <p>{movie.title}</p>

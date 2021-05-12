@@ -608,6 +608,16 @@ footer {
     width: 215px;
   }
 
+  .slider-video-wrap > video {
+    max-height: 125px;
+    max-width: 215px;
+  }
+
+  .slider-video-wrap {
+    height: 125px;
+    width: 215px;
+  }
+
   .item-play-btn .play-arrow {
     position: relative;
     left: 0.55rem;
