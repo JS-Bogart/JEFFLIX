@@ -12,6 +12,8 @@ class Search extends React.Component {
     }
     this.myRef = React.createRef();
     this.changeSearchStatus = this.changeSearchStatus.bind(this);
+    this.searchMovies = this.searchMovies.bind(this);
+    this.debounce = this.debounce.bind(this);
   }
 
   componentDidMount() {
@@ -27,18 +29,33 @@ class Search extends React.Component {
       this.props.requestAllGenres();
     }
     this.props.getMyList(this.props.currentUser.id);
-    this.searchMovies();
+    // this.searchMovies();
+    this.debounce(this.searchMovies(), 5000);
   }
 
   componentDidUpdate(){
     if (this.state.movies.length < 1 && this.props.movies.length > 0 && 
       !this.state.searched) {
-      this.searchMovies();
+      // this.searchMovies();
+      this.debounce(this.searchMovies(), 5000);
     } else if (this.state.previousTerm !== this.state.searchTerm) {
       this.setState({
         previousTerm: this.state.searchTerm
       });
-      this.searchMovies();
+      // this.searchMovies();
+      this.debounce(this.searchMovies(), 5000);
+    }
+  }
+
+  debounce(search, time) {
+    let timeout;
+    return function () {
+      // let context = this, args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        // search.apply(context, args);
+        search;
+      }, time)
     }
   }
 
