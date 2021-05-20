@@ -29,31 +29,31 @@ class Search extends React.Component {
       this.props.requestAllGenres();
     }
     this.props.getMyList(this.props.currentUser.id);
-    // this.searchMovies();
-    this.debounce(this.searchMovies(), 5000);
+    this.searchMovies();
+    // this.debounce(this.searchMovies(), 5000);
   }
 
   componentDidUpdate(){
     if (this.state.movies.length < 1 && this.props.movies.length > 0 && 
       !this.state.searched) {
-      // this.searchMovies();
-      this.debounce(this.searchMovies(), 5000);
+      this.searchMovies();
+      // this.debounce(this.searchMovies(), 5000);
     } else if (this.state.previousTerm !== this.state.searchTerm) {
       this.setState({
         previousTerm: this.state.searchTerm
       });
-      // this.searchMovies();
-      this.debounce(this.searchMovies(), 5000);
+      this.searchMovies();
+      // this.debounce(this.searchMovies(), 5000);
     }
   }
 
   debounce(search, time) {
     let timeout;
     return function () {
-      // let context = this, args = arguments;
+      let context = this, args = arguments;
       clearTimeout(timeout);
       timeout = setTimeout(() => {
-        // search.apply(context, args);
+        search.apply(context, args);
         search;
       }, time)
     }
@@ -73,8 +73,10 @@ class Search extends React.Component {
 
   handleInput(field) {
     return (e) => {
+      const value = `${e.currentTarget.value}`;
+      const update = this.props.history.push(`/search/${value}`);
       this.setState({ [field]: e.currentTarget.value, searched: false })
-      this.props.history.push(`/search/${e.currentTarget.value}`);
+      this.debounce(update, 5000)
     }
   }
 
