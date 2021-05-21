@@ -12,8 +12,10 @@ class Search extends React.Component {
     }
     this.myRef = React.createRef();
     this.changeSearchStatus = this.changeSearchStatus.bind(this);
-    this.searchMovies = this.searchMovies.bind(this);
+    // this.searchMovies = this.searchMovies.bind(this);
     this.debounce = this.debounce.bind(this);
+    this.handleUpdate = this.debounce(this.handleUpdate.bind(this), 2000)
+    this.searchMovies = this.debounce(this.searchMovies.bind(this), 2000)
   }
 
   componentDidMount() {
@@ -47,17 +49,46 @@ class Search extends React.Component {
     }
   }
 
-  debounce(search, time) {
-    let timeout;
-    return function () {
-      let context = this, args = arguments;
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        search.apply(context, args);
-        search;
-      }, time)
+  // debounce(search, time) {
+  //   debugger
+  //   let timeout;
+  //   return function () {
+  //     let context = this, args = arguments;
+  //     clearTimeout(timeout);
+  //     timeout = setTimeout(() => {
+  //       search.apply(context, args);
+  //     }, time)
+  //   }
+  // }
+
+  debounce(func, time) {
+    let urlTimeout;
+    clearTimeout(urlTimeout);
+    urlTimeout = setTimeout(func, time);
+    return (...args) => {
+      clearTimeout(urlTimeout);
+      urlTimeout = setTimeout(() => {func.apply(this, args);}, time)
     }
   }
+
+  // debounce(func, time, type) {
+  //   if (type === "urlUpdate") {
+  //     let urlTimeout;
+  //     clearTimeout(urlTimeout);
+  //     urlTimeout = setTimeout(func, time);
+  //     return (...args) => {
+  //       console.log(1);
+  //       console.log(2);
+  //       console.log(3);
+  //       clearTimeout(urlTimeout);
+  //       urlTimeout = setTimeout(() => {func.apply(this, args);}, time)
+  //     }
+  //   } else if (type === "search") {
+  //     let searchTimeout;
+  //     clearTimeout(searchTimeout);
+  //     searchTimeout = setTimeout(func, time)
+  //   }
+  // }
 
   handlePlayButton(movie) {
     this.props.history.push(`/watch/${movie}`);
@@ -71,12 +102,17 @@ class Search extends React.Component {
     }
   }
 
+  handleUpdate(value) {
+    this.props.history.push(`/search/${value}`)
+  }
+
   handleInput(field) {
     return (e) => {
       const value = `${e.currentTarget.value}`;
-      const update = this.props.history.push(`/search/${value}`);
+      // const update = this.props.history.push(`/search/${value}`);
       this.setState({ [field]: e.currentTarget.value, searched: false })
-      this.debounce(update, 5000)
+      // this.debounce(() => this.handleUpdate(value), 1000, "urlUpdate")
+      this.handleUpdate(value);
     }
   }
 
