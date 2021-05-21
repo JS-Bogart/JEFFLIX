@@ -12,10 +12,9 @@ class Search extends React.Component {
     }
     this.myRef = React.createRef();
     this.changeSearchStatus = this.changeSearchStatus.bind(this);
-    // this.searchMovies = this.searchMovies.bind(this);
     this.debounce = this.debounce.bind(this);
-    this.handleUpdate = this.debounce(this.handleUpdate.bind(this), 2000)
-    this.searchMovies = this.debounce(this.searchMovies.bind(this), 2000)
+    this.handleUpdate = this.debounce(this.handleUpdate.bind(this), 500);
+    this.searchUpdate = this.debounce(this.searchUpdate.bind(this), 500);
   }
 
   componentDidMount() {
@@ -32,63 +31,36 @@ class Search extends React.Component {
     }
     this.props.getMyList(this.props.currentUser.id);
     this.searchMovies();
-    // this.debounce(this.searchMovies(), 5000);
   }
 
   componentDidUpdate(){
     if (this.state.movies.length < 1 && this.props.movies.length > 0 && 
       !this.state.searched) {
       this.searchMovies();
-      // this.debounce(this.searchMovies(), 5000);
-    } else if (this.state.previousTerm !== this.state.searchTerm) {
+    } else if (this.state.previousTerm !== this.state.searchTerm 
+      && this.state.previousTerm.length < 1) {
       this.setState({
         previousTerm: this.state.searchTerm
       });
       this.searchMovies();
-      // this.debounce(this.searchMovies(), 5000);
+    } else if (this.state.previousTerm !== this.state.searchTerm
+      && this.state.previousTerm.length >= 1) {
+      this.setState({
+        previousTerm: this.state.searchTerm
+      });
+      this.searchUpdate();
     }
   }
-
-  // debounce(search, time) {
-  //   debugger
-  //   let timeout;
-  //   return function () {
-  //     let context = this, args = arguments;
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(() => {
-  //       search.apply(context, args);
-  //     }, time)
-  //   }
-  // }
 
   debounce(func, time) {
-    let urlTimeout;
-    clearTimeout(urlTimeout);
-    urlTimeout = setTimeout(func, time);
+    let timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(func, time);
     return (...args) => {
-      clearTimeout(urlTimeout);
-      urlTimeout = setTimeout(() => {func.apply(this, args);}, time)
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {func.apply(this, args);}, time)
     }
   }
-
-  // debounce(func, time, type) {
-  //   if (type === "urlUpdate") {
-  //     let urlTimeout;
-  //     clearTimeout(urlTimeout);
-  //     urlTimeout = setTimeout(func, time);
-  //     return (...args) => {
-  //       console.log(1);
-  //       console.log(2);
-  //       console.log(3);
-  //       clearTimeout(urlTimeout);
-  //       urlTimeout = setTimeout(() => {func.apply(this, args);}, time)
-  //     }
-  //   } else if (type === "search") {
-  //     let searchTimeout;
-  //     clearTimeout(searchTimeout);
-  //     searchTimeout = setTimeout(func, time)
-  //   }
-  // }
 
   handlePlayButton(movie) {
     this.props.history.push(`/watch/${movie}`);
@@ -96,23 +68,33 @@ class Search extends React.Component {
 
   changeSearchStatus() {
     if (this.state.searching) {
-      this.setState({searching: false})
+      this.setState({searching: false});
     } else {
-      this.setState({ searching: true })
+      this.setState({ searching: true });
     }
   }
 
+  searchUpdate(){
+    this.searchMovies();
+  }
+
   handleUpdate(value) {
-    this.props.history.push(`/search/${value}`)
+    if (value) {
+      this.props.history.push(`/search/${value}`);
+    } else if (this.state.searchTerm === '') {
+      this.props.history.push("/browse");
+    }
   }
 
   handleInput(field) {
     return (e) => {
       const value = `${e.currentTarget.value}`;
-      // const update = this.props.history.push(`/search/${value}`);
       this.setState({ [field]: e.currentTarget.value, searched: false })
-      // this.debounce(() => this.handleUpdate(value), 1000, "urlUpdate")
-      this.handleUpdate(value);
+      if (value.length < 1) {
+        this.props.history.push("/browse");
+      } else {
+        this.handleUpdate(value);
+      }
     }
   }
 

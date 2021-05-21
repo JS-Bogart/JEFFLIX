@@ -13,6 +13,8 @@ class Browse extends React.Component {
     };
     this.getGenreList = this.getGenreList.bind(this);
     this.handlePlayButton = this.handlePlayButton.bind(this);
+    this.debounce = this.debounce.bind(this);
+    this.handleUpdate = this.debounce(this.handleUpdate.bind(this), 500);
   }
 
   componentDidMount(){
@@ -103,10 +105,27 @@ class Browse extends React.Component {
     }
   }
 
+  handleUpdate(value) {
+    if (value) {
+      this.props.history.push(`/search/${value}`)
+    }
+  }
+
   handleInput(field) {
     return (e) => {
-      this.setState({ [field]: e.currentTarget.value })
-      this.props.history.push(`/search/${e.currentTarget.value}`);
+      const value = `${e.currentTarget.value}`;
+      this.setState({ [field]: e.currentTarget.value})
+      this.handleUpdate(value);
+    }
+  }
+
+  debounce(func, time) {
+    let urlTimeout;
+    clearTimeout(urlTimeout);
+    urlTimeout = setTimeout(func, time);
+    return (...args) => {
+      clearTimeout(urlTimeout);
+      urlTimeout = setTimeout(() => { func.apply(this, args); }, time)
     }
   }
 
