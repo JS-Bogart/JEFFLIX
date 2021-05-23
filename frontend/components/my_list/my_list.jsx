@@ -10,6 +10,8 @@ class MyList extends React.Component {
     };
 
     this.removeFromList = this.removeFromList.bind(this);
+    this.debounce = this.debounce.bind(this);
+    this.handleUpdate = this.debounce(this.handleUpdate.bind(this), 500);
   }
 
   componentDidMount(){
@@ -119,12 +121,36 @@ class MyList extends React.Component {
     }
   }
 
-  handleInput(field) {
-    return (e) => {
-      this.setState({ [field]: e.currentTarget.value })
-      this.props.history.push(`/search/${e.currentTarget.value}`);
+  handleUpdate(value) {
+    if (value) {
+      this.props.history.push(`/search/${value}`)
     }
   }
+
+  handleInput(field) {
+    return (e) => {
+      const value = `${e.currentTarget.value}`;
+      this.setState({ [field]: e.currentTarget.value })
+      this.handleUpdate(value);
+    }
+  }
+
+  debounce(func, time) {
+    let urlTimeout;
+    clearTimeout(urlTimeout);
+    urlTimeout = setTimeout(func, time);
+    return (...args) => {
+      clearTimeout(urlTimeout);
+      urlTimeout = setTimeout(() => { func.apply(this, args); }, time)
+    }
+  }
+
+  // handleInput(field) {
+  //   return (e) => {
+  //     this.setState({ [field]: e.currentTarget.value })
+  //     this.props.history.push(`/search/${e.currentTarget.value}`);
+  //   }
+  // }
 
   getSearchBar() {
     if (this.state.searching) {
