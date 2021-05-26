@@ -145,13 +145,6 @@ class MyList extends React.Component {
     }
   }
 
-  // handleInput(field) {
-  //   return (e) => {
-  //     this.setState({ [field]: e.currentTarget.value })
-  //     this.props.history.push(`/search/${e.currentTarget.value}`);
-  //   }
-  // }
-
   getSearchBar() {
     if (this.state.searching) {
       return (
