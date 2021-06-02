@@ -1,6 +1,6 @@
 import React from 'react';
 
-class DemoSlides extends React.Component {
+class Slides extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -235,4 +235,4 @@ class DemoSlides extends React.Component {
   }
 }
 
-export default DemoSlides;
+export default Slides;

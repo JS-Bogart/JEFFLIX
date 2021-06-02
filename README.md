@@ -76,7 +76,7 @@ JEFFLIX displays movies on carousels organized into genres and suggestions for u
 The carousel component has three important features: the previous slide arrow button, the next slide arrow button, and the rendered slides component. The arrow buttons change the state to reflect which section of the carousel should currently be displayed. This feature of the arrow buttons is handled by the previousSlide and nextSlide functions. That information is then passed to the slides as props, where it is used to provide information for CSS animations. The CSS transition and transform properties are used to slide the carousel from one section to another.
 
 ```
-class DemoCarousel extends React.Component{
+class Carousel extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -117,7 +117,7 @@ class DemoCarousel extends React.Component{
           currentSliderItem={this.state.currentSliderItem}
           glyph="‹" />
 
-        <DemoSlides 
+        <Slides 
           currentSliderItem={this.state.currentSliderItem}
         />
 
@@ -140,7 +140,7 @@ const Arrow = ({ direction, clickFunction, currentSliderItem, glyph }) => (
   </div>
 );
 ------------------------------------------------------------------
-class DemoSlides extends React.Component {
+class Slides extends React.Component {
   constructor(props){
     super(props);
     this.state = {

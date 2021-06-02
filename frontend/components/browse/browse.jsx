@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoCarousel from './carousels/demo_carousel';
+import Carousel from './carousels/carousel';
 import Billboard from './billboard';
 
 class Browse extends React.Component {
@@ -66,7 +66,7 @@ class Browse extends React.Component {
           {genres.map((genre, index) => (
             <div className="browse-row" key={index}>
               <h2>{genre.genre}</h2>
-              <DemoCarousel
+              <Carousel
                 movies={this.props.movies}
                 genre={genre}
                 addMovie={this.props.addMovie}

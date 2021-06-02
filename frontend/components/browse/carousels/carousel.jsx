@@ -1,8 +1,8 @@
 import React from 'react';
 import Arrow from './arrow';
-import DemoSlides from './demo_slides';
+import Slides from './slides';
 
-class DemoCarousel extends React.Component{
+class Carousel extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -43,7 +43,7 @@ class DemoCarousel extends React.Component{
           currentSliderItem={this.state.currentSliderItem}
           glyph="‹" />
 
-        <DemoSlides 
+        <Slides 
           currentSliderItem={this.state.currentSliderItem}
           movies={this.props.movies}
           genre={this.props.genre}
@@ -64,4 +64,4 @@ class DemoCarousel extends React.Component{
   }
 }
 
-export default DemoCarousel;
+export default Carousel;
