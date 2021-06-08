@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import NavbarContainer from '../navbar/navbar_container';
 import Carousel from './carousels/carousel';
 import Billboard from './billboard';
 
@@ -7,8 +9,6 @@ class Browse extends React.Component {
     super(props);
     this.state = {
       genresLoaded: false,
-      searchTerm: '',
-      searching: false,
       genres: []
     };
     this.getGenreList = this.getGenreList.bind(this);
@@ -98,6 +98,7 @@ class Browse extends React.Component {
   render() {
     return (
       <div className="browse">
+        <Route component={NavbarContainer} />
         <div className="browse-body">
           <div className="browse-title">
             <h1>Movies</h1>
