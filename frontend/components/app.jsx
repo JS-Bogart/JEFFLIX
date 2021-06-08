@@ -10,9 +10,11 @@ import MyListContainer from './my_list/my_list_container';
 import GenreContainer from './genre_page/genre_container';
 import SearchContainer from './search/search_container';
 import WatchContainer from './watch/watch_container';
+import NavbarContainer from './navbar/navbar_container';
 
 const App = () => (
   <div className="app">
+    <ProtectedRoute component={NavbarContainer} />
     <Switch>
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
