@@ -95,6 +95,7 @@ class Navbar extends React.Component {
           <div className="logout-dropdown">
             <span>&#x25B4;</span>
             <div>
+              <a href="https://github.com/JS-Bogart/JEFFLIX">GitHub</a>
               <a
                 onClick={this.props.logout}
                 href="/#/login"
