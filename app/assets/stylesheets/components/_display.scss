@@ -102,6 +102,11 @@
   display: none;
 }
 
+.dropdown-list {
+  display: flex;
+  flex-direction: column;
+}
+
 .browse-icon:hover {
   cursor: pointer;
 }
