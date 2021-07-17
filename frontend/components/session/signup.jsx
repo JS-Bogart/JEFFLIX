@@ -1,52 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Signup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-  }
-  
-  componentDidMount() {
-    this.props.removeErrors();
-    this.splashData = JSON.parse(localStorage.getItem('splashEmail'));
+const Signup = (props) => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    props.removeErrors();
+    const splashData = JSON.parse(localStorage.getItem('splashEmail'));
 
     if (localStorage.getItem('splashEmail')) {
-      this.setState({
-        email: this.splashData.splashEmail,
-        password: ''
-      })
-    } else {
-      this.setState({
-        email: '',
-        password: ''
-      })
+      setEmail(splashData.splashEmail)
     }
-    if (this.props.movies.length < 2) {
-      this.props.requestAllMovies();
+
+    if (props.movies.length < 2) {
+      props.requestAllMovies();
     }
-    if (this.props.genres.length < 1) {
-      this.props.requestAllGenres();
+    if (props.genres.length < 1) {
+      props.requestAllGenres();
+    }
+  }, [])
+
+  const handleInput = (field) => {
+    if (field === 'email') {
+      return (e) => {
+        setEmail(e.currentTarget.value)
+      }
+    } else if (field === 'password') {
+      return (e) => {
+        setPassword(e.currentTarget.value)
+      }
     }
   }
 
-  handleInput(field) {
-    return (e) => {
-      this.setState({ [field]: e.currentTarget.value })
-    }
-  }
-
-  handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.signup(this.state);
+    props.signup({ email: email, password: password });
   }
   
-  renderEmailError() {
-    if (this.props.errors[0] === "Email has already been taken") {
+  const renderEmailError = () => {
+    if (props.errors[0] === "Email has already been taken") {
       return(
         <div className="signup-email-error">
           <span>&#9888;</span>
@@ -61,8 +54,8 @@ class Signup extends React.Component {
     }
   }
 
-  renderPasswordError() {
-    if (this.props.errors[0] === "Password is too short (minimum is 6 characters)") {
+   const renderPasswordError = () => {
+    if (props.errors[0] === "Password is too short (minimum is 6 characters)") {
       return (
         <div className="signup-password-error">
           <p>Password should be at least 6 characters.</p>
@@ -71,52 +64,50 @@ class Signup extends React.Component {
     }
   }
 
-  render() {
-    return(
-      <div className="signup">
-        <header>
-          <a
-            href="/#/"
-            className="logo-signup-link"
-          >
-            <img src={window.splashLogo} alt="splashLogo"/>
-          </a>
-          <a
-            href="/#/login"
-            className="login-link"
-          >
-            Sign In
-          </a>
-        </header>
-        <div className="signup-body">
-          {this.renderEmailError()}
-          <h2>Create a password to start your membership.</h2>
-          <p>Just a few more steps and you're done!</p>
-          <p>We hate paperwork, too.</p>
-          <form className="signup-form" onSubmit={this.handleSubmit}>
-            <label className="email-label">Email</label>
-            <input 
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
-            />
-            <label className="password-label">Add a password</label>
-            <input 
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-            />
-            {this.renderPasswordError()}
-            <input
-              type="submit"
-              className="signup-link"
-              value="Continue"
-            />
-          </form>
-        </div>
+  return(
+    <div className="signup">
+      <header>
+        <a
+          href="/#/"
+          className="logo-signup-link"
+        >
+          <img src={window.splashLogo} alt="splashLogo"/>
+        </a>
+        <a
+          href="/#/login"
+          className="login-link"
+        >
+          Sign In
+        </a>
+      </header>
+      <div className="signup-body">
+        {renderEmailError()}
+        <h2>Create a password to start your membership.</h2>
+        <p>Just a few more steps and you're done!</p>
+        <p>We hate paperwork, too.</p>
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <label className="email-label">Email</label>
+          <input 
+            type="text"
+            value={email}
+            onChange={handleInput('email')}
+          />
+          <label className="password-label">Add a password</label>
+          <input 
+            type="password"
+            value={password}
+            onChange={handleInput('password')}
+          />
+          {renderPasswordError()}
+          <input
+            type="submit"
+            className="signup-link"
+            value="Continue"
+          />
+        </form>
       </div>
-    )
-  }
+    </div>
+  )
 };
 
 export default Signup;
