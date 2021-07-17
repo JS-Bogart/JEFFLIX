@@ -11,7 +11,7 @@ const Splash = (props) => {
 
   useEffect(() => {
     const lsEmail = localStorage.getItem('splashEmail');
-    if (lsEmail !== "undefined" && splashEmail === "") {
+    if (lsEmail !== "undefined" && lsEmail !== null && splashEmail === "") {
       const splashData = JSON.parse(lsEmail);
       setSplashEmail(splashData.splashEmail)
     }

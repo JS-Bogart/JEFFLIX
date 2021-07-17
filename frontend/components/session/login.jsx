@@ -1,55 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.demoSubmit = this.demoSubmit.bind(this);
-    this.demo = {
-      email: 'demo@demo.com',
-      password: '123456'
-    };
-  }
+const demo = {
+  email: 'demo@demo.com',
+  password: '123456'
+};
 
-  componentDidMount() {
-    this.props.removeErrors();
-    if (this.props.movies.length < 2) {
-      this.props.requestAllMovies();
+const Login = (props) => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    props.removeErrors();
+    if (props.movies.length < 2) {
+      props.requestAllMovies();
     }
-    if (this.props.genres.length < 1) {
-      this.props.requestAllGenres();
+    if (props.genres.length < 1) {
+      props.requestAllGenres();
     }
-  }
+  }, [])
 
-  handleInput(field) {
-    return (e) => {
-      this.setState({ [field]: e.currentTarget.value })
+  const handleInput = (field) => {
+    if (field === 'email') {
+      return (e) => {
+        setEmail(e.currentTarget.value)
+      }
+    } else if (field === 'password') {
+      return (e) => {
+        setPassword(e.currentTarget.value)
+      }
     }
-  }
-
-  getData() {
-    this.props.requestAllMovies();
-    this.props.requestAllGenres();
   }
   
-  handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.getData();
-    this.props.login(this.state);
+    props.login({ email: email, password: password });
   }
 
-  demoSubmit() {
-    this.getData();
-    this.props.login(this.demo);
+  const demoSubmit = () => {
+    props.login(demo);
   }
 
-  renderErrors() {
-    if (this.props.errors.length > 0) {
+  const renderErrors = () => {
+    if (props.errors.length > 0) {
       return (
         <div className="signin-error">
           <p>Sorry, we can't find an account with this</p>
@@ -60,59 +53,57 @@ class Login extends React.Component {
     }
   }
 
-  render() {
-    return(
-      <div className="signin">
-        <img src={window.splashbg} alt="splashLogo" className="splashbg" />
-        <div className="signin-wrapper">
-          <a
-            href="/#/"
-            className="logo-signup-link"
-          >
-            <img src={window.splashLogo} alt="splashLogo" />
-          </a>
-          <div className="signin-body">
-            <h2>Sign In</h2>
-            {this.renderErrors()}
-            <form className="signin-form" onSubmit={this.handleSubmit}>
-              <label>Email</label>
-              <input 
-                type="text"
-                value={this.state.email}
-                onChange={this.handleInput('email')}
-              />
-              <label>Password</label>
-              <input 
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInput('password')}
-              />
-              <input 
-                type="submit"
-                className="signin-btn"
-                value="Sign In"
-              />
-              <div
-                onClick={this.demoSubmit}
-                className="demo-btn"
-              >
-                Demo User
-              </div>
-            </form>
-            <div className="signup-now">
-              <p>New to Jefflix?</p>
-              <a
-                href="/#/signup"
-                className="signup-now-link"
-              >
-                Sign up now.
-              </a>
+  return(
+    <div className="signin">
+      <img src={window.splashbg} alt="splashLogo" className="splashbg" />
+      <div className="signin-wrapper">
+        <a
+          href="/#/"
+          className="logo-signup-link"
+        >
+          <img src={window.splashLogo} alt="splashLogo" />
+        </a>
+        <div className="signin-body">
+          <h2>Sign In</h2>
+          {renderErrors()}
+          <form className="signin-form" onSubmit={handleSubmit}>
+            <label>Email</label>
+            <input 
+              type="text"
+              value={email}
+              onChange={handleInput('email')}
+            />
+            <label>Password</label>
+            <input 
+              type="password"
+              value={password}
+              onChange={handleInput('password')}
+            />
+            <input 
+              type="submit"
+              className="signin-btn"
+              value="Sign In"
+            />
+            <div
+              onClick={demoSubmit}
+              className="demo-btn"
+            >
+              Demo User
             </div>
+          </form>
+          <div className="signup-now">
+            <p>New to Jefflix?</p>
+            <a
+              href="/#/signup"
+              className="signup-now-link"
+            >
+              Sign up now.
+            </a>
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 };
 
 export default Login;
