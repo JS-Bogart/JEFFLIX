@@ -1,70 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Watch extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      movieId: null,
-      movie: null,
-      movieTitle: "",
-      playpause: "❙❙",
-      mute: <p>&#x1f50a;</p>,
-      time: ""
-    }
-  }
+const Watch = (props) => {
 
-  componentDidMount() {
-    const { id } = this.props.match.params;
+  const [movie, setMovie] = useState(null);
+  const [movieTitle, setMovieTitle] = useState("");
+  const [playpause, setPlaypause] = useState("❙❙");
+  const [mute, setMute] = useState(<p>&#x1f50a;</p>);
+
+  useEffect(async () => {
+    const { id } = props.match.params;
     const movieId = parseInt(id);
-    this.setState({
-      movieId: movieId
-    });
-    if (this.props.movies.length < 1) {
-      this.props.requestMovie(movieId);
-    } else if (this.props.movies.length > 0) {
+    if (props.movies.length < 1) {
+      props.requestMovie(movieId);
+    } else if (props.movies.length > 0 && !movie) {
       let currentMovie;
-      this.props.movies.forEach(movie => {
+      props.movies.forEach(movie => {
         if (movie.id === movieId) {
           currentMovie = movie;
         }
       })
-      this.setState({
-        movie: <video
-          id="video"
-          controls
-          preload="metadata"
-          src={currentMovie.videoUrl}
-          type="video/mp4"
-          autoPlay={true}
-        />,
-        movieTitle: currentMovie.title
-      });
+      setMovie(<video
+        id="video"
+        controls
+        preload="metadata"
+        src={currentMovie.videoUrl}
+        type="video/mp4"
+        autoPlay={true}
+      />);
+      setMovieTitle(currentMovie.title)
     }
-  }
 
-  componentDidUpdate(prevProps){
-    let currentMovie;
-    this.props.movies.forEach(movie => {
-      if (movie.id === this.state.movieId){
-        currentMovie = movie;
-      }
-    })
-    if (prevProps.movies !== this.props.movies){
-      this.setState({
-        movie: <video
-          id="video"
-          controls
-          preload="metadata"
-          src={currentMovie.videoUrl}
-          type="video/mp4"
-          autoPlay={true}
-        />,
-        movieTitle: currentMovie.title
-      });
-    }
-    if (this.state.movie) {
+    if (movie) {
+      debugger
       const videoContainer = document.getElementById('videoContainer');
-      this.video = document.getElementById('video');
       const video = document.getElementById('video');
       video.controls = false;
       const progress = document.getElementById('progress');
@@ -122,93 +90,84 @@ class Watch extends React.Component {
         handleFullscreen();
       });
     }
-  }
+  }, [props.movies, movie])
 
-  pauseButton(){
-    if (this.video.paused) {
-      this.video.play();
-      this.setState({
-        playpause: "❙❙"
-      })
+  const pauseButton = () => {
+    if (video.paused) {
+      video.play();
+      setPlaypause("❙❙");
     } else {
-      this.video.pause();
-      this.setState({
-        playpause: "▶"
-      })
+      video.pause();
+      setPlaypause("▶")
     }
   }
 
-  muteButton(){
-    this.video.muted = !this.video.muted;
-    if (this.video.muted) {
-      this.setState({
-        mute: <p>&#x1f507;</p>
-      })
+  const muteButton = () => {
+    video.muted = !video.muted;
+    if (video.muted) {
+      setMute(<p>&#x1f507;</p>);
     } else {
-      this.setState({
-        mute: <p>&#x1f50a;</p>
-      })
+      setMute(<p>&#x1f50a;</p>);
     }
   }
 
-  handleBackButton() {
-    this.props.history.push(`/browse`);
+  const handleBackButton = () => {
+    props.history.push(`/browse`);
   }
 
-  render() {
-    return (
-      <div id="videoContainer">
-        <div className="back-box">
-          <div 
-            className="back-btn"
-            onClick={() => this.handleBackButton()}
-          >
-            <p className="back-arrow">←</p>
-            <p
-              className="back-msg"
-            >Back to Browse</p>
-          </div>
+
+  return (
+    <div id="videoContainer">
+      <div className="back-box">
+        <div 
+          className="back-btn"
+          onClick={() => handleBackButton()}
+        >
+          <p className="back-arrow">←</p>
+          <p
+            className="back-msg"
+          >Back to Browse</p>
         </div>
-        {this.state.movie}
-        <div className="controls-box">
-          <div id="video-controls" className="controls">
-            <li className="progress">
-              <progress id="progress" value="0" min="0">
-                <span id="progress-bar"></span>
-              </progress>
-              <label id="timer"></label>
-            </li>
-            <div id="control-buttons">
-              <div className="cb-left">
-                <div
-                  id="playpause"
-                  onClick={() => this.pauseButton()}
-                >
-                  {this.state.playpause}
-                </div>
-                <div
-                  id="mute" 
-                  onClick={() => this.muteButton()}
-                >
-                  {this.state.mute}
-                </div>
-                <div
-                  id="watch-movie-title"
-                >
-                  {this.state.movieTitle}
-                </div>
+      </div>
+      {movie}
+      <div className="controls-box">
+        <div id="video-controls" className="controls">
+          <li className="progress">
+            <progress id="progress" value="0" min="0">
+              <span id="progress-bar"></span>
+            </progress>
+            <label id="timer"></label>
+          </li>
+          <div id="control-buttons">
+            <div className="cb-left">
+              <div
+                id="playpause"
+                onClick={() => pauseButton()}
+              >
+                {playpause}
               </div>
               <div
-                id="fs" 
+                id="mute" 
+                onClick={() => muteButton()}
               >
-                ❏
+                {mute}
               </div>
+              <div
+                id="watch-movie-title"
+              >
+                {movieTitle}
+              </div>
+            </div>
+            <div
+              id="fs" 
+            >
+              ❏
             </div>
           </div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Watch;
