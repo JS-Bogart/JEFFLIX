@@ -1,34 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 
-const MyList = (props) => {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     movies: []
-  //   };
-  //   this.removeFromList = this.removeFromList.bind(this);
-  // }
+class MyList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      movies: []
+    };
 
-  const [movies, setMovies] = useState([]);
+    this.removeFromList = this.removeFromList.bind(this);
+  }
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.getMyList(this.props.currentUser.id);
   }
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps) {
     if (prevProps.myList !== this.props.myList && this.state.movies.length < 1) {
       this.getMovies();
     }
   }
-
-  useEffect(() => {
-    props.getMyList(props.currentUser.id);
-    if (movies.length < 1) {
-      getMovies();
-    }
-  }, [props.myList])
 
   shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -91,7 +83,7 @@ const MyList = (props) => {
         </div>
       )
     })
-    
+
     this.setState({ movies: movies })
   }
 
@@ -107,13 +99,13 @@ const MyList = (props) => {
 
   getList() {
     if (this.state.movies.length > 0) {
-      return(
+      return (
         <div className="my-list-list">
           {this.state.movies}
         </div>
       )
     } else {
-      return(
+      return (
         <p>You haven't added any titles to your list yet.</p>
       )
     }
