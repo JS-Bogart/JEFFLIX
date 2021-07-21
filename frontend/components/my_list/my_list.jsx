@@ -1,36 +1,26 @@
 import React, { useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { Route } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 
 const MyList = (props) => {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     movies: []
-  //   };
-  //   this.removeFromList = this.removeFromList.bind(this);
-  // }
 
   const [movies, setMovies] = useState([]);
-
-  componentDidMount(){
-    this.props.getMyList(this.props.currentUser.id);
-  }
-
-  componentDidUpdate(prevProps){
-    if (prevProps.myList !== this.props.myList && this.state.movies.length < 1) {
-      this.getMovies();
-    }
-  }
+  const [moviesLoaded, setMoviesLoaded] = useState(false);
+  const stateRef = useRef();
+  stateRef.current = movies;
 
   useEffect(() => {
-    props.getMyList(props.currentUser.id);
+    if (!moviesLoaded) {
+      props.getMyList(props.currentUser.id);
+      setMoviesLoaded(true);
+    }
     if (movies.length < 1) {
       getMovies();
     }
   }, [props.myList])
 
-  shuffle(array) {
+  const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -38,16 +28,16 @@ const MyList = (props) => {
     return (array)
   }
 
-  handlePlayButton(movie) {
-    this.props.history.push(`/watch/${movie}`);
+  const handlePlayButton = (movie) => {
+    props.history.push(`/watch/${movie}`);
   }
 
-  getMovies() {
-    const movieList = this.shuffle(this.props.myList);
-    const movies = [];
+  const getMovies = () => {
+    const movieList = shuffle(props.myList);
+    const newMovies = [];
 
     movieList.forEach((movie, index) => {
-      movies.push(
+      newMovies.push(
         <div className="my-list-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
           <div className="my-list-video-wrap">
@@ -66,11 +56,11 @@ const MyList = (props) => {
               <p>{movie.title}</p>
               <div className="item-buttons">
                 <p className="my-list-btn" onClick={
-                  () => this.removeFromList(movie, index)
+                  () => removeFromList(movie, index)
                 }>⊖</p>
                 <div
                   className="item-play-btn"
-                  onClick={() => this.handlePlayButton(movie.id)}
+                  onClick={() => handlePlayButton(movie.id)}
                 >
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
@@ -92,24 +82,23 @@ const MyList = (props) => {
       )
     })
     
-    this.setState({ movies: movies })
+    setMovies(newMovies);
   }
 
-  removeFromList(movie, index) {
-    const userId = this.props.currentUser.id;
+  const removeFromList = (movie, index) => {
+    const userId = props.currentUser.id;
     const movieListId = { user_id: userId, movie_id: movie.id }
-    this.props.deleteMovie(movieListId);
-    let movies = this.state.movies;
-    // movies.splice(index, 1);
-    movies[index] = null;
-    this.setState({ movies: movies })
+    props.deleteMovie(movieListId);
+    const newMovies = stateRef.current.map(listMovie => listMovie);
+    newMovies[index] = null;
+    setMovies(newMovies);
   }
 
-  getList() {
-    if (this.state.movies.length > 0) {
+  const getList = () => {
+    if (movies.length > 0) {
       return(
         <div className="my-list-list">
-          {this.state.movies}
+          {movies}
         </div>
       )
     } else {
@@ -119,17 +108,15 @@ const MyList = (props) => {
     }
   }
 
-  render() {
-    return (
-      <div className="my-list">
-        <Route component={NavbarContainer} />
-        <div className="my-list-body">
-          <h1>My List</h1>
-          {this.getList()}
-        </div>
+  return (
+    <div className="my-list">
+      <Route component={NavbarContainer} />
+      <div className="my-list-body">
+        <h1>My List</h1>
+        {getList()}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default MyList;
