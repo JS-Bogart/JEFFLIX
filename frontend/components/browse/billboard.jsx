@@ -1,52 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Billboard extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      muteButton: "muted"
+const Billboard = () => {
+
+  const [muted, setMuted] = useState(true);
+  const [muteButton, setMuteButton] = useState(<p>&#x1f507;</p>);
+  const billboardRef = React.createRef();
+
+  useEffect(() => {
+    if (!muted) {
+      setMuteButton(<p>&#x1f50a;</p>);
+    } else {
+      setMuteButton(<p>&#x1f507;</p>);
     }
-    this.billboardRef = React.createRef();
-    this.unMute = this.unMute.bind(this);
+  }, [muted])
+
+  const unMute = () => {
+    billboardRef.current.muted = !billboardRef.current.muted;
+    if (muted) {
+      setMuted(false);
+    } else {
+      setMuted(true);
+    }
   }
 
-  unMute(){
-    this.billboardRef.current.muted = !this.billboardRef.current.muted;
-    if (this.state.muteButton === "unmuted") {
-      this.setState({ muteButton: "muted" });
-    } else {
-      this.setState({ muteButton: "unmuted" });
-    }
-  }
-
-  render(){
-    let muteButton;
-    if (this.state.muteButton === "unmuted"){
-      muteButton = <p>&#x1f50a;</p>
-    } else {
-      muteButton = <p>&#x1f507;</p>
-    }
-    return(
-      <div className="billboard">
-        <div className="browse-title-box">
-          <img src={window.flashgordonimg} alt="flashgordonimg" />
-          <p>A football player and his friends travel to the planet Mongo and find themselves fighting the tyranny of Ming the Merciless to save Earth.</p>
-        </div>
-        <div className="browse-rating-box">
-          <div className="billboard-mute-btn" onClick={this.unMute}>
-            {muteButton}
-          </div>
-          <p id="bb-rating">PG</p>
-        </div>
-        <video
-          ref={this.billboardRef}
-          src={'https://jefflix-seeds.s3-us-west-1.amazonaws.com/trailers/flash_gordon.mp4'}
-          autoPlay={true}
-          muted 
-        />
+  return(
+    <div className="billboard">
+      <div className="browse-title-box">
+        <img src={window.flashgordonimg} alt="flashgordonimg" />
+        <p>A football player and his friends travel to the planet Mongo and find themselves fighting the tyranny of Ming the Merciless to save Earth.</p>
       </div>
-    )
-  }
+      <div className="browse-rating-box">
+        <div className="billboard-mute-btn" onClick={unMute}>
+          {muteButton}
+        </div>
+        <p id="bb-rating">PG</p>
+      </div>
+      <video
+        ref={billboardRef}
+        src={'https://jefflix-seeds.s3-us-west-1.amazonaws.com/trailers/flash_gordon.mp4'}
+        autoPlay={true}
+        muted 
+      />
+    </div>
+  )
 }
 
 export default Billboard;
