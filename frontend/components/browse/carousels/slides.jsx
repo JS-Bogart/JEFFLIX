@@ -1,31 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-class Slides extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      currentSliderItem: props.currentSliderItem,
-      movies: []
-    };
+const Slides = (props) => {
 
-    this.getMovies = this.getMovies.bind(this);
-    this.addToList = this.addToList.bind(this);
-    this.removeFromList = this.removeFromList.bind(this);
-    this.listButton = this.listButton.bind(this);
-  }
+  const [currentSliderItem, setCurrentSliderItem] = useState(props.currentSliderItem);
+  const [movies, setMovies] = useState([]);
+  const [sliderBuilt, setSliderBuilt] = useState(false);
+  const movieRef = useRef();
+  movieRef.current = movies;
 
-  componentDidMount(){
-    this.buildSlide();
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.currentSliderItem !== prevState.currentSliderItem) {
-      return { currentSliderItem: nextProps.currentSliderItem };
+  useEffect(() => {
+    if (!sliderBuilt) {
+      buildSlide();
+      setSliderBuilt(true);
     }
-    else return null;
-  }
+    setCurrentSliderItem(props.currentSliderItem);
+  }, [props.currentSliderItem])
 
-  shuffle(array) {
+  const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -33,12 +24,12 @@ class Slides extends React.Component {
     return(array)
   }
 
-  getMovies() {
-    const movies = this.props.movies;
+  const getMovies = () => {
+    const sliderMovies = props.movies;
     const genreMovies = [];
-    const slideGenre = this.props.genre.genre
+    const slideGenre = props.genre.genre
 
-    movies.forEach(movie => {
+    sliderMovies.forEach(movie => {
       movie.genres.forEach(genre => {
         if (genre.genre === slideGenre) {
           genreMovies.push(movie);
@@ -46,14 +37,14 @@ class Slides extends React.Component {
       })
     })
 
-    const shuffledMovies = this.shuffle(genreMovies);
+    const shuffledMovies = shuffle(genreMovies);
     return (shuffledMovies.slice(0, 18));
   }
 
-  addToList(movie, index) {
-    this.props.addMovie({ my_list: {user_id: this.props.userId, movie_id: movie.id} })
-    let movies = this.state.movies;
-    movies[index] = 
+  const addToList = (movie, index) => {
+    props.addMovie({ my_list: {user_id: props.userId, movie_id: movie.id} })
+    const listMovies = movieRef.current.map(movie => movie);
+    listMovies[index] =
       <div className="slider-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
         <div className="slider-video-wrap">
@@ -73,11 +64,11 @@ class Slides extends React.Component {
             <div className="item-buttons">
               <p
                 className="my-list-btn"
-                onClick={() => this.removeFromList(movie, index)}
+                onClick={() => removeFromList(movie, index)}
               >⊖</p>
               <div
                 className="item-play-btn"
-                onClick={() => this.props.handlePlayButton(movie.id)}
+                onClick={() => props.handlePlayButton(movie.id)}
               >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
@@ -96,15 +87,15 @@ class Slides extends React.Component {
           </div>
         </div>
       </div>
-    this.setState({ movies: movies })
+    setMovies(listMovies);
   }
 
-  removeFromList(movie, index){
-    const userId = this.props.userId;
+  const removeFromList = (movie, index) => {
+    const userId = props.userId;
     const movieListId = { user_id: userId, movie_id: movie.id }
-    this.props.deleteMovie(movieListId);
-    let movies = this.state.movies;
-    movies[index] =
+    props.deleteMovie(movieListId);
+    const listMovies = movieRef.current.map(movie => movie);
+    listMovies[index] =
       <div className="slider-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
         <div className="slider-video-wrap">
@@ -124,11 +115,11 @@ class Slides extends React.Component {
             <div className="item-buttons">
               <p
                 className="my-list-btn"
-                onClick={() => this.addToList(movie, index)}
+                onClick={() => addToList(movie, index)}
               >⊕</p>
               <div
                 className="item-play-btn"
-                onClick={() => this.props.handlePlayButton(movie.id)}
+                onClick={() => props.handlePlayButton(movie.id)}
               >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
@@ -147,11 +138,11 @@ class Slides extends React.Component {
           </div>
         </div>
       </div>
-    this.setState({ movies: movies })
+    setMovies(listMovies);
   }
 
-  listButton(movie, index) {
-    const myList = this.props.myList;
+  const listButton = (movie, index) => {
+    const myList = props.myList;
     const movieId =  movie.id;
     let check = false;
     myList.forEach(movie => {
@@ -163,25 +154,25 @@ class Slides extends React.Component {
       return(
         <p 
           className="my-list-btn" 
-          onClick={() => this.removeFromList(movie, index)}
+          onClick={() => removeFromList(movie, index)}
         >⊖</p>
       )
     } else {
       return(
         <p 
           className="my-list-btn" 
-          onClick={() => this.addToList(movie, index)}
+          onClick={() => addToList(movie, index)}
         >⊕</p>
       )
     }
   }
 
-  buildSlide() {
-    const movieList = this.getMovies();
-    const movies = [];
+  const buildSlide = () => {
+    const movieList = getMovies();
+    const sliderMovies = [];
 
     movieList.forEach((movie, index) => {
-      movies.push(
+      sliderMovies.push(
         <div className="slider-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
           <div className="slider-video-wrap">
@@ -199,10 +190,10 @@ class Slides extends React.Component {
             <div className="item-title-play">
               <p>{movie.title}</p>
               <div className="item-buttons">
-                {this.listButton(movie, index)}
+                {listButton(movie, index)}
                 <div 
                   className="item-play-btn"
-                  onClick={() => this.props.handlePlayButton(movie.id)}
+                  onClick={() => props.handlePlayButton(movie.id)}
                 >
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
@@ -223,16 +214,14 @@ class Slides extends React.Component {
         </div>
       )
     })
-    this.setState({movies: movies})
+    setMovies(sliderMovies);
   }
 
-  render() {
-    return(
-      <div className="slider-wrap" slide={this.state.currentSliderItem}>
-        {this.state.movies}
-      </div>
-    )
-  }
+  return(
+    <div className="slider-wrap" slide={currentSliderItem}>
+      {movies}
+    </div>
+  )
 }
 
 export default Slides;

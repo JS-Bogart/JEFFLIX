@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Route } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 
@@ -7,8 +6,8 @@ const MyList = (props) => {
 
   const [movies, setMovies] = useState([]);
   const [moviesLoaded, setMoviesLoaded] = useState(false);
-  const stateRef = useRef();
-  stateRef.current = movies;
+  const movieRef = useRef();
+  movieRef.current = movies;
 
   useEffect(() => {
     if (!moviesLoaded) {
@@ -89,7 +88,7 @@ const MyList = (props) => {
     const userId = props.currentUser.id;
     const movieListId = { user_id: userId, movie_id: movie.id }
     props.deleteMovie(movieListId);
-    const newMovies = stateRef.current.map(listMovie => listMovie);
+    const newMovies = movieRef.current.map(listMovie => listMovie);
     newMovies[index] = null;
     setMovies(newMovies);
   }
