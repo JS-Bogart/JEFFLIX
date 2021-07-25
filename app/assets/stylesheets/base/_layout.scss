@@ -465,7 +465,6 @@ footer {
 // Carousel
 
 .slide-arrow-left {
-  width: 55px;
   position: absolute;
   text-align: center;
   left: 0;
@@ -474,7 +473,6 @@ footer {
 }
 
 .slide-arrow-right {
-  width: 55px;
   position: absolute;
   text-align: center;
   right: 0;
@@ -559,11 +557,13 @@ footer {
 @media screen and (min-width: 1441px) {
   .slide-arrow-left {
     height: 175px;
+    width: 55px;
     line-height: 2;
   }
 
   .slide-arrow-right {
     height: 175px;
+    width: 55px;
     line-height: 2;
   }
 
@@ -600,12 +600,16 @@ footer {
   }
 
   .slide-arrow-left {
-    height: 125px;
+    height: 127px;
+    width: 61px;
+    margin-top: 1px;
     line-height: 1.5;
   }
 
   .slide-arrow-right {
-    height: 125px;
+    height: 127px;
+    width: 61px;
+    margin-top: 1px;
     line-height: 1.5;
   }
 
