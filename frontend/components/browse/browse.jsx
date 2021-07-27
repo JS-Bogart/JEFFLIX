@@ -10,25 +10,6 @@ const Browse = (props) => {
   const [genresLoaded, setGenresLoaded] = useState(false);
   const [listLoaded, setListLoaded] = useState(false);
 
-  // componentDidMount(){
-  //   if (this.props.movies.length < 2) {
-  //     this.props.requestAllMovies();
-  //   }
-  //   if (this.props.genres.length < 1) {
-  //     this.props.requestAllGenres();
-  //   }
-  //   this.props.getMyList(this.props.currentUser.id);
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.genres !== this.props.genres || prevProps.movies !== this.props.movies) {
-  //     this.setState({
-  //       genresLoaded: false
-  //     });
-  //     this.loadGenres();
-  //   }
-  // }
-
   useEffect(() => {
     const moviesPresent = props.movies.length > 1;
     const genresPresent = props.genres.length > 0;
