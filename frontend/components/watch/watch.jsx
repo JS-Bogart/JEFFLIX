@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 const Watch = (props) => {
 
   const [movie, setMovie] = useState(null);
+  const [movieLoaded, setMovieLoaded] = useState(false);
   const [movieTitle, setMovieTitle] = useState("");
   const [playpause, setPlaypause] = useState("❙❙");
-  const [mute, setMute] = useState(<p>&#x1f50a;</p>);
+  const [mute, setMute] = useState(<p>&#x1f507;</p>);
 
   useEffect(async () => {
     const { id } = props.match.params;
     const movieId = parseInt(id);
     if (props.movies.length < 1) {
-      props.requestMovie(movieId);
+      await props.requestMovie(movieId);
     } else if (props.movies.length > 0 && !movie) {
       let currentMovie;
       props.movies.forEach(movie => {
@@ -26,12 +27,12 @@ const Watch = (props) => {
         src={currentMovie.videoUrl}
         type="video/mp4"
         autoPlay={true}
+        muted={true}
       />);
-      setMovieTitle(currentMovie.title)
+      setMovieTitle(currentMovie.title);
     }
 
-    if (movie) {
-      debugger
+    if (movie && !movieLoaded) {
       const videoContainer = document.getElementById('videoContainer');
       const video = document.getElementById('video');
       video.controls = false;
@@ -89,6 +90,7 @@ const Watch = (props) => {
       fullscreen.addEventListener('click', function (e) {
         handleFullscreen();
       });
+      setMovieLoaded(true);
     }
   }, [props.movies, movie])
 
@@ -115,7 +117,6 @@ const Watch = (props) => {
     props.history.push(`/browse`);
   }
 
-
   return (
     <div id="videoContainer">
       <div className="back-box">
@@ -130,6 +131,7 @@ const Watch = (props) => {
         </div>
       </div>
       {movie}
+      <div className="loader"></div>
       <div className="controls-box">
         <div id="video-controls" className="controls">
           <li className="progress">
