@@ -4,7 +4,7 @@ import NavbarContainer from '../navbar/navbar_container';
 import Carousel from './carousels/carousel';
 import Billboard from './billboard';
 
-const Browse = (props) => {qqq
+const Browse = (props) => {
 
   const [genres, setGenres] = useState([]);
   const [genresLoaded, setGenresLoaded] = useState(false);

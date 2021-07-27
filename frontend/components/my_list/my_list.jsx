@@ -4,20 +4,18 @@ import NavbarContainer from '../navbar/navbar_container';
 
 const MyList = (props) => {
 
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(<p>You haven't added any titles to your list yet.</p>);
   const [moviesLoaded, setMoviesLoaded] = useState(false);
   const movieRef = useRef();
   movieRef.current = movies;
 
-  useEffect(() => {
+  useEffect(async () => {
     if (!moviesLoaded) {
-      props.getMyList(props.currentUser.id);
+      await props.getMyList(props.currentUser.id);
+      getMovies();
       setMoviesLoaded(true);
     }
-    if (movies.length < 1) {
-      getMovies();
-    }
-  }, [props.myList])
+  }, [movies])
 
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -93,26 +91,14 @@ const MyList = (props) => {
     setMovies(newMovies);
   }
 
-  const getList = () => {
-    if (movies.length > 0) {
-      return(
-        <div className="my-list-list">
-          {movies}
-        </div>
-      )
-    } else {
-      return(
-        <p>You haven't added any titles to your list yet.</p>
-      )
-    }
-  }
-
   return (
     <div className="my-list">
       <Route component={NavbarContainer} />
       <div className="my-list-body">
         <h1>My List</h1>
-        {getList()}
+        <div className="my-list-list">
+          {movies}
+        </div>
       </div>
     </div>
   );
