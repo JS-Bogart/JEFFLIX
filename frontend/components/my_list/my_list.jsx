@@ -5,17 +5,20 @@ import NavbarContainer from '../navbar/navbar_container';
 const MyList = (props) => {
 
   const [movies, setMovies] = useState(<p>You haven't added any titles to your list yet.</p>);
+  const [moviesRequested, setMoviesRequested] = useState(false);
   const [moviesLoaded, setMoviesLoaded] = useState(false);
   const movieRef = useRef();
   movieRef.current = movies;
 
   useEffect(async () => {
-    if (!moviesLoaded) {
+    if (!moviesRequested && props.myList.length < 1) {
       await props.getMyList(props.currentUser.id);
+      setMoviesRequested(true);
+    } else if (!moviesLoaded) {
       getMovies();
       setMoviesLoaded(true);
     }
-  }, [movies])
+  }, [props.myList, movies])
 
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
