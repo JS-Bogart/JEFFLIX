@@ -1,40 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Route } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 
-class Genre extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      genreId: null,
-      genre: null,
-      searchTerm: '',
-      searching: false,
-      movies: []
-    };
-  }
+const Genre = (props) => {
 
-  componentDidMount(){
-    const { id } = this.props.match.params;
-    const paramsArray = id.split("+");
-    const genreId = parseInt(paramsArray[1]);
-    const genre = paramsArray[0];
-    this.setState({ 
-      genreId: genreId,
-      genre: genre
-    });
-    this.props.requestGenreMovies(genreId);
-  }
+  const [genreId, setGenreId] = useState(null);
+  const [genre, setGenre] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [myListCheck, setMyListCheck] = useState(false);
+  const movieRef = useRef();
+  movieRef.current = movies;
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.genreMovies !== this.props.genreMovies 
-      && this.state.movies.length < 1){
-      this.getMovies();
-      this.props.getMyList(this.props.userId);
-    } 
-  }
+  useEffect(async () => {
+    if (!myListCheck && props.myList.length < 1) {
+      await props.getMyList(props.userId);
+      setMyListCheck(true);
+    }
+    if (!genreId || !genre) {
+      const { id } = props.match.params;
+      const paramsArray = id.split("+");
+      const newGenreId = parseInt(paramsArray[1]);
+      const newGenre = paramsArray[0];
+      setGenreId(newGenreId);
+      setGenre(newGenre);
+      await props.requestGenreMovies(newGenreId);
+    } else if (movies.length < 1) {
+      getMovies();
+    }
+  }, [props.genreMovies])
 
-  shuffle(array) {
+  const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -42,12 +37,12 @@ class Genre extends React.Component {
     return (array)
   }
 
-  handlePlayButton(movie) {
-    this.props.history.push(`/watch/${movie}`);
+  const handlePlayButton = (movie) => {
+    props.history.push(`/watch/${movie}`);
   }
 
-  listButton(movie, index) {
-    const myList = this.props.myList;
+  const listButton = (movie, index) => {
+    const myList = props.myList;
     const movieId = movie.id;
     let check = false;
     myList.forEach(movie => {
@@ -59,23 +54,23 @@ class Genre extends React.Component {
       return (
         <p
           className="my-list-btn"
-          onClick={() => this.removeFromList(movie, index)}
+          onClick={() => removeFromList(movie, index)}
         >⊖</p>
       )
     } else {
       return (
         <p
           className="my-list-btn"
-          onClick={() => this.addToList(movie, index)}
+          onClick={() => addToList(movie, index)}
         >⊕</p>
       )
     }
   }
 
-  addToList(movie, index) {
-    this.props.addMovie({ my_list: { user_id: this.props.userId, movie_id: movie.id } })
-    let movies = this.state.movies;
-    movies[index] =
+  const addToList = (movie, index) => {
+    props.addMovie({ my_list: { user_id: props.userId, movie_id: movie.id } })
+    const newMovies = movieRef.current.map(movie => movie);
+    newMovies[index] =
       <div className="genre-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
         <div className="genre-video-wrap">
@@ -95,11 +90,11 @@ class Genre extends React.Component {
             <div className="item-buttons">
               <p
                 className="my-list-btn"
-                onClick={() => this.removeFromList(movie, index)}
+                onClick={() => removeFromList(movie, index)}
               >⊖</p>
               <div
                 className="item-play-btn"
-                onClick={() => this.handlePlayButton(movie.id)}
+                onClick={() => handlePlayButton(movie.id)}
               >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
@@ -118,15 +113,15 @@ class Genre extends React.Component {
           </div>
         </div>
       </div>
-    this.setState({ movies: movies })
+    setMovies(newMovies);
   }
 
-  removeFromList(movie, index) {
-    const userId = this.props.userId;
+  const removeFromList = (movie, index) => {
+    const userId = props.userId;
     const movieListId = { user_id: userId, movie_id: movie.id }
-    this.props.deleteMovie(movieListId);
-    let movies = this.state.movies;
-    movies[index] =
+    props.deleteMovie(movieListId);
+    const newMovies = movieRef.current.map(movie => movie);
+    newMovies[index] =
       <div className="genre-item" key={index}>
         <img src={movie.imageUrl} alt={movie.title} />
         <div className="genre-video-wrap">
@@ -146,11 +141,11 @@ class Genre extends React.Component {
             <div className="item-buttons">
               <p
                 className="my-list-btn"
-                onClick={() => this.addToList(movie, index)}
+                onClick={() => addToList(movie, index)}
               >⊕</p>
               <div
                 className="item-play-btn"
-                onClick={() => this.handlePlayButton(movie.id)}
+                onClick={() => handlePlayButton(movie.id)}
               >
                 <p className="play-circle">&#11044;</p>
                 <p className="play-arrow">▶</p>
@@ -169,15 +164,15 @@ class Genre extends React.Component {
           </div>
         </div>
       </div>
-    this.setState({ movies: movies })
+    setMovies(newMovies);
   }
 
-  getMovies() {
-    const movieList = this.shuffle(this.props.genreMovies);
-    const movies = [];
+  const getMovies = () => {
+    const movieList = shuffle(props.genreMovies);
+    const newMovies = [];
 
     movieList.forEach((movie, index) => {
-      movies.push(
+      newMovies.push(
         <div className="genre-item" key={index}>
           <img src={movie.imageUrl} alt={movie.title} />
           <div className="genre-video-wrap">
@@ -195,10 +190,10 @@ class Genre extends React.Component {
             <div className="item-title-play">
               <p>{movie.title}</p>
               <div className="item-buttons">
-                {this.listButton(movie, index)}
+                {listButton(movie, index)}
                 <div
                   className="item-play-btn"
-                  onClick={() => this.handlePlayButton(movie.id)}
+                  onClick={() => handlePlayButton(movie.id)}
                 >
                   <p className="play-circle">&#11044;</p>
                   <p className="play-arrow">▶</p>
@@ -219,27 +214,24 @@ class Genre extends React.Component {
         </div>
       )
     })
-
-    this.setState({ movies: movies })
+    setMovies(newMovies);
   }
 
-  render(){
-    return (
-      <div className="genre-page">
-        <Route component={NavbarContainer} />
-        <div className="genre-body">
-          <div className="genre-title-box">
-            <p>Movies</p>
-            <p>{">"}</p>
-            <h1 className="genre-title">{this.state.genre}</h1>
-          </div>
-          <div className="genre-list">
-            {this.state.movies}
-          </div>
+  return (
+    <div className="genre-page">
+      <Route component={NavbarContainer} />
+      <div className="genre-body">
+        <div className="genre-title-box">
+          <p>Movies</p>
+          <p>{">"}</p>
+          <h1 className="genre-title">{genre}</h1>
+        </div>
+        <div className="genre-list">
+          {movies}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Genre;
