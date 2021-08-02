@@ -11,7 +11,7 @@ const MyList = (props) => {
   movieRef.current = movies;
 
   useEffect(async () => {
-    if (!moviesRequested && props.myList.length < 1) {
+    if (!moviesRequested) {
       await props.getMyList(props.currentUser.id);
       setMoviesRequested(true);
     } else if (!moviesLoaded) {
