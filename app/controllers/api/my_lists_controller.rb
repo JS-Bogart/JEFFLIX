@@ -1,6 +1,6 @@
 class Api::MyListsController < ApplicationController
 
-  skip_before_action :verify_authenticity_token
+  before_action :require_logged_in, only: [:show, :create, :destroy]
 
   def show
     @my_list = MyList.find_by(

@@ -1,9 +1,15 @@
+const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
 export const add = myList => {
   return(
     $.ajax({
       method: 'POST',
       url: '/api/my_lists',
-      data: myList
+      data: JSON.stringify(myList),
+      headers: {
+        "X-CSRF-Token": csrfToken,
+        "Content-Type": "application/json",
+      },
     })
   )
 }
@@ -13,7 +19,11 @@ export const remove = movie => {
     $.ajax({
       method: 'DELETE',
       url: `/api/my_lists/${movie.movie_id}`,
-      data: movie
+      data: JSON.stringify(movie),
+      headers: {
+        "X-CSRF-Token": csrfToken,
+        "Content-Type": "application/json",
+      },
     })
   )
 }
