@@ -4,9 +4,7 @@ import useDebounce from '../../util/debounce_util';
 const Search = (props) => {
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [previousTerm, setPreviousTerm] = useState(null);
   const [searchbarOpen, setSearchbarOpen] = useState(true);
-  const [searched, setSearched] = useState(false);
   const [newSearch, setNewSearch] = useState(false);
   const [movies, setMovies] = useState(<p>No Results</p>);
   const myRef = React.createRef();
@@ -15,25 +13,22 @@ const Search = (props) => {
   movieRef.current = movies;
 
   useEffect(async () => {
-    if (props.movies.length < 1) {
-      await props.requestAllMovies();
-    } else if (props.genres.length < 1) {
-      await props.requestAllGenres();
-    } else if (searchTerm === '') {
-      const { newSearchTerm } = props.match.params;
+    if (searchTerm === '' && !newSearch) {
+      const newSearchTerm = props.match.params.searchTerm;
       setSearchTerm(newSearchTerm);
       myRef.current.focus();
       await props.getMyList(props.currentUser.id);
+    } else if (props.movies.length < 1) {
+      await props.requestAllMovies();
+    } else if (props.genres.length < 1) {
+      await props.requestAllGenres();
+    } else if (searchTerm.length > 0) {
       searchMovies()
     }
-    if (movies.length < 1 && props.movies.length > 0 &&
-      !searched) {
-      searchMovies();
-    } else if (debouncedSearchTerm && newSearch) {
+    if (newSearch) {
       handleUpdate(debouncedSearchTerm);
     }
-
-  }, [searchTerm, debouncedSearchTerm])
+  }, [props.movies, props.genres, debouncedSearchTerm])
 
   const handlePlayButton = (movie) => {
     props.history.push(`/watch/${movie}`);
@@ -47,30 +42,18 @@ const Search = (props) => {
     }
   }
 
-  const searchUpdate = () => {
-    searchMovies();
-  }
-
   const handleUpdate = (value) => {
     if (value) {
       props.history.push(`/search/${value}`);
-    } else if (searchTerm === '') {
+    } else if (value === '') {
       props.history.push("/browse");
     }
   }
 
   const handleInput = () => {
     return (e) => {
-      const value = `${e.currentTarget.value}`;
       setSearchTerm(e.currentTarget.value);
-      // setSearched(false);
       setNewSearch(true);
-      if (value.length < 1) {
-        props.history.push("/browse");
-      }
-      // } else {
-      //   handleUpdate(value);
-      // }
     }
   }
 
@@ -272,8 +255,9 @@ const Search = (props) => {
 
     if (newMovies.length > 0) {
       setMovies(newMovies);
+    } else {
+      setMovies(<p>No Results</p>);
     }
-    setSearched(true);
   }
 
   return (
@@ -307,7 +291,11 @@ const Search = (props) => {
           <span>&#x25BE;</span>
           <div className="logout-dropdown">
             <span>&#x25B4;</span>
-            <div>
+            <div className="dropdown-list">
+              <a href="https://github.com/JS-Bogart/JEFFLIX">GitHub</a>
+              <a href="https://www.linkedin.com/in/jeffrey-bogart-7874121a5/">
+                LinkedIn
+              </a>
               <a
                 onClick={props.logout}
                 href="/#/login"
