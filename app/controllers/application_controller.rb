@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user, :logged_in?, :require_logged_in
+  helper_method :current_user, :require_logged_in
 
   private
 
@@ -22,10 +22,6 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
-  end
-  
-  def redirect_if_logged_in
-    redirect_to root_url if logged_in?
   end
 
   def require_logged_in
